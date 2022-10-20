@@ -6,7 +6,6 @@
 *.user
 *.userosscache
 *.sln.docstates
-.angular
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -62,6 +61,7 @@ dlldata.c
 *.vspscc
 *.vssscc
 .builds
+.angular
 *.pidb
 *.svclog
 *.scc
@@ -227,7 +227,6 @@ _Pvt_Extensions
 
 # Paket dependency manager
 .paket/paket.exe
-.angular
 
 # FAKE - F# Make
 .fake/
