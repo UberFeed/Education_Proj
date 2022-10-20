@@ -1,0 +1,203 @@
+@import "../../_variables.scss";
+
+.home-page {
+  height: auto;
+  width: 100%;
+
+  .content {
+    max-width: 984px;
+    height: inherit;
+    margin: 0 auto;
+  }
+
+  .frontpage-banner {
+    padding-top: 40px;
+    height: inherit;
+    color: $light-color;
+
+    .fronpage-banner_info {
+
+      h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1.25;
+        margin-bottom: 16px;
+      }
+
+      p {
+        font-size: 1.42rem;
+        font-weight: 500;
+        margin-bottom: 40px;
+      }
+    }
+
+    .fronpage-banner_sub {
+      margin-bottom: 40px;
+
+      h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+
+      p {
+        font-size: 1.14rem;
+        font-weight: 500;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .frontpage-content {
+
+    .tabs {
+      height: inherit;
+
+      .tabs_menu {
+        background-color: $fourth-color;
+        position: sticky;
+        top: 0px;
+        z-index: 1;
+
+        .tabs_menu-inner {
+          //position: relative;
+          height: 68px;
+          color: $light-color;
+          display: flex;
+          justify-content: center;
+          border-bottom: 1px solid $border-color;
+
+          .menu_elem {
+            padding: 12px 8px;
+            display: flex;
+            min-width: 180px;
+            flex-direction: column;
+            cursor: pointer;
+            text-decoration: none;
+            color: $light-color;
+
+            &:hover {
+              color: $orange-color;
+              border-bottom: 1px solid $orange-color;
+            }
+
+            .elem_title {
+              font-weight: 500;
+              font-size: .85rem;
+              line-height: 18px;
+              text-transform: uppercase;
+            }
+
+            .elem_subtitle {
+              font-style: normal;
+              font-weight: 600;
+              font-size: 1.14rem;
+              line-height: 24px;
+              letter-spacing: 1px;
+              text-align: left;
+            }
+          }
+
+          .active {
+            color: $orange-color;
+            border-bottom: 1px solid $orange-color;
+          }
+        }
+      }
+
+      .tabs_content {
+        /*height: 500px;
+          overflow-y: scroll;*/
+        .tabs-wrapper {
+          counter-reset: a;
+
+          .tabs_inner {
+            color: $grey-color;
+            padding-top: 35px;
+
+            h2 {
+              font-size: 1.42rem;
+              margin-bottom: 24px;
+              font-weight: 700;
+            }
+
+            .tabs_description {
+              margin-bottom: 24px;
+
+              p {
+                margin-bottom: 8px;
+              }
+
+              p:last-child {
+                margin-bottom: 0;
+              }
+            }
+
+            .list {
+              .list_item {
+                margin-bottom: 24px;
+
+                .list_title {
+                  margin-bottom: 16px;
+
+                  h3, .subsection_name {
+                    font-size: 1.14rem;
+                    font-weight: 700;
+                    margin-bottom: 0;
+                    color: $grey-color;
+                    cursor: pointer;
+                    text-decoration: none;
+                    &:hover{
+                        color: $orange-color;
+                        text-decoration: underline;
+                    }
+                  }
+                }
+
+                .list_sub {
+                  counter-increment: a;
+                  counter-reset: b;
+                  column-count: 3;
+                  column-gap: 10px;
+                  //min-height: 300px;
+                  list-style-type: none;
+                  margin: 0;
+                  padding: 0;
+
+                  li {
+                    padding-left: 38px;
+                    font-size: 1.14rem;
+                    color: $fifth-color;
+                    position: relative;
+                    display: flex;
+                    break-inside: avoid;
+                    line-break: loose;
+                    //min-height: 37px;
+                    //align-items: center;
+
+                    &:hover {
+                      cursor: pointer;
+                      color: $orange-color;
+                      text-decoration: underline;
+                    }
+                  }
+
+                  li::before {
+                    counter-increment: b;
+                    content: counter(a) '.' counter(b);
+                    position: absolute;
+                    left: 0;
+                    color: $light-color;
+                    font-family: 'Consolas', serif;
+                    font-size: .85rem;
+                    line-height: 1.9rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,131 @@
+@import "../../_variables.scss";
+
+header {
+  padding: 0;
+  padding-right: 15px;
+  height: 63px;
+  background-color: $first-color;
+  color: $second-color;
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: 60px 270px auto 1fr repeat(3, 50px);
+    grid-template-rows: 1fr;
+    height: 100%;
+    align-items: center;
+
+    .lang_switcher {
+      width: 60px;
+      border-right: 1px solid $second-color;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+
+      .btn-lang_switch {
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+        .btn_content{
+
+        }
+
+        .icon-color {
+          fill: $grey-color;
+        }
+
+        &:hover {
+          .icon-color {
+            fill: $orange-color;
+          }
+
+          .btn-current_lang {
+            color: $orange-color;
+          }
+        }
+
+        .btn-current_lang {
+          color: $grey-color;
+          text-transform: uppercase;
+          font-size: .9rem;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .logo {
+      padding: 0 32px 0 32px;
+
+      .logo-text {
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        line-height: 1.5rem;
+        font-weight: bold;
+        color: $grey-color;
+        //font-family: 'Square Peg', cursive;
+      }
+    }
+
+    .main_navigation {
+      .main_navigation-list {
+        list-style-type: none;
+        display: flex;
+        font-size: 1.2rem;
+        font-weight: 600;
+        line-height: 1.2rem;
+        margin: 0;
+        padding: 0;
+
+        .main_nav-elem {
+          margin-right: 20px;
+
+          &:hover {
+            cursor: pointer;
+            color: $orange-color;
+          }
+        }
+      }
+    }
+
+    .download_link {
+      justify-self: flex-end;
+      color: $orange-color;
+      border: 1px solid darken($orange-color, 35%);
+      border-radius: 34px;
+      padding: 3px 12px;
+      cursor: pointer;
+
+      span {
+        font-size: 1.2rem;
+        font-weight: 500;
+        line-height: 1.2rem;
+      }
+
+      &:hover {
+        border-color: $orange-color;
+      }
+    }
+
+    .user_account, .theme, .search {
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+      margin-left: 15px;
+
+      .icon-color {
+        fill: $second-color;
+      }
+
+      &:hover {
+        .icon-color {
+          fill: $grey-color;
+        }
+      }
+    }
+  }
+}
+
+/*@font-face {
+  font-family: 'Square Peg';
+  src: url('/wwwroot/font/SquarePeg-Regular.ttf') format('ttf');
+  font-style: normal;
+  font-weight: 400;
+}*/
