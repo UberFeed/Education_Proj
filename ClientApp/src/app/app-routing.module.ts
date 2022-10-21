@@ -15,14 +15,12 @@ const routes: Routes = [
       { path: 'html-basic', component: HtmlBasicsComponent }
     ]
   },
-
 ]
 
 @NgModule({
   imports: [
     RouterModule.forRoot(routes)
   ],
-//  exports: [RouterModule]
 })
 export class AppRoutingModule { }
 

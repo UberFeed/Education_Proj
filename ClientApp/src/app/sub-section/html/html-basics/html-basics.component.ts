@@ -3,13 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-html-basics',
   templateUrl: './html-basics.component.html',
-  styleUrls: ['./html-basics.component.css']
+  styleUrls: ['../../general-style.css', './html-basics.component.css']
 })
-export class HtmlBasicsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class HtmlBasicsComponent{
+  title: string = 'Структура HTML-документа';
 }
