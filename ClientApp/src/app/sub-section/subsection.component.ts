@@ -7,7 +7,11 @@ import { CommonModule } from '@angular/common';
   templateUrl: './subsection.component.html',
   styleUrls: ['./subsection.component.css'],
 })
-export class SubsectionComponent {
+export class SubsectionComponent implements OnInit {
+
+  ngOnInit() {
+  //  document.s
+  }
 
   setting = {
     sidebarToggle: false

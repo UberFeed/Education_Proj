@@ -11,6 +11,7 @@ import { SectionComponent } from './section/section.component';
 import { SubsectionComponent } from './sub-section/subsection.component';
 
 import { AppRoutingModule } from './app-routing.module';
+import { LessonsData } from './LessonsData.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { AppRoutingModule } from './app-routing.module';
     NavMenuComponent,
     HomeComponent,
     SectionComponent,
-    SubsectionComponent
+    SubsectionComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -27,7 +28,7 @@ import { AppRoutingModule } from './app-routing.module';
     AppRoutingModule,
     RouterModule
   ],
-  providers: [],
+  providers: [LessonsData],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
