@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, AfterViewChecked, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TransportData } from './TrasportData.service';
 
 
 @Component({
@@ -9,8 +10,22 @@ import { CommonModule } from '@angular/common';
 })
 export class SubsectionComponent implements OnInit {
 
+  public title!: string;
+
+  constructor(
+    public transportData: TransportData,
+    private cd: ChangeDetectorRef
+  ) { }
+
   ngOnInit() {
-  //  document.s
+    if (window.scrollY > 0) {
+      window.scrollTo(0, 0);
+    }
+
+    this.transportData.Title.subscribe((data) => {
+      this.title = data;
+      this.cd.detectChanges();
+    });
   }
 
   setting = {
