@@ -13,9 +13,14 @@ export class HtmlBasicsComponent implements OnInit {
   constructor(private transportData: TransportData) { }
 
   title: string = "Структура HTML-документа";
+  textPath: Array<object> = [
+    { section: 'Основы HTML', path: 'html/basics' }
+  ];
 
   ngOnInit() {
-    this.transportData.changeTitle(this.title);
+    let headers = document.querySelectorAll("h1.head");
+
+    this.transportData.changeTitle(this.title, headers, this.textPath);
   }
 
 }

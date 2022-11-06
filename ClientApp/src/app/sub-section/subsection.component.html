@@ -78,7 +78,9 @@
                   </svg>
                 </a>
               </li>
-              <li class="breadcrumb-item" aria-current="page">Разметка HTML</li>
+              <li *ngFor="let item of TextPath" class="breadcrumb-item" aria-current="page">
+                <a href="{{item.path}}">{{item.section}}</a>
+              </li>
             </ol>
           </nav>
         </div>

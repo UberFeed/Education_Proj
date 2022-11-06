@@ -10,12 +10,15 @@ import { TransportData } from './TrasportData.service';
 })
 export class SubsectionComponent implements OnInit {
 
-  public title!: string;
-
   constructor(
     public transportData: TransportData,
     private cd: ChangeDetectorRef
   ) { }
+
+  public title!: string;
+  public Headers!: any;
+  public TextPath!: any;
+
 
   ngOnInit() {
     if (window.scrollY > 0) {
@@ -24,8 +27,17 @@ export class SubsectionComponent implements OnInit {
 
     this.transportData.Title.subscribe((data) => {
       this.title = data;
-      this.cd.detectChanges();
     });
+
+    this.transportData.Headers.subscribe((data) => {
+      this.Headers = data;
+    });
+
+    this.transportData.TextPath.subscribe((data) => {
+      this.TextPath = data;
+    });
+
+    this.cd.detectChanges();
   }
 
   setting = {
