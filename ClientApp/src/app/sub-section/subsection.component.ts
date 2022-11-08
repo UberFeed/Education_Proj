@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit, AfterViewChecked, ChangeDetectorRef } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgForOf } from '@angular/common';
 import { TransportData } from './TrasportData.service';
+import { Scroll } from '@angular/router';
 
 
 @Component({
@@ -8,7 +9,7 @@ import { TransportData } from './TrasportData.service';
   templateUrl: './subsection.component.html',
   styleUrls: ['./subsection.component.css'],
 })
-export class SubsectionComponent implements OnInit {
+export class SubsectionComponent implements OnInit, AfterViewInit {
 
   constructor(
     public transportData: TransportData,
@@ -18,6 +19,9 @@ export class SubsectionComponent implements OnInit {
   public title!: string;
   public Headers!: any;
   public TextPath!: any;
+
+  heads: any;
+  temp: any;
 
 
   ngOnInit() {
@@ -31,6 +35,7 @@ export class SubsectionComponent implements OnInit {
 
     this.transportData.Headers.subscribe((data) => {
       this.Headers = data;
+      console.log(this.Headers);
     });
 
     this.transportData.TextPath.subscribe((data) => {
@@ -38,6 +43,28 @@ export class SubsectionComponent implements OnInit {
     });
 
     this.cd.detectChanges();
+  }
+
+  ngAfterViewInit() {
+
+    this.heads = document.querySelectorAll('.test-1');
+    this.heads.forEach((elem: any) => {
+      elem.addEventListener('click', this.Scrolling);
+    });
+
+    for (let i = 0; i < this.heads.length; i++) {
+      this.heads[i].dataset.custom = this.Headers[i].dataset.custom;
+    }
+
+    console.log("test");
+  }
+
+  Scrolling(e: any) {
+    let elem = e.target;
+
+    this.temp = document.querySelector(`h2[data-custom='${elem.dataset.custom}']`);
+
+    window.scrollTo(0, this.temp.offsetTop);
   }
 
   setting = {

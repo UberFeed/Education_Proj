@@ -105,7 +105,12 @@
               }
 
               a {
+                text-decoration: none;
+                color: $light-color;
                 display: flex;
+                &:hover{
+                    color: $orange-color;
+                }
               }
             }
           }

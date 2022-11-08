@@ -18,7 +18,7 @@ export class HtmlBasicsComponent implements OnInit {
   ];
 
   ngOnInit() {
-    let headers = document.querySelectorAll("h1.head");
+    let headers = document.querySelectorAll("h2.head");
 
     this.transportData.changeTitle(this.title, headers, this.textPath);
   }

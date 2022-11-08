@@ -1,4 +1,3 @@
-
 <p>
   Язык HTML следует правилам, которые содержатся в файле
   объявления типа документа (Document Type Definition, или DTD).
@@ -13,12 +12,13 @@
 </p>
 
 <p>
-  Элементы, находящиеся внутри элемента
-  &lt;html&gt;
-  , образуют дерево документа, так называемую объектную модель документа, DOM (document object model). При этом элемент
-  &lt;html&gt;
-  является корневым элементом.
+  Элементы, находящиеся внутри элемента &lt;html&gt;, образуют дерево документа,
+  так называемую объектную модель документа, DOM (document object model). При этом элемент
+  &lt;html&gt; является корневым элементом.
 </p>
+
+<img src="../../../../assets/img/DOM.png" />
+<span class="label-img">Рис.1 Простейшая структура веб-страницы</span>
 
 <p>
   Чтобы разобраться во взаимодействии
@@ -35,3 +35,89 @@
   <li><b>Дочерний элемент</b> — элемент, непосредственно подчиненный другому элементу более высокого уровня. На рисунке 1 только элементы <kbd>&lt;h1&gt;</kbd>, <kbd>&lt;h2&gt;</kbd>, <kbd>&lt;p&gt;</kbd> и <kbd>&lt;nav&gt;</kbd> являются дочерними по отношению к <kbd>&lt;body&gt;</kbd>.</li>
   <li><b>Сестринский элемент</b> — элемент, имеющий общий родительский элемент с рассматриваемым, так называемые элементы одного уровня. На рисунке 1 <kbd>&lt;head&gt;</kbd> и <kbd>&lt;body&gt;</kbd> — элементы одного уровня, так же как и элементы <kbd>&lt;h1&gt;</kbd>, <kbd>&lt;h2&gt;</kbd> и <kbd>&lt;p&gt;</kbd> являются между собой сестринскими.</li>
 </ul>
+
+<h2 class="head" data-custom="head1">Элемент &lt;html&gt;</h2>
+
+<p>
+  Является корневым элементом документа. Все остальные элементы содержатся внутри
+  &lt;html&gt;...&lt;html&gt;. Все, что находится за пределами элемента, не воспринимается браузером как HTML-код и никак им не обрабатывается.
+  Для элемента доступен атрибут, описанный в таблице ниже, а также глобальные атрибуты.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Атрибут</th>
+      <th>Описание, принимаемое значение</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>manifest</td>
+      <td>
+        С помощью значения атрибута указывается путь к документу кэша манифеста, например:
+        &lt;html manifest="about_company.appcache"&gt;
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 class="head" data-custom="head2">Элемент &lt;head&gt;</h2>
+
+<p>
+  Раздел
+  &lt;head&gt;...&lt;/head&gt; содержит техническую информацию о странице: заголовок, описание, ключевые слова для поисковых машин, кодировку и т.д. Введенная в нем информация не отображается в окне браузера, однако содержит данные, которые указывают браузеру, как следует обрабатывать страницу.
+  Для элемента доступны глобальные атрибуты.
+</p>
+
+<p>
+  Обязательным элементом раздела &lt;head&gt; является &lt;title&gt;. Текст, размещенный
+  внутри элемента &lt;title&gt;, отображается в строке заголовка веб-браузера. Длина заголовка
+  должна быть не более 60 символов, чтобы полностью поместиться в заголовке.
+  Текст заголовка должен содержать максимально полное описание содержимого веб-страницы.
+  Для элемента доступны глобальные атрибуты.
+</p>
+
+<!--<pre class="code-table">
+  <code class=" language-html">
+    <span class="token tag">
+      <span class="token tag">
+        <span class="token punctuation">&lt;</span>
+         meta
+      </span>
+        <span class="token attr-name">name</span>
+        <span class="token attr-value">
+        <span class="token punctuation">=</span>
+        <span class="token punctuation">"</span>description
+        <span class="token punctuation">"</span>
+               </span>
+        <span class="token attr-name">content</span>
+        <span class="token attr-value">
+        <span class="token punctuation">=</span>
+        <span class="token punctuation">"</span>Описание содержимого страницы
+        <span class="token punctuation">"</span>
+              </span><span class="token punctuation">&gt;</span>
+    </span>
+        <span class="token tag">
+        <span class="token tag">
+        <span class="token punctuation">&lt;</span>meta
+                </span> <span class="token attr-name">name</span>
+        <span class="token attr-value">
+        <span class="token punctuation">=</span>
+        <span class="token punctuation">"</span>keywords
+        <span class="token punctuation">"</span>
+              </span>
+        <span class="token attr-name">content</span>
+        <span class="token attr-value">
+        <span class="token punctuation">=</span>
+        <span class="token punctuation">"</span>Ключевые слова через запятую
+        <span class="token punctuation">"</span>
+      </span>
+          <span class="token punctuation">&gt;</span>
+      </span>
+  </code>
+</pre>-->
+
+<pre class="code-table">
+<code class=" language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>description<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Описание содержимого страницы<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>keywords<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Ключевые слова через запятую<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></code></pre>

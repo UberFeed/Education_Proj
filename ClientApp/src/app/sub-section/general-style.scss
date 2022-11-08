@@ -1,3 +1,4 @@
+@import "../../_variables.scss";
 
 p{
     font-size: 16px;
@@ -5,5 +6,51 @@ p{
 }
 ul{
     font-size: 16px;
-    color: white;
+    color: $light-color;
+}
+
+h2{
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    color: $light-color;
+}
+
+.label-img{
+    display: block;
+    color: $grey-color;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+img{
+    margin-top: 10px;
+}
+
+table{
+    color: $light-color;
+    border: 3px solid $border-color;
+    tr{
+        th,td{
+            padding: 7px 15px;
+            border: 2px solid $border-color;
+        }
+
+    }
+}
+
+.code-table {
+  background-color: $code-table-color;
+  padding: 15px;
+  width: 100%;
+  code {
+    span {
+      color: $light-color;
+      font-size: 1.1rem;
+    }
+    .tag{
+        color: #905;
+    }
+  }
 }

@@ -2,18 +2,11 @@
   <div class="sidebar">
     <div [ngClass]="setting" class="sidebar_menu">
       <div class="sidebar_inner">
-        <p>Смежные разделы</p>
+        <p>Навигация по уроку</p>
         <ul class="sidebar_link">
-          <li><a href="">Основы HTML</a></li>
-          <li><a href="">HTML-текст</a></li>
-          <li><a href="">HTML-ссылки</a></li>
-          <li><a href="">HTML-изображения</a></li>
-          <li><a href="">HTML-таблицы</a></li>
-          <li><a href="">HTML-списки</a></li>
-          <li><a href="">Разделы документа</a></li>
-          <li><a href="">Семантика уровня текста</a></li>
-          <li><a href="">Встраиваемое содержимое</a></li>
-          <li><a href="">Формы</a></li>
+          <li *ngFor="let item of Headers" class="test-1" data-custom="">
+            {{item.textContent}}
+          </li>
         </ul>
       </div>
     </div>
