@@ -2,11 +2,15 @@
 
 p{
     font-size: 16px;
-    color: green;
+    color: $light-color;
 }
 ul{
     font-size: 16px;
     color: $light-color;
+}
+
+kbd{
+    font-size: 1rem;
 }
 
 h2{
@@ -52,16 +56,20 @@ table{
       font-size: 1.1rem;
     }
 
-    .tag {
+    .tag, .property {
       color: #905;
     }
 
-    .attr-name {
+    .attr-name, .selector {
       color: #690;
     }
 
-    .attr-value {
+    .attr-value, .rule {
       color: lighten(#07a, 5%);
+    }
+
+    .url {
+      color: #9a6e3a;
     }
   }
 }

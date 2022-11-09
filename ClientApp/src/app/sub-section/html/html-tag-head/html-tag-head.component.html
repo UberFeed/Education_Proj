@@ -1,0 +1,401 @@
+
+<p>
+  Раздел
+  <kbd>&lt;head&gt;...&lt;/head&gt;</kbd> содержит техническую информацию о странице: заголовок, описание, ключевые слова для поисковых машин, кодировку и т.д. Введенная в нем информация не отображается в окне браузера, однако содержит данные, которые указывают браузеру, как следует обрабатывать страницу.
+  Для элемента доступны глобальные атрибуты.
+</p>
+
+<h2 class="head" data-custom="head1">Элемент &lt;title&gt;</h2>
+
+<p>
+  Обязательным элементом раздела <kbd>&lt;head&gt;</kbd> является <kbd>&lt;title&gt;</kbd>. Текст, размещенный
+  внутри элемента <kbd>&lt;title&gt;</kbd>, отображается в строке заголовка веб-браузера. Длина заголовка
+  должна быть не более 60 символов, чтобы полностью поместиться в заголовке.
+  Текст заголовка должен содержать максимально полное описание содержимого веб-страницы.
+  Для элемента доступны глобальные атрибуты.
+</p>
+
+<h2 class="head" data-custom="head2">Элемент &lt;meta&gt;</h2>
+
+<p>
+  Необязательным элементом раздела <kbd>&lt;head&gt;</kbd> является элемент <kbd>&lt;meta&gt;</kbd>.
+  С его помощью можно задать описание содержимого страницы и ключевые слова для
+  поисковых машин, автора HTML-документа и прочие свойства метаданных.
+</p>
+
+<p>
+  Элемент &lt;head&gt; может содержать несколько элементов &lt;meta&gt;, потому что в
+  зависимости от используемых атрибутов они несут различную информацию.
+</p>
+
+<pre class="code-table">
+<code class=" language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>description<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Описание содержимого страницы<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>keywords<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Ключевые слова через запятую<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<p>
+  Описание содержимого страницы и ключевые слова одновременно можно указывать на
+  нескольких языках, например, на русском и английском:
+</p>
+
+<pre class="code-table"><code class=" language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>description<span class="token punctuation">"</span></span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ru<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Описание содержимого страницы<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>description<span class="token punctuation">"</span></span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Description<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>keywords<span class="token punctuation">"</span></span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ru<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Ключевые слова через запятую<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>keywords<span class="token punctuation">"</span></span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Keywords<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<p>
+  С помощью элемента &lt;meta&gt; можно запретить или разрешить индексацию веб-страницы
+  поисковыми машинами:
+</p>
+
+<p>
+  Индексация и переход по ссылкам разрешены:
+</p>
+
+<pre class="code-table"><code class=" language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>robots<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>index, follow<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<p>
+  Для автоматической перезагрузки страницы через заданный промежуток времени
+  (например, через 30 секунд) нужно воспользоваться значением refresh:
+</p>
+
+<pre class="code-table"><code class=" language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>refresh<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>30<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<p>
+  Чтобы перебросить посетителя на другую страницу, нужно указать URL-адрес в параметре url:
+</p>
+
+<pre class="code-table"><code class=" language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>refresh<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0; url=http://yandex.ru/<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<p>
+  Для элемента &lt;meta&gt; доступны атрибуты, описанные в таблице ниже, а также глобальные атрибуты.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Атрибут</th>
+      <th>Описание, принимаемое значение</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>charset</td>
+      <td>
+        Указывает кодировку символов для текущего HTML-документа: <kbd>&lt;meta charset="UTF-8"&gt;</kbd>
+      </td>
+    </tr>
+    <tr>
+      <td>content</td>
+      <td>
+        Содержит произвольный текст, который определяет значение, ассоциируемое с атрибутом
+        http-equiv или name, в зависимости от их значения.
+      </td>
+    </tr>
+    <tr>
+      <td>http-equiv</td>
+      <td>
+        Контролирует действия браузера на данной веб-странице (эквивалент HTTP заголовков). При отображении страницы браузер будет следовать инструкциям, заданным в атрибуте:<br>
+        <kbd>default-style</kbd> указывает предпочтительный стиль для использования на странице. Атрибут <kbd>content</kbd> должен содержать идентификатор элемента <kbd>&lt;link&gt;</kbd>, который ссылается на таблицу стилей CSS, или идентификатор элемента <kbd>&lt;style&gt;</kbd>, содержащего таблицу стилей.<br>
+        <kbd>refresh</kbd> указывает время в секундах до перезагрузки страницы или время до перенаправления на другую страницу, если в атрибуте <kbd>content</kbd> после указания времени идет строка <kbd>"url=адрес_страницы"</kbd>.<br>
+        Автоматическая перезагрузка страницы через заданный промежуток времени, в данном примере, через 30 секунд:<br>
+        <kbd>&lt;meta http-equiv="refresh" content="30"&gt;</kbd><br>
+        Если необходимо сразу перебросить посетителя на другую страницу, то можно указать URL-адрес в параметре <kbd>url</kbd>:<br>
+        <kbd>&lt;meta http-equiv="refresh" content="0; url=http://mail.ru/"&gt;</kbd>
+      </td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>
+        Ассоциируется со значением, содержащемся в атрибуте <kbd>content</kbd>. Не должен использоваться в случае, если для элемента уже заданы атрибуты <kbd>http-equiv</kbd>, <kbd>charset</kbd> или <kbd>itemprop</kbd>.<br>
+        <kbd>application-name</kbd> указывает название веб-приложения, используемого на странице.<br>
+        <kbd>author</kbd> указывает имя автора документа в свободном формате.<br>
+        <kbd>description</kbd> определяет краткое описание к содержимому страницы, например:<br>
+        <kbd>&lt;meta name="description" content="Описание содержимого страницы"&gt;</kbd><br>
+        <kbd>generator</kbd> указывает один из пакетов программного обеспечения, используемого для создания документа, например:<br>
+        <kbd>&lt;meta name="generator" content="WordPress 4.0"&gt;</kbd> .<br>
+        <kbd>keywords</kbd> содержит список ключевых слов, разделенных запятыми, соответствующих содержимому страницы, например:<br>
+        <kbd>&lt;meta name="keywords" content="Ключевые слова через запятую"&gt;</kbd>.<br>
+        <em>Также атрибут <kbd>name</kbd> может принимать следующие значения из расширенной спецификации, такие как <kbd>creator</kbd>, <kbd>googlebot</kbd>, <kbd>publisher</kbd>, <kbd>robots</kbd>, <kbd>slurp</kbd>, <kbd>viewport</kbd>, хотя ни одно из них еще не было официально принято.</em>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 class="head" data-custom="head3">Элемент &lt;style&gt;</h2>
+
+<p>
+  Внутри этого элемента задаются стили, которые используются на странице. Для задания
+  стилей в HTML-документе используется язык CSS. Таких элементов на странице может быть несколько.
+  Для элемента доступны атрибуты, приведенные в таблице ниже, а также глобальные атрибуты.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Атрибут</th>
+      <th>Описание, принимаемое значение</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>media</td>
+      <td>
+        Определяет, для какого типа устройства предназначены те или иные каскадные таблицы стилей.
+        Внутри таблицы стилей CSS специфичные правила для определенных устройств прописываются с
+        помощью media query.
+      </td>
+    </tr>
+    <tr>
+      <td>nonce</td>
+      <td>
+        Генерируемая случайным образом на сервере строковая переменная, которая устанавливает
+        правила использования встроенных стилей с целью защиты контента.
+        Значение атрибута — строка текста.
+      </td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>
+        Определяет MIME-тип подключаемого файла со стилями, в данном случае
+        <kbd>type="text/css"</kbd>.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  Элемент может содержать код форматирования как самих элементов веб-страницы,
+  так и веб-страницы целиком.
+</p>
+
+<pre class="code-table"><code class=" language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">.paper</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> #ef4444<span class="token punctuation">;</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> #666666<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<p>
+  Чтобы подключить к элементу заданный стиль, необходимо через атрибут
+  <kbd>class</kbd> (или <kbd>id</kbd>) присвоить элементу соответствующее название:
+</p>
+
+<pre class="code-table"><code class=" language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>paper<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<p>
+  CSS-код можно встраивать непосредственно в элемент разметки в виде значение атрибута
+  <kbd>style</kbd>, например:
+</p>
+
+<pre class="code-table"><code class=" language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">color</span><span class="token punctuation">:</span> #666666<span class="token punctuation">;</span> <span class="token property">background-color</span><span class="token punctuation">:</span> #ef4444<span class="token punctuation">;</span> <span class="token property">padding</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h2 class="head" data-custom="head4">Элемент &lt;link&gt;</h2>
+
+<p>
+  Задать стили для документа можно также при помощи другого способа — записать их в отдельный
+  файл с расширением <kbd>.css</kbd>, например, <kbd>style.css</kbd>.
+</p>
+
+<p>
+  Подключить файл со стилями к веб-странице можно двумя способами:
+</p>
+
+<ul>
+  <li>
+    через директиву <kbd>@import url</kbd>
+  </li>
+  <li>с использованием элемента <kbd>&lt;link&gt;</kbd>. Данный способ является предпочтительным.</li>
+</ul>
+
+<pre class="code-table"><code class=" language-html"><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+      <span class="token atrule"><span class="token rule">@import</span> <span class="token url">url(style.css)</span><span class="token punctuation">;</span></span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<p>
+  Элемент <kbd>&lt;link&gt;</kbd> определяет отношение между текущей страницей и другими
+  документами. Таких элементов на странице может быть несколько.
+</p>
+
+<pre class="code-table"><code class=" language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>style.css<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<p>
+  Для элемента доступны атрибуты, приведенные в таблице ниже, а также глобальные атрибуты.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Атрибут</th>
+      <th>Описание, принимаемое значение</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>crossorigin</td>
+      <td>
+        Указывает, должен ли использоваться CORS (технология браузеров, которая позволяет предоставить веб-странице доступ к ресурсам другого домена) при извлечении изображения с сайта.<br>
+        <kbd>anonymous</kbd> — в кросс-доменный запрос браузер автоматически добавляет заголовок Origin, содержащий имя домена, с которого осуществлён запрос. Если сервер не ответит CORS-заголовком <kbd>Access-Control-Allow-Origin: *</kbd> (или имя домена вместо звёздочки), то загрузка изображения будет заблокирована.<br>
+        <kbd>use-credentials</kbd> — если сервер не предоставляет учётные данные с помощью <kbd>Access-Control-Allow-Credentials: true</kbd>, то загрузка изображения будет заблокирована.
+      </td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>
+        Основной атрибут элемента, в качестве значения выступает путь к файлу со стилями.
+      </td>
+    </tr>
+    <tr>
+      <td>hreflang</td>
+      <td>
+        Определяет язык текста в документе, на который идет ссылка.
+      </td>
+    </tr>
+    <tr>
+      <td>media</td>
+      <td>
+        Определяет тип устройства, к которым должен быть применен ресурс ссылки.
+      </td>
+    </tr>
+    <tr>
+      <td>nonce</td>
+      <td>
+        Генерируемая случайным образом на сервере строковая переменная, которая устанавливает
+        правила использования встроенных стилей с целью защиты контента. Значение атрибута — строка
+        текста.
+      </td>
+    </tr>
+    <tr>
+      <td>rel</td>
+      <td>
+        Атрибут определяет отношения между текущим документом и документом, на который идет ссылка.<br>
+        <kbd>alternate</kbd> — ссылка на тот же документ, но в другом формате (например, страницы для печати, перевод, зеркало, лента в формате RSS или Atom),<br>
+        <kbd>&lt;link rel="alternate stylesheet" type="text/css" title="small_font" href="small-font.css"&gt;</kbd>.<br>
+        <kbd>&lt;link rel="alternate" type="application/rss+xml" title="my_RSS" href="index.xml"&gt;</kbd><br>
+        <kbd>&lt;link rel="alternate" type="application/atom+xml" title="News" href="/atom.xml?type=news"&gt;</kbd><br>
+        <kbd>archives</kbd> — указывает на то, что документ по ссылке представляет исторический интерес. Ссылка может указывать на коллекцию записей, документов и других материалов.<br>
+        <kbd>author</kbd> ссылка на страницу об авторе документа или на страницу с контактными данными автора.<br>
+        <kbd>bookmark</kbd> ссылка на ближайшего предка статьи, являющегося связующим звеном, или на раздел статьи, наиболее тесно связанных с элементом, если нет предка.<br>
+        <kbd>external</kbd> используется для указания того, что страница на которую ведет ссылка не являются частью данного сайта.<br>
+        <kbd>first</kbd> указывает ссылку, ведущую на первый документ из последовательности документов.<br>
+        <kbd>help</kbd> ссылка на документ со справкой.<br>
+        <kbd>icon</kbd> определяет путь к иконке, которая будет использована для текущего документа.<br>
+        <kbd>last</kbd> указывает ссылку, ведущую на последний документ в последовательности документов.<br>
+        <kbd>license</kbd> ссылка на сведения об авторских правах для документа.<br>
+        <kbd>next</kbd> указывает, что этот документ является частью серии, и что ссылка ведет на следующий документ в этой серии.<br>
+        <kbd>&lt;link rel="next" href="/next.html" type="text/html" title="Следующая страница"&gt;</kbd><br>
+        <kbd>nofollow</kbd> указывает на то, что ссылка не одобрена автором страницы или что ссылка носит коммерческий характер.<br>
+        <kbd>noreferrer</kbd> указывает на то, что заголовок запроса клиента, содержащий <kbd>url</kbd> источника запроса, не должен передаваться при переходе по ссылке.<br>
+        <kbd>pingback</kbd> указывает адрес пингбэк-сервера, что дает возможность для блога автоматически оповещать сайты, ссылающиеся на него.<br>
+        <kbd>prefetch</kbd> указывает, что следует заранее кэшировать файл, на который ведет ссылка.<br>
+        <kbd>prev</kbd> указывает, что этот документ является частью серии, и что ссылка ведет на предыдущий документ в этой серии.<br>
+        <kbd>&lt;link rel="prev" href="/next.html" type="text/html" title="Предыдущая страница"&gt;</kbd><br>
+        <kbd>search</kbd> указывает, что ссылаемый документ содержит интерфейс поиска и связанных с ним ресурсов.<br>
+        <kbd>sidebar</kbd> указывает, что ссылаемый документ, если это возможно, будет показан в дополнительном контексте браузера, и некоторые браузеры при щелчке по гиперссылке открывают окно для добавления ссылки в панель закладок.<br>
+        <kbd>stylesheet</kbd> ссылка на внешний файл, который будет использоваться в качестве таблицы стилей для данного документа.<br>
+        <kbd>tag</kbd> указывает на то, что метка, на которую ведет гиперссылка, относится к данному документу.<br>
+        <kbd>up</kbd> указывает, что страница является частью иерархической структуры, и что гиперссылка ведет на более высокий уровень ресурса в структуре.
+      </td>
+    </tr>
+    <tr>
+      <td>sizes</td>
+      <td>
+        Указывает размер иконок для визуального отображения. Атрибут <kbd>sizes</kbd> используется только совместно с <kbd>rel="icon"</kbd>, и может принимать следующий значения:<br>
+        ширина<span style="color: #2eb8b8;">х</span>высота — определяет список размеров, разделенных пробелами, каждый размер должен быть в формате — ширина<span style="color: #2eb8b8;">х</span>высота (размеры иконки задаются в пикселях), например:<br>
+        <kbd>&lt;link rel="icon" href="favicon.png" sizes="16x16 32х32" type="image/png"&gt;</kbd>;<br>
+        <kbd>any</kbd> — иконка может масштабироваться до любого размера.
+      </td>
+    </tr>
+    <tr>
+      <td>title</td>
+      <td>
+        Определяет заголовок ссылки или название набора альтернативных таблиц стилей.
+        Значение атрибута — текст.
+      </td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>
+        Определяет MIME-тип документа, на который идет ссылка. В данном случае он принимает
+        значение <kbd>"text/css"</kbd>.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 class="head" data-custom="head5">Элемент &lt;script&gt;</h2>
+
+<p>
+  Элемент <kbd>&lt;script&gt;</kbd> позволяет присоединять к документу различные сценарии.
+  Текст сценария может располагаться либо внутри этого элемента, либо во внешнем файле.
+  Если текст сценария расположен во внешнем файле, то он подключается с помощью атрибутов элемента.
+</p>
+
+<p>
+  Для элемента доступны атрибуты, приведенные в таблице ниже, а также глобальные атрибуты.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Атрибут</th>
+      <th>Описание, принимаемое значение</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>async</td>
+      <td>
+        Атрибут указывает на то, что сценарий будет выполняться асинхронно с остальной частью страницы (сценарий начнет выполняться одновременно с загрузкой страницы).
+      </td>
+    </tr>
+    <tr>
+      <td>charset</td>
+      <td>
+        Определяет кодировку символов
+      </td>
+    </tr>
+    <tr>
+      <td>crossorigin</td>
+      <td>
+        Определяет, будет ли использоваться CORS при загрузке внешних скриптов (с использованием атрибута src).<br>
+        <kbd>anonymous</kbd> — перед загрузкой скрипта в кросс-доменный запрос браузер автоматически добавляет заголовок Origin, при этом не передаются параметры доступа (cookie, сертификат X.509, логин/пароль для базовой аутентификации по HTTP). Если в ответе сервера отсутствует заголовок <kbd>Access-Control-Allow-Origin: имя домена</kbd>, скрипт не будет загружен.<br>
+        <kbd>use-credentials</kbd> — перед загрузкой скрипта в кросс-доменный запрос браузер автоматически добавляет заголовок Origin с указанием параметров доступа (cookie, SSL-сертификат или пары логин/пароль). Если в ответе сервера отсутствует заголовок <kbd>Access-Control-Allow-Credentials: true</kbd>, скрипт не будет загружен.
+      </td>
+    </tr>
+    <tr>
+      <td>defer</td>
+      <td>
+        Интерпретация сценариев откладывается до окончания отображения документа на устройстве пользователя.
+      </td>
+    </tr>
+    <tr>
+      <td>nonce</td>
+      <td>
+        Обеспечивает безопасность, защищая от атак с внедрением межсайтового скриптинга (XSS, cross site scripting). Устанавливает правила использования встроенных скриптов с помощью nonce-значений и хэшей. Во время рендеринга страницы браузер для каждого инлайн-скрипта вычисляет хэши и сравнивает с перечисленными в CSP. Загрузка с ресурсов, не входящих в «белый список», блокируется.
+      </td>
+    </tr>
+    <tr>
+      <td>src</td>
+      <td>
+        Указывает на месторасположение файла со сценарием, значение атрибута — это url файла, содержащего JavaScript-программу.
+      </td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>
+        Используются для объявления языка сценария, использованного при составлении содержимого элемента.
+      </td>
+    </tr>
+  </tbody>
+</table>
