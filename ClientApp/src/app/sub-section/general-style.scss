@@ -31,6 +31,7 @@ img{
 table{
     color: $light-color;
     border: 3px solid $border-color;
+    margin-bottom: 20px;
     tr{
         th,td{
             padding: 7px 15px;
@@ -44,13 +45,23 @@ table{
   background-color: $code-table-color;
   padding: 15px;
   width: 100%;
+
   code {
     span {
       color: $light-color;
       font-size: 1.1rem;
     }
-    .tag{
-        color: #905;
+
+    .tag {
+      color: #905;
+    }
+
+    .attr-name {
+      color: #690;
+    }
+
+    .attr-value {
+      color: lighten(#07a, 5%);
     }
   }
 }
