@@ -1,8 +1,8 @@
 @import "../../_variables.scss";
 
-p{
-    font-size: 16px;
-    color: $light-color;
+p {
+  font-size: 16px;
+  color: $light-color;
 }
 ul{
     font-size: 16px;
@@ -13,12 +13,20 @@ kbd{
     font-size: 1rem;
 }
 
-h2{
-    font-size: 1.9rem;
-    font-weight: 700;
-    margin-top: 24px;
-    margin-bottom: 12px;
-    color: $light-color;
+h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  color: darken($fifth-color, 5%);
+  cursor: default;
+  text-decoration: underline;
+  svg{
+      margin-left: 10px;
+      margin-bottom: 4px;
+      width: 30px;
+      height: 30px;
+  }
 }
 
 .label-img{
@@ -47,10 +55,13 @@ table{
 
 .code-table {
   background-color: $code-table-color;
-  padding: 15px;
+  padding: 0 15px;
   width: 100%;
 
   code {
+    color: $light-color;
+    font-size: 1.1rem;
+
     span {
       color: $light-color;
       font-size: 1.1rem;
@@ -68,8 +79,24 @@ table{
       color: lighten(#07a, 5%);
     }
 
+    .punctuation{
+       color: $light-color;
+    }
+
     .url {
       color: #9a6e3a;
     }
   }
+}
+
+.tag, .property {
+  color: #905;
+}
+
+.attr-name, .selector {
+  color: #690;
+}
+
+.attr-value, .rule {
+  color: lighten(#07a, 5%);
 }

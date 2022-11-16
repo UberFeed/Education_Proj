@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { empty } from 'rxjs';
 import { LessonsData } from '../../../LessonsData.service';
 import { TransportData } from '../../TrasportData.service';
@@ -23,5 +24,4 @@ export class HtmlBasicsComponent implements OnInit {
 
     this.transportData.changeTitle(this.title, headers, this.textPath);
   }
-
 }

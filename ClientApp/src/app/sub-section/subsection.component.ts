@@ -20,13 +20,16 @@ export class SubsectionComponent implements OnInit, AfterViewInit {
   public title!: string;
   public Headers!: any;
   public TextPath!: any;
-  public CurrentRouter: string = this.router.url;
+  public CurrentRouter!: string;
 
   cloneSection!: any;
 
   ngOnInit() {
-    if (window.scrollY > 0) {
-      window.scrollTo(0, 0);
+    if (this.router.url.indexOf("#") != -1) {
+      this.CurrentRouter = this.router.url.slice(0, this.router.url.indexOf("#"));
+    }
+    else {
+      this.CurrentRouter = this.router.url;
     }
 
     this.transportData.Title.subscribe((data) => {
