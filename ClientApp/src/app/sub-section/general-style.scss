@@ -3,6 +3,9 @@
 p {
   font-size: 16px;
   color: $light-color;
+  &:last-child{
+    margin-bottom: 0;
+  }
 }
 ul{
     font-size: 16px;
@@ -13,19 +16,22 @@ kbd{
     font-size: 1rem;
 }
 
-h2 {
-  font-size: 1.9rem;
-  font-weight: 700;
-  margin-top: 24px;
-  margin-bottom: 16px;
-  color: darken($fifth-color, 5%);
-  cursor: default;
-  text-decoration: underline;
-  svg{
+div[data-custom] {
+  padding-top: 24px;
+  h2 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: darken($fifth-color, 5%);
+    cursor: default;
+    text-decoration: underline;
+
+    svg {
       margin-left: 10px;
       margin-bottom: 4px;
       width: 30px;
       height: 30px;
+    }
   }
 }
 

@@ -23,6 +23,7 @@ export class SubsectionComponent implements OnInit, AfterViewInit {
   public CurrentRouter!: string;
 
   cloneSection!: any;
+  subSections: any;
 
   ngOnInit() {
     if (this.router.url.indexOf("#") != -1) {
@@ -47,11 +48,31 @@ export class SubsectionComponent implements OnInit, AfterViewInit {
     this.cd.detectChanges();
   }
 
-  ngAfterViewInit() {
+  temp: any;
 
-    this.cloneSection = document.querySelector('a[href="html/basics"]')?.cloneNode(true);
-    let output = document.querySelector('.section-mark');
-    output?.insertAdjacentElement('beforeend', this.cloneSection);
+  ngAfterViewInit() {
+    this.cloneSection = document.querySelector('.breadcrumb li:nth-child(3) a')?.cloneNode(true);
+    document.querySelector('.section-mark')?.insertAdjacentElement('beforeend', this.cloneSection);
+
+    let leftMenu = document.querySelectorAll('#hide_menu-inner li a');
+    this.subSections = document.querySelectorAll('div[data-custom]');
+    console.log(this.subSections);
+    for (var i = 0; i < this.Headers.length; i++) {
+      leftMenu[i].setAttribute('data-custom', this.subSections[i].dataset.custom);
+    }
+
+    window.document.addEventListener("scroll", () => {
+      this.subSections.forEach((elem: any) => {
+        if (window.scrollY >= elem.offsetTop && window.scrollY <= (elem.offsetTop + elem.offsetHeight)) {
+          document.querySelector(`#hide_menu-inner li a[data-custom='${elem.dataset.custom}']`)?.
+            classList.add('active');
+        }
+        else {
+          document.querySelector(`#hide_menu-inner li a[data-custom='${elem.dataset.custom}']`)?.
+            classList.remove('active');
+        }
+      })
+    });
   }
 
   setting = {

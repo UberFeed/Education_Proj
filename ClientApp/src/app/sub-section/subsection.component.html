@@ -8,7 +8,7 @@
         </ul>
         <p>Навигация по уроку</p>
         <ul class="sidebar_link" id="hide_menu-inner">
-          <li *ngFor="let item of Headers" class="test-1" data-custom="">
+          <li *ngFor="let item of Headers" class="test-1">
             <a href="{{CurrentRouter}}#{{item.id}}">{{item.textContent}}</a>
           </li>
         </ul>
@@ -85,7 +85,7 @@
           <h1>{{title}}</h1>
         </div>
       </header>
-      <div class="page_content" data-bs-spy="scroll" data-bs-target="#hide_menu-inner">
+      <div class="page_content">
         <router-outlet></router-outlet>
       </div>
     </main>
