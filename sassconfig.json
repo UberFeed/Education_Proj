@@ -474,5 +474,13 @@
   {
     "outputFile": "ClientApp/src/app/sub-section/subsection.component.css",
     "inputFile": "ClientApp/src/app/sub-section/subsection.component.scss"
+  },
+  {
+    "outputFile": "ClientApp/src/app/sub-section/general-style.css",
+    "inputFile": "ClientApp/src/app/sub-section/general-style.scss"
+  },
+  {
+    "outputFile": "ClientApp/src/app/sub-section/general-style.css",
+    "inputFile": "ClientApp/src/app/sub-section/general-style.scss"
   }
 ]

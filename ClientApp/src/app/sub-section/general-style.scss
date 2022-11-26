@@ -16,6 +16,21 @@ kbd{
     font-size: 1rem;
 }
 
+.code-mirror {
+  background-color: $code-table-color;
+  padding: 15px 10px;
+
+  div {
+    .cm-editor {
+      .cm-scroller {
+        .cm-gutters {
+          background-color: $code-table-color !important;
+        }
+      }
+    }
+  }
+}
+
 div[data-custom] {
   padding-top: 24px;
   h2 {

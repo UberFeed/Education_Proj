@@ -24,6 +24,7 @@ export class SubsectionComponent implements OnInit, AfterViewInit {
 
   cloneSection!: any;
   subSections: any;
+  temp: any;
 
   ngOnInit() {
     if (this.router.url.indexOf("#") != -1) {
@@ -48,7 +49,6 @@ export class SubsectionComponent implements OnInit, AfterViewInit {
     this.cd.detectChanges();
   }
 
-  temp: any;
 
   ngAfterViewInit() {
     this.cloneSection = document.querySelector('.breadcrumb li:nth-child(3) a')?.cloneNode(true);
