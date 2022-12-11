@@ -26,20 +26,6 @@ export class HtmlFormattingComponent implements OnInit {
     let headers = document.querySelectorAll("h2.head");
     this.transportData.changeTitle(this.title, headers, this.textPath);
 
-    // Родительские элементы для вставки mirrorcode
-    let head1_content = document.createElement("div");
-    let head2_1_content = document.createElement("div");
-    let head2_2_content = document.createElement("div");
-    let head3_1_content = document.createElement("div");
-    let head3_2_content = document.createElement("div");
-    let head4_content = document.createElement("div");
-    let head5_content = document.createElement("div");
-    let head6_content = document.createElement("div");
-    let head7_content = document.createElement("div");
-    let head8_content = document.createElement("div");
-    let head9_1_content = document.createElement("div");
-    let head9_2_content = document.createElement("div");
-
     const MyHighlightStyle = HighlightStyle.define([
       { tag: tags.tagName, color: "#905" },
       { tag: tags.attributeName, color: "#690" },
@@ -66,7 +52,7 @@ export class HtmlFormattingComponent implements OnInit {
 
     new EditorView({
       state: startStateH1,
-      parent: head1_content,
+      parent: document.querySelector(".code-mirror.head1")!,
     })
 
     let startStateH2_1 = EditorState.create({
@@ -89,7 +75,7 @@ export class HtmlFormattingComponent implements OnInit {
 
     new EditorView({
       state: startStateH2_1,
-      parent: head2_1_content,
+      parent: document.querySelector(".code-mirror.head2_1")!,
     })
 
     let startStateH2_2 = EditorState.create({
@@ -108,7 +94,7 @@ export class HtmlFormattingComponent implements OnInit {
 
     new EditorView({
       state: startStateH2_2,
-      parent: head2_2_content,
+      parent: document.querySelector(".code-mirror.head2_2")!,
     })
 
     let startStateH3_1 = EditorState.create({
@@ -127,7 +113,7 @@ export class HtmlFormattingComponent implements OnInit {
 
     new EditorView({
       state: startStateH3_1,
-      parent: head3_1_content,
+      parent: document.querySelector(".code-mirror.head3_1")!,
     })
 
     let startStateH3_2 = EditorState.create({
@@ -146,7 +132,7 @@ export class HtmlFormattingComponent implements OnInit {
 
     new EditorView({
       state: startStateH3_2,
-      parent: head3_2_content,
+      parent: document.querySelector(".code-mirror.head3_2")!,
     })
 
     let startStateH4 = EditorState.create({
@@ -166,7 +152,7 @@ export class HtmlFormattingComponent implements OnInit {
 
     new EditorView({
       state: startStateH4,
-      parent: head4_content,
+      parent: document.querySelector(".code-mirror.head4")!,
     })
 
     let startStateH5 = EditorState.create({
@@ -186,7 +172,7 @@ export class HtmlFormattingComponent implements OnInit {
 
     new EditorView({
       state: startStateH5,
-      parent: head5_content,
+      parent: document.querySelector(".code-mirror.head5")!,
     })
 
     let startStateH6 = EditorState.create({
@@ -204,7 +190,7 @@ export class HtmlFormattingComponent implements OnInit {
 
     new EditorView({
       state: startStateH6,
-      parent: head6_content,
+      parent: document.querySelector(".code-mirror.head6")!,
     })
 
     let startStateH7 = EditorState.create({
@@ -221,7 +207,7 @@ export class HtmlFormattingComponent implements OnInit {
 
     new EditorView({
       state: startStateH7,
-      parent: head7_content,
+      parent: document.querySelector(".code-mirror.head7")!,
     })
 
     let startStateH8 = EditorState.create({
@@ -238,7 +224,7 @@ export class HtmlFormattingComponent implements OnInit {
 
     new EditorView({
       state: startStateH8,
-      parent: head8_content,
+      parent: document.querySelector(".code-mirror.head8")!,
     })
 
     let startStateH9_1 = EditorState.create({
@@ -260,7 +246,7 @@ export class HtmlFormattingComponent implements OnInit {
 
     new EditorView({
       state: startStateH9_1,
-      parent: head9_1_content,
+      parent: document.querySelector(".code-mirror.head9_1")!,
     })
 
     let startStateH9_2 = EditorState.create({
@@ -279,22 +265,8 @@ export class HtmlFormattingComponent implements OnInit {
 
     new EditorView({
       state: startStateH9_2,
-      parent: head9_2_content,
+      parent: document.querySelector(".code-mirror.head9_2")!,
     })
-
-    // Вывод исходного кода в соответствующие заголовки
-    document.querySelector(".code-mirror.head1")?.append(head1_content);
-    document.querySelector(".code-mirror.head2_1")?.append(head2_1_content);
-    document.querySelector(".code-mirror.head2_2")?.append(head2_2_content);
-    document.querySelector(".code-mirror.head3_1")?.append(head3_1_content);
-    document.querySelector(".code-mirror.head3_2")?.append(head3_2_content);
-    document.querySelector(".code-mirror.head4")?.append(head4_content);
-    document.querySelector(".code-mirror.head5")?.append(head5_content);
-    document.querySelector(".code-mirror.head6")?.append(head6_content);
-    document.querySelector(".code-mirror.head7")?.append(head7_content);
-    document.querySelector(".code-mirror.head8")?.append(head8_content);
-    document.querySelector(".code-mirror.head9_1")?.append(head9_1_content);
-    document.querySelector(".code-mirror.head9_2")?.append(head9_2_content);
 
     // Вывод результата в соответствующие заголовки
     let resultH1code = document.createElement("div");

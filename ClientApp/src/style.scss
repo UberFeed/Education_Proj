@@ -41,7 +41,19 @@ body {
     margin: 2.33em 0 2.33em;
   }
 
-  p{
-      margin: 1em 0 1em;
+  p {
+    margin: 1em 0 1em;
+  }
+
+  samp {
+    font-family: initial;
+  }
+
+  blockquote{
+      margin: 1em 2.85em;
+  }
+
+  address{
+      font-style: italic;
   }
 }
