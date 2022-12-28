@@ -54,6 +54,7 @@
 
   <ItemGroup>
     <Folder Include="ClientApp\src\app\sub-section\html\html-text\" />
+    <Folder Include="ClientApp\src\app\sub-section\html\html-lists\" />
   </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

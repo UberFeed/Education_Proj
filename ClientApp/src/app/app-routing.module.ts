@@ -10,6 +10,7 @@ import { HtmlHeadlinesComponent } from './sub-section/html/html-text/html-headli
 import { HtmlFormattingComponent } from './sub-section/html/html-text/html-formatting/html-formatting.component';
 import { HtmlCompTextComponent } from './sub-section/html/html-text/html-comp-text/html-comp-text.component';
 import { HtmlCiteComponent } from './sub-section/html/html-text/html-cite/html-cite.component';
+import { OrderedListComponent } from './sub-section/html/html-lists/ordered-list/ordered-list.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -22,6 +23,7 @@ const routes: Routes = [
       { path: 'html-formatting', component: HtmlFormattingComponent },
       { path: 'html-compText', component: HtmlCompTextComponent },
       { path: 'html-cite', component: HtmlCiteComponent },
+      { path: 'html-ordered-list', component: OrderedListComponent },
     ]
   },
 ]

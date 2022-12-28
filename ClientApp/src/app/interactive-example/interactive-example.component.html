@@ -1,0 +1,25 @@
+
+<div class="interactive_area">
+  <header class="output_header">
+    <span>Нумерованный список: &lt;ol&gt;</span>
+    <div>
+      <button class="reset_btn" (click)="ResetCode()">reset</button>
+    </div>
+  </header>
+  <div class="editor_container">
+    <div class="editor_tab">
+      <div class="tabs">
+        <button [ngClass]="{'active': HTMLactive}" *ngIf="HTMLinputValue != ''" (click)="HTMLswitch()">html</button>
+        <button [ngClass]="{'active': CSSactive}" *ngIf="CSSinputValue != ''" (click)="CSSswitch()">css</button>
+        <button [ngClass]="{'active': JSactive}" *ngIf="JSinputValue != ''" (click)="JSswitch()">js</button>
+      </div>
+      <div class="code_editor" (keyup)="ChangeCode()">
+        <div class="html_editor"></div>
+        <div class="css_editor"></div>
+        <div class="js_editor"></div>
+      </div>
+    </div>
+    <div class="output_tab"></div>
+  </div>
+</div>
+

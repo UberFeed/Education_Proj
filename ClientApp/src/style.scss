@@ -49,11 +49,21 @@ body {
     font-family: initial;
   }
 
-  blockquote{
-      margin: 1em 2.85em;
+  blockquote {
+    margin: 1em 2.85em;
   }
 
-  address{
-      font-style: italic;
+  address {
+    font-style: italic;
+  }
+
+  .cm-editor {
+    outline: none !important;
+  }
+
+  ol, ul {
+    padding-left: 40px;
+    margin-top: 1em;
+    margin-bottom: 1em;
   }
 }

@@ -1,0 +1,101 @@
+
+@import "../../_variables.scss";
+
+.interactive_area {
+  color: $light-color;
+  border: 1px solid $border-color;
+
+  header {
+    margin: 0;
+    padding: .5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $border-color;
+
+    span {
+      font-weight: 500;
+      font-size: 1.3rem;
+    }
+
+    button {
+      background-color: transparent;
+      color: $light-color;
+      margin: 0;
+      padding: .5em .7em;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      border: none;
+      max-width: 100px;
+      cursor: pointer;
+      border-radius: 10px;
+
+      &:hover {
+        background-color: darken($light-color, 60%);
+      }
+    }
+  }
+
+  .editor_container {
+    height: 300px;
+    display: flex;
+
+    .editor_tab {
+      width: 60%;
+      height: 100%;
+      border-right: 1px solid $border-color;
+
+      .tabs {
+        padding-top: 14px;
+        background-color: $fourth-color;
+        border-bottom: 1px solid $border-color;
+        height: 50px;
+
+        button {
+          background-color: transparent;
+          padding: .5em 30px;
+          border: 0 none;
+          border-bottom: 3px solid transparent;
+          border-bottom-color: transparent;
+          cursor: pointer;
+          text-transform: uppercase;
+          color: $light-color;
+          font-weight: 600;
+
+          &:hover {
+            color: darken($light-color, 10%);
+          }
+        }
+
+        .active {
+          color: $orange-color;
+          border-bottom: 1px solid $orange-color;
+
+          &:hover {
+            color: darken($orange-color, 10%);
+            border-color: darken($orange-color, 10%);
+          }
+        }
+      }
+
+      .code_editor {
+        height: 250px;
+
+        .html_editor {
+          .cm-editor {
+            height: 100%;
+            &:focus{
+                outline: none;
+            }
+          }
+        }
+      }
+    }
+
+    .output_tab {
+      width: 40%;
+      overflow-y: auto;
+      padding: 15px;
+    }
+  }
+}

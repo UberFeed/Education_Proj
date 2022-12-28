@@ -9,6 +9,9 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { SectionComponent } from './section/section.component';
 import { SubsectionComponent } from './sub-section/subsection.component';
+import { OrderedListComponent } from './sub-section/html/html-lists/ordered-list/ordered-list.component';
+import { InteractiveExampleComponent } from './interactive-example/interactive-example.component';
+import { StaticExampleComponent } from './static-example/static-example.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { LessonsData } from './LessonsData.service';
@@ -20,6 +23,9 @@ import { LessonsData } from './LessonsData.service';
     HomeComponent,
     SectionComponent,
     SubsectionComponent,
+    OrderedListComponent,
+    InteractiveExampleComponent,
+    StaticExampleComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -29,6 +35,6 @@ import { LessonsData } from './LessonsData.service';
     RouterModule
   ],
   providers: [LessonsData],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

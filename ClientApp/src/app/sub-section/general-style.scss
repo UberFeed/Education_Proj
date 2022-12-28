@@ -12,8 +12,27 @@ ul{
     color: $light-color;
 }
 
-kbd{
-    font-size: 1rem;
+dl{
+    font-size: 16px;
+    dt{
+        margin-bottom: 5px;
+    }
+    dd{
+        color: $light-color;
+        padding-left: 15px;
+    }
+}
+
+kbd {
+  font-size: 1rem;
+  background-color: $fourth-color;
+  border-radius: 5px;
+}
+
+code {
+  background-color: $fourth-color;
+  border-radius: 5px;
+  padding: .2rem .4rem;
 }
 
 .code-mirror {
@@ -22,17 +41,18 @@ kbd{
   margin-bottom: 15px;
   position: relative;
 
-  .label{
-      position: absolute;
-      z-index: 2;
-      background-color: $light-color;
-      padding: 5px 10px;
-      top: 0;
-      right: 0;
+  .label {
+    position: absolute;
+    z-index: 2;
+    background-color: $light-color;
+    padding: 5px 10px;
+    top: 0;
+    right: 0;
   }
 
   div {
-      z-index: 1;
+    z-index: 1;
+
     .cm-editor {
       .cm-scroller {
         .cm-gutters {
@@ -60,6 +80,7 @@ kbd{
     font-size: 1rem !important;
   }
 }
+
 
 div[data-custom] {
   padding-top: 24px;
