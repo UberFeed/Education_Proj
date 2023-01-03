@@ -10,12 +10,16 @@ p {
 ul{
     font-size: 16px;
     color: $light-color;
+    li{
+        margin-bottom: 1rem;
+    }
 }
 
 dl{
     font-size: 16px;
     dt{
         margin-bottom: 5px;
+        font-size: 18px;
     }
     dd{
         color: $light-color;
@@ -83,7 +87,7 @@ code {
 
 
 div[data-custom] {
-  padding-top: 24px;
+  padding-top: 0;
 
   h2 {
     font-size: 1.9rem;
@@ -181,4 +185,8 @@ table{
 
 .attr-value, .rule {
   color: lighten(#07a, 5%);
+}
+
+.css-prop{
+    color: rgb(86, 156, 214);
 }

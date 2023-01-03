@@ -11,6 +11,8 @@ import { HtmlFormattingComponent } from './sub-section/html/html-text/html-forma
 import { HtmlCompTextComponent } from './sub-section/html/html-text/html-comp-text/html-comp-text.component';
 import { HtmlCiteComponent } from './sub-section/html/html-text/html-cite/html-cite.component';
 import { OrderedListComponent } from './sub-section/html/html-lists/ordered-list/ordered-list.component';
+import { UnorderedListComponent } from './sub-section/html/html-lists/unordered-list/unordered-list.component';
+import { ListOfDefinitionsComponent } from './sub-section/html/html-lists/list-of-definitions/list-of-definitions.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -24,6 +26,8 @@ const routes: Routes = [
       { path: 'html-compText', component: HtmlCompTextComponent },
       { path: 'html-cite', component: HtmlCiteComponent },
       { path: 'html-ordered-list', component: OrderedListComponent },
+      { path: 'html-unordered-list', component: UnorderedListComponent },
+      { path: 'html-list-of-definitions', component: ListOfDefinitionsComponent },
     ]
   },
 ]

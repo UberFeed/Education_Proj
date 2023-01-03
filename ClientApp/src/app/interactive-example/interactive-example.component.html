@@ -1,7 +1,7 @@
 
 <div class="interactive_area">
   <header class="output_header">
-    <span>Нумерованный список: &lt;ol&gt;</span>
+    <span>{{NameComponent}}</span>
     <div>
       <button class="reset_btn" (click)="ResetCode()">reset</button>
     </div>
@@ -13,13 +13,10 @@
         <button [ngClass]="{'active': CSSactive}" *ngIf="CSSinputValue != ''" (click)="CSSswitch()">css</button>
         <button [ngClass]="{'active': JSactive}" *ngIf="JSinputValue != ''" (click)="JSswitch()">js</button>
       </div>
-      <div class="code_editor" (keyup)="ChangeCode()">
-        <div class="html_editor"></div>
-        <div class="css_editor"></div>
-        <div class="js_editor"></div>
+      <div #codeMirror class="code_editor" (keyup)="ChangeCode()">
       </div>
     </div>
-    <div class="output_tab"></div>
+    <div #codeResult class="output_tab"></div>
   </div>
 </div>
 

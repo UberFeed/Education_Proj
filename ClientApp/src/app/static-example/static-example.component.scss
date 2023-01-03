@@ -2,9 +2,10 @@
 
 .code-mirror {
   background-color: $code-table-color;
-  padding: 15px 10px;
+  padding: 15px;
   margin-bottom: 15px;
   position: relative;
+  font-size: 14px;
 
   .label {
     position: absolute;
@@ -30,9 +31,11 @@
 
 .code-result {
   background-color: $code-table-color;
-  padding: 15px 10px;
+  padding: 15px;
   position: relative;
   color: white;
+  margin-bottom: 20px;
+  font-size: 14px;
 
   .label {
     position: absolute;

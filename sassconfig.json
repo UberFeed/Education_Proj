@@ -518,5 +518,13 @@
   {
     "outputFile": "ClientApp/src/app/static-example/static-xample.component.css",
     "inputFile": "ClientApp/src/app/static-example/static-xample.component.scss"
+  },
+  {
+    "outputFile": "ClientApp/src/app/static-example/static-example.component.css",
+    "inputFile": "ClientApp/src/app/static-example/static-example.component.scss"
+  },
+  {
+    "outputFile": "ClientApp/src/style.css",
+    "inputFile": "ClientApp/src/style.scss"
   }
 ]

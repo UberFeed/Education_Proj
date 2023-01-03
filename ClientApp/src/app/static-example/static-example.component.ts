@@ -1,6 +1,6 @@
-import { Component, ContentChild, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { EditorState } from "@codemirror/state";
-import { EditorView, keymap, lineNumbers, } from "@codemirror/view";
+import { EditorView, keymap, lineNumbers } from "@codemirror/view";
 import { defaultKeymap } from "@codemirror/commands";
 import { tags, Tag } from "@lezer/highlight";
 import { syntaxHighlighting, HighlightStyle } from "@codemirror/language";
@@ -12,14 +12,17 @@ import { html } from "@codemirror/lang-html";
   templateUrl: './static-example.component.html',
   styleUrls: ['./static-example.component.css']
 })
-export class StaticExampleComponent implements OnInit {
+export class StaticExampleComponent implements OnInit, AfterViewInit {
 
   constructor() { }
 
-  @ViewChild("nameText", { static: false })
-  public codeMir!: ElementRef;
+  @ViewChild("codeMirror", { static: false })
+  public codeMirror: ElementRef | undefined;
 
-  temp: any;
+  @ViewChild("codeResult", { static: false })
+  public codeResult: ElementRef | undefined;
+
+  temp = document.createElement('div');
 
   @Input()
   InputValue: string = "";
@@ -36,7 +39,7 @@ export class StaticExampleComponent implements OnInit {
       ".cm-gutters": { background: "#282a36", border: "none" },
       ".cm-gutterElement": { padding: "0 10px 0 5px !important" }
     }),
-    lineNumbers(), EditorView.editable.of(false), html(),
+    EditorView.editable.of(false), html(), EditorView.lineWrapping,
     syntaxHighlighting(this.MyHighlightStyle),
     ],
   })
@@ -49,14 +52,12 @@ export class StaticExampleComponent implements OnInit {
       parent: this.temp,
     })
 
-    console.log(this.codeMir?.nativeElement.textContent);
-    if (this.codeMir) {
-      this.codeMir.nativeElement.textContent = 'xyi';
-    }
-    //this.codeMir!.nativeElement.textContent = "hell";
-
     this.startView.dispatch(this.startView.state.update({ changes: { from: 0, insert: this.InputValue } }))
-    document.querySelector(".code-result")?.insertAdjacentHTML('beforeend', this.InputValue);
+  }
+
+  ngAfterViewInit() {
+    this.codeMirror!.nativeElement.append(this.temp);
+    this.codeResult!.nativeElement.insertAdjacentHTML('beforeend', this.InputValue);
   }
 
 }

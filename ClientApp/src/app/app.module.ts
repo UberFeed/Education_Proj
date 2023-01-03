@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { SectionComponent } from './section/section.component';
 import { SubsectionComponent } from './sub-section/subsection.component';
 import { OrderedListComponent } from './sub-section/html/html-lists/ordered-list/ordered-list.component';
+import { UnorderedListComponent } from './sub-section/html/html-lists/unordered-list/unordered-list.component';
+import { ListOfDefinitionsComponent } from './sub-section/html/html-lists/list-of-definitions/list-of-definitions.component';
 import { InteractiveExampleComponent } from './interactive-example/interactive-example.component';
 import { StaticExampleComponent } from './static-example/static-example.component';
 
@@ -24,6 +26,8 @@ import { LessonsData } from './LessonsData.service';
     SectionComponent,
     SubsectionComponent,
     OrderedListComponent,
+    UnorderedListComponent,
+    ListOfDefinitionsComponent,
     InteractiveExampleComponent,
     StaticExampleComponent,
   ],

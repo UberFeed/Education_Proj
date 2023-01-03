@@ -24,7 +24,7 @@
       <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
     </svg>
   </h2>
-  <app-interactive-example [HTMLinputValue]="Head1code"></app-interactive-example>
+  <app-interactive-example [NameComponent]="NameComponent" [HTMLinputValue]="interactiveExample"></app-interactive-example>
 </div>
 
 <div data-custom="head2">
@@ -41,29 +41,61 @@
       Атрибут логического значения (bool) показывает, что предметы указаны по списку в обратном
       порядке. Пункты в списке будут пронумерованы от большего к меньшему.
     </dd>
+    <app-static-example [InputValue]="staticExample1"></app-static-example>
     <dt><code class="attr-name">start</code></dt>
     <dd>
       Нумерация начнётся с указанного числа. Арабскими цифрами (1, 2, 3, и т.д.), даже когда
-      нумерация type в буквах или Римском исчислении. Например, чтобы начать нумерацию с
+      нумерация <code class="attr-name">type</code> в буквах или Римском исчислении. Например, чтобы начать нумерацию с
       буквы "г" или Римской "v", используйте <code class="attr-name">start</code> = <code class="attr-value">'4'</code>.
     </dd>
+    <app-static-example [InputValue]="staticExample2"></app-static-example>
     <dt><code class="attr-name">type</code></dt>
     <dd>
       Задаёт тип нумерации:
       <ul>
-        <li><kbd class="attr-value">'a'</kbd> для строчных букв</li>
-        <li><kbd class="attr-value">'A'</kbd> для заглавных букв</li>
-        <li><kbd class="attr-value">'i'</kbd> для строчной Римской нумерации</li>
-        <li><kbd class="attr-value">'I'</kbd> для заглавной Римской нумерации</li>
-        <li><kbd class="attr-value">'1'</kbd> для цифр (по умолчанию) указанный тип используется для
-        всего списка, если только не указан любой другой атрибут <code class="attr-name">type</code> в элементе <code class="tag">&lt;li&gt;</code>
+        <li><code class="attr-value">'a'</code> для строчных букв</li>
+        <li><code class="attr-value">'A'</code> для заглавных букв</li>
+        <li><code class="attr-value">'i'</code> для строчной Римской нумерации</li>
+        <li><code class="attr-value">'I'</code> для заглавной Римской нумерации</li>
+        <li>
+          <code class="attr-value">'1'</code> для цифр (по умолчанию) указанный тип используется для
+          всего списка, если только не указан любой другой атрибут <code class="attr-name">type</code> в элементе <code class="tag">&lt;li&gt;</code>
         </li>
       </ul>
     </dd>
+    <app-static-example [InputValue]="staticExample3"></app-static-example>
   </dl>
 </div>
 
-<app-static-example [InputValue]="staticExample"></app-static-example>
+<div data-custom="head3">
+  <h2 class="head" id="head3">
+    Примечание об использовании
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <p>Обычно, элементы списка отображены с маркером, предшествующим цифрам или буквам.</p>
+  <p>
+    Элементы <code class="tag">&lt;ol&gt;</code> и <code class="tag">&lt;ul&gt;</code> могут быть
+    вложены (nested) на любом уровне, чередуясь между элементами <code class="tag">&lt;ol&gt;</code> и <code class="tag">&lt;ul&gt;</code>.
+  </p>
+  <app-static-example [InputValue]="staticExample4"></app-static-example>
+  <p>
+    Оба элемента <code class="tag">&lt;ol&gt;</code> и <code class="tag">&lt;ul&gt;</code>
+    используются для списков. Различие лишь в том, что в элементе <code class="tag">&lt;ol&gt;</code>
+    порядок имеет значение,как в данных примерах:
+  </p>
+  <ul>
+    <li>Инструкции рецепта</li>
+    <li>Направление по заданному маршруту</li>
+    <li>Список ингредиентов на информации о питании, в убывающих пропорциях.</li>
+  </ul>
+  <p>
+    Чтобы определить, каким списком пользоваться, можно поменять порядок элементов с списке.
+    Если значение меняется, используйте элемент <code class="tag">&lt;ol&gt;</code> — в противном
+    случае <code class="tag">&lt;ul&gt;</code>.
+  </p>
+</div>
 
-<!--<app-static-example [InputValue]="staticExample1"></app-static-example>-->
+
 

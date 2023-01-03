@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { EditorState } from "@codemirror/state";
 import { autocompletion, closeBrackets, closeBracketsKeymap } from "@codemirror/autocomplete";
 import { EditorView, keymap, lineNumbers } from "@codemirror/view";
@@ -12,9 +12,12 @@ import { html } from "@codemirror/lang-html";
   templateUrl: './interactive-example.component.html',
   styleUrls: ['./interactive-example.component.css']
 })
-export class InteractiveExampleComponent implements OnInit {
+export class InteractiveExampleComponent implements OnInit, AfterViewInit {
 
   constructor() { }
+
+  @Input()
+  NameComponent!: string;
 
   @Input()
   HTMLinputValue: string = "";
@@ -28,6 +31,14 @@ export class InteractiveExampleComponent implements OnInit {
   HTMLactive: boolean = true;
   CSSactive: boolean = false;
   JSactive: boolean = false;
+
+  @ViewChild("codeMirror", { static: false })
+  codeMirror: ElementRef | undefined;
+
+  @ViewChild("codeResult", { static: false })
+  codeResult: ElementRef | undefined;
+
+  temp = document.createElement('div');
 
   MyHighlightStyle = HighlightStyle.define([
     { tag: tags.tagName, color: "#905" },
@@ -55,24 +66,28 @@ export class InteractiveExampleComponent implements OnInit {
   ngOnInit(): void {
     this.HTMLstartView = new EditorView({
       state: this.startStateTemplate,
-      parent: document.querySelector(".html_editor")!,
+      parent: this.temp,
     })
 
     this.HTMLstartView.dispatch(this.HTMLstartView.state.update({ changes: { from: 0, insert: this.HTMLinputValue } }))
-    document.querySelector(".output_tab")?.insertAdjacentHTML('beforeend', String(this.HTMLstartView.state.doc));
+  }
+
+  ngAfterViewInit() {
+    this.codeMirror?.nativeElement.append(this.temp);
+    this.codeResult?.nativeElement.insertAdjacentHTML('beforeend', String(this.HTMLstartView.state.doc));
   }
 
   ResetCode() {
     this.HTMLstartView.dispatch(this.HTMLstartView.state.update({ changes: { from: 0, to: this.HTMLstartView.state.doc.length, insert: this.HTMLinputValue } }))
     let temp = document.createElement("div");
     temp.insertAdjacentHTML('beforeend', String(this.HTMLstartView.state.doc));
-    document.querySelector(".output_tab")?.replaceChildren(temp);
+    this.codeResult?.nativeElement.replaceChildren(temp);
   }
 
   ChangeCode() {
     let temp = document.createElement("div");
     temp.insertAdjacentHTML('beforeend', String(this.HTMLstartView.state.doc));
-    document.querySelector(".output_tab")?.replaceChildren(temp);
+    this.codeResult?.nativeElement.replaceChildren(temp);
   }
 
   HTMLswitch() {
