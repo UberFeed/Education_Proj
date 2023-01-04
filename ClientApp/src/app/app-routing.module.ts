@@ -13,6 +13,7 @@ import { HtmlCiteComponent } from './sub-section/html/html-text/html-cite/html-c
 import { OrderedListComponent } from './sub-section/html/html-lists/ordered-list/ordered-list.component';
 import { UnorderedListComponent } from './sub-section/html/html-lists/unordered-list/unordered-list.component';
 import { ListOfDefinitionsComponent } from './sub-section/html/html-lists/list-of-definitions/list-of-definitions.component';
+import { HtmlHyperlinkComponent } from './sub-section/html/html-links/html-hyperlink/html-hyperlink.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -28,6 +29,7 @@ const routes: Routes = [
       { path: 'html-ordered-list', component: OrderedListComponent },
       { path: 'html-unordered-list', component: UnorderedListComponent },
       { path: 'html-list-of-definitions', component: ListOfDefinitionsComponent },
+      { path: 'html-hyperlinks', component: HtmlHyperlinkComponent },
     ]
   },
 ]

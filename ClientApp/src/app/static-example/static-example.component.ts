@@ -22,6 +22,9 @@ export class StaticExampleComponent implements OnInit, AfterViewInit {
   @ViewChild("codeResult", { static: false })
   public codeResult: ElementRef | undefined;
 
+  @Input()
+  CodeResultVisible: boolean = true;
+
   temp = document.createElement('div');
 
   @Input()
@@ -57,7 +60,7 @@ export class StaticExampleComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.codeMirror!.nativeElement.append(this.temp);
-    this.codeResult!.nativeElement.insertAdjacentHTML('beforeend', this.InputValue);
+    this.codeResult?.nativeElement.insertAdjacentHTML('beforeend', this.InputValue);
   }
 
 }

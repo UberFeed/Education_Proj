@@ -1,7 +1,7 @@
 <div #codeMirror class="code-mirror">
-  <div class="label">Разметка</div>
+  <div *ngIf="CodeResultVisible" class="label">Разметка</div>
 </div>
 
-<div #codeResult class="code-result">
+<div *ngIf="CodeResultVisible" #codeResult class="code-result">
   <div class="label">Результат</div>
 </div>
