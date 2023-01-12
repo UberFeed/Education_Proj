@@ -1,0 +1,32 @@
+@import "../../_variables.scss";
+
+.code-mirror {
+  background-color: $code-table-color;
+  padding: 15px;
+  margin-bottom: 15px;
+  position: relative;
+  font-size: 14px;
+
+  .label {
+    position: absolute;
+    z-index: 2;
+    background-color: transparent;
+    border: none;
+    padding: 5px 10px;
+    top: 0;
+    right: 0;
+  }
+
+  div {
+    z-index: 1;
+
+    .cm-editor {
+      .cm-scroller {
+        .cm-gutters {
+          background-color: $code-table-color !important;
+        }
+      }
+    }
+  }
+}
+

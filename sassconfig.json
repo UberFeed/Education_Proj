@@ -526,5 +526,13 @@
   {
     "outputFile": "ClientApp/src/style.css",
     "inputFile": "ClientApp/src/style.scss"
+  },
+  {
+    "outputFile": "ClientApp/src/app/interactive-example/interactive-example.component.css",
+    "inputFile": "ClientApp/src/app/interactive-example/interactive-example.component.scss"
+  },
+  {
+    "outputFile": "ClientApp/src/app/code-example/code-example.component.css",
+    "inputFile": "ClientApp/src/app/code-example/code-example.component.scss"
   }
 ]

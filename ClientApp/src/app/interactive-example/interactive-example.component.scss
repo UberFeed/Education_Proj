@@ -95,7 +95,11 @@
     .output_tab {
       width: 40%;
       overflow-y: auto;
+      overflow-x: clip;
       padding: 15px;
+      div{
+          word-wrap: anywhere;
+      }
     }
   }
 }

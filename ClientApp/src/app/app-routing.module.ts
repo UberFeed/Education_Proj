@@ -14,6 +14,7 @@ import { OrderedListComponent } from './sub-section/html/html-lists/ordered-list
 import { UnorderedListComponent } from './sub-section/html/html-lists/unordered-list/unordered-list.component';
 import { ListOfDefinitionsComponent } from './sub-section/html/html-lists/list-of-definitions/list-of-definitions.component';
 import { HtmlHyperlinkComponent } from './sub-section/html/html-links/html-hyperlink/html-hyperlink.component';
+import { HtmlLinkComponent } from './sub-section/html/html-links/html-link/html-link.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -30,6 +31,7 @@ const routes: Routes = [
       { path: 'html-unordered-list', component: UnorderedListComponent },
       { path: 'html-list-of-definitions', component: ListOfDefinitionsComponent },
       { path: 'html-hyperlinks', component: HtmlHyperlinkComponent },
+      { path: 'html-link', component: HtmlLinkComponent },
     ]
   },
 ]
