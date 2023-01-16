@@ -16,6 +16,7 @@ import { ListOfDefinitionsComponent } from './sub-section/html/html-lists/list-o
 import { HtmlHyperlinkComponent } from './sub-section/html/html-links/html-hyperlink/html-hyperlink.component';
 import { HtmlLinkComponent } from './sub-section/html/html-links/html-link/html-link.component';
 import { AddImageComponent } from './sub-section/html/html-img/add-image/add-image.component';
+import { FigureComponent } from './sub-section/html/html-img/figure/figure.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -34,6 +35,7 @@ const routes: Routes = [
       { path: 'html-hyperlinks', component: HtmlHyperlinkComponent },
       { path: 'html-link', component: HtmlLinkComponent },
       { path: 'html-add-img', component: AddImageComponent },
+      { path: 'html-figure', component: FigureComponent },
     ]
   },
 ]

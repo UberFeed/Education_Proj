@@ -15,6 +15,7 @@ import { ListOfDefinitionsComponent } from './sub-section/html/html-lists/list-o
 import { HtmlHyperlinkComponent } from './sub-section/html/html-links/html-hyperlink/html-hyperlink.component';
 import { HtmlLinkComponent } from './sub-section/html/html-links/html-link/html-link.component';
 import { AddImageComponent } from './sub-section/html/html-img/add-image/add-image.component';
+import { FigureComponent } from './sub-section/html/html-img/figure/figure.component';
 import { InteractiveExampleComponent } from './interactive-example/interactive-example.component';
 import { StaticExampleComponent } from './static-example/static-example.component';
 import { CodeExampleComponent } from './code-example/code-example.component';
@@ -35,6 +36,7 @@ import { LessonsData } from './LessonsData.service';
     HtmlHyperlinkComponent,
     HtmlLinkComponent,
     AddImageComponent,
+    FigureComponent,
     InteractiveExampleComponent,
     StaticExampleComponent,
     CodeExampleComponent,
