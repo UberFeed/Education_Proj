@@ -96,6 +96,7 @@
       width: 40%;
       overflow-y: auto;
       overflow-x: clip;
+      word-wrap: break-word;
       padding: 15px;
       div{
           word-wrap: anywhere;

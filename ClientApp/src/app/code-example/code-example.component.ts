@@ -11,7 +11,7 @@ import { html } from "@codemirror/lang-html";
   templateUrl: './code-example.component.html',
   styleUrls: ['./code-example.component.css']
 })
-export class CodeExampleComponent implements OnInit {
+export class CodeExampleComponent implements OnInit, AfterViewInit {
 
   constructor() { }
 
