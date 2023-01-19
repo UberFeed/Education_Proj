@@ -16,6 +16,7 @@ import { HtmlHyperlinkComponent } from './sub-section/html/html-links/html-hyper
 import { HtmlLinkComponent } from './sub-section/html/html-links/html-link/html-link.component';
 import { AddImageComponent } from './sub-section/html/html-img/add-image/add-image.component';
 import { FigureComponent } from './sub-section/html/html-img/figure/figure.component';
+import { ImageMapComponent } from './sub-section/html/html-img/image-map/image-map.component';
 import { InteractiveExampleComponent } from './interactive-example/interactive-example.component';
 import { StaticExampleComponent } from './static-example/static-example.component';
 import { CodeExampleComponent } from './code-example/code-example.component';
@@ -37,6 +38,7 @@ import { LessonsData } from './LessonsData.service';
     HtmlLinkComponent,
     AddImageComponent,
     FigureComponent,
+    ImageMapComponent,
     InteractiveExampleComponent,
     StaticExampleComponent,
     CodeExampleComponent,
