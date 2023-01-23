@@ -18,6 +18,10 @@ import { HtmlLinkComponent } from './sub-section/html/html-links/html-link/html-
 import { AddImageComponent } from './sub-section/html/html-img/add-image/add-image.component';
 import { FigureComponent } from './sub-section/html/html-img/figure/figure.component';
 import { ImageMapComponent } from './sub-section/html/html-img/image-map/image-map.component';
+import { TableCreateComponent } from './sub-section/html/table/table-create/table-create.component';
+import { TableSectionComponent } from './sub-section/html/table/table-section/table-section.component';
+import { TableRowComponent } from './sub-section/html/table/table-row/table-row.component';
+import { TableDataSpanComponent } from './sub-section/html/table/table-data-span/table-data-span.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -38,6 +42,10 @@ const routes: Routes = [
       { path: 'html-add-img', component: AddImageComponent },
       { path: 'html-figure', component: FigureComponent },
       { path: 'html-image-map', component: ImageMapComponent },
+      { path: 'html-table-create', component: TableCreateComponent },
+      { path: 'html-table-section', component: TableSectionComponent },
+      { path: 'html-table-row', component: TableRowComponent },
+      { path: 'html-table-data-span', component: TableDataSpanComponent },
     ]
   },
 ]
