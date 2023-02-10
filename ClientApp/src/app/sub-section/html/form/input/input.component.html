@@ -1,0 +1,671 @@
+
+<div>
+  <p>
+    Все элементы формы помещаются в тег <code class="tag">&lt;form&gt;</code>. Для него всегда должен
+    быть указан атрибут <code class="attr-name">action</code>, кроме того, для этого элемента часто
+    устанавливают атрибуты <code class="attr-name">method</code> и <code class="attr-name">id</code>.
+  </p>
+  <p>
+    Элемент <code class="tag">&lt;input&gt;</code> используется для создания компонентов формы
+    нескольких типов. Значение атрибута <code class="attr-name">type</code> указывает этот тип.
+  </p>
+  <p>
+    У каждого элемента формы должна быть своя надпись, или метка, создаваемая при помощи элемента
+    <code class="tag">&lt;label&gt;</code> и упрощающая пользование сайтом людям с нарушениями
+    зрения.
+  </p>
+</div>
+
+<div data-custom="head1" style="padding-top: 0;">
+  <h2 class="head" id="head1">
+    Интерактивный пример
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <app-interactive-example [NameComponent]="NameComponent" [HTMLinputValue]="interactiveExample"></app-interactive-example>
+  <p>
+    Элемент <code class="tag">&lt;lable&gt;</code> можно использовать двумя способами. Окружить им и
+    метку и сам элемент формы, как показано справа на примере поля ввода текста. Указать отдельно от
+    элемента формы, но при этом использовать атрибут <code class="attr-name">for</code> для соотнесения
+    с нужным элементом, как показано на примере переключателей.
+  </p>
+  <p>
+    Значение атрибута <code class="attr-name">for</code> - это значение атрибута <code class="attr-name">id</code>
+    требуемого элемента формы. Данный прием присвоения меток может быть использован со всеми элементами
+    формы.
+  </p>
+</div>
+
+<div data-custom="head2">
+  <h2 class="head" id="head2">
+    Значения атрибута type
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <p>
+    То, как работает <code class="tag">&lt;input&gt;</code>, значительно различается в зависимости от
+    значения его атрибута <code class="attr-name">type</code>, поэтому различные значения будут
+    рассмотрены более детально.
+  </p>
+  <dl>
+    <dt>
+      <code class="attr-value">button</code>
+    </dt>
+    <dd>
+      Кнопка без поведения по умолчанию, отображающая значение атрибута <code class="attr-value">value</code>
+    </dd>
+    <app-static-example [InputValue]="staticExample1"></app-static-example>
+    <dt>
+      <code class="attr-value">checkbox</code>
+    </dt>
+    <dd>
+      Флажок, позволяющий выбирать/отменять выбор отдельных значений. С помощью флажков
+      посетители сайта могут выбирать из нескольких вариантов ответа, а также отменять выбор.
+    </dd>
+    <app-static-example [InputValue]="staticExample2"></app-static-example>
+    <dt>
+      <code class="attr-value">color</code>
+    </dt>
+    <dd>
+      Элемент управления для указания цвета; открытие палитры цветов, когда она активна в поддерживаемых
+      браузерах.
+    </dd>
+    <app-static-example [InputValue]="staticExample3"></app-static-example>
+    <dt>
+      <code class="attr-value">date</code>
+    </dt>
+    <dd>
+      Элемент управления для ввода даты (год, месяц и день, без времени). Открывает средство выбора
+      даты или числовые колеса для года, месяца, дня, когда они активны в поддерживающих браузерах.
+    </dd>
+    <app-static-example [InputValue]="staticExample4"></app-static-example>
+    <dt>
+      <code class="attr-value">datetime-local</code>
+    </dt>
+    <dd>
+      Элемент управления для ввода даты и времени без часового пояса. Открывает средство выбора даты
+      или числовые колеса для компонентов даты и времени, когда они активны в поддерживающих браузерах.
+    </dd>
+    <app-static-example [InputValue]="staticExample5"></app-static-example>
+    <dt>
+      <code class="attr-value">email</code>
+    </dt>
+    <dd>
+      Поле для редактирования адреса электронной почты. Выглядит как ввод текста, но имеет параметры
+      проверки и соответствующую клавиатуру для поддержки браузеров и устройств с динамической
+      клавиатурой.
+    </dd>
+    <app-static-example [InputValue]="staticExample6"></app-static-example>
+    <dt>
+      <code class="attr-value">file</code>
+    </dt>
+    <dd>
+      Элемент управления, позволяющий пользователю выбрать файл. Используйте атрибут <code class="attr-name">accept</code>,
+      чтобы определить типы файлов, которые может выбирать элемент управления.
+    </dd>
+    <app-static-example [InputValue]="staticExample7"></app-static-example>
+    <dt>
+      <code class="attr-value">hidden</code>
+    </dt>
+    <dd>
+      Элемент управления, который не отображается, но значение которого отправляется на сервер.
+    </dd>
+    <app-static-example [InputValue]="staticExample8"></app-static-example>
+    <dt>
+      <code class="attr-value">image</code>
+    </dt>
+    <dd>
+      Если вы хотите использовать собственное изображение для кнопки подтверждения, то вам потребуется
+      присвоить атрибуту <code class="attr-name">type</code> значение <code class="attr-value">image</code>.
+      При этом атрибуты <code class="attr-name">src</code>, <code class="attr-name">width</code>,
+      <code class="attr-name">height</code> и <code class="attr-name">alt</code> будут работать точно
+      также, как и для элемента <code class="tag">&lt;img&gt;</code>
+    </dd>
+    <app-static-example [InputValue]="staticExample9"></app-static-example>
+    <dt>
+      <code class="attr-value">month</code>
+    </dt>
+    <dd>
+      Элемент управления для ввода месяца и года без часового пояса.
+    </dd>
+    <app-static-example [InputValue]="staticExample10"></app-static-example>
+    <dt>
+      <code class="attr-value">number</code>
+    </dt>
+    <dd>
+      Элемент управления для ввода числа. Отображает счетчик и добавляет проверку по умолчанию.
+      Отображает цифровую клавиатуру на некоторых устройствах с динамической клавиатурой.
+    </dd>
+    <app-static-example [InputValue]="staticExample11"></app-static-example>
+    <dt>
+      <code class="attr-value">password</code>
+    </dt>
+    <dd>
+      Однострочное текстовое поле, значение которого скрыто.
+    </dd>
+    <app-static-example [InputValue]="staticExample12"></app-static-example>
+    <dt>
+      <code class="attr-value">radio</code>
+    </dt>
+    <dd>
+      Радиокнопка, позволяющая выбрать одно значение из нескольких вариантов с одинаковым значением
+      атрибута <code class="attr-name">name</code>.
+    </dd>
+    <app-static-example [InputValue]="staticExample13"></app-static-example>
+    <dt>
+      <code class="attr-value">range</code>
+    </dt>
+    <dd>
+      Элемент управления для ввода числа, точное значение которого не важно. Отображается как виджет
+      диапазона со средним значением по умолчанию. Используется вместе с <code class="attr-name">min</code>
+      и <code class="attr-name">max</code> для определения диапазона допустимых значений.
+    </dd>
+    <app-static-example [InputValue]="staticExample14"></app-static-example>
+    <dt>
+      <code class="attr-value">search</code>
+    </dt>
+    <dd>
+      Однострочное текстовое поле для ввода строк поиска. Разрывы строк автоматически удаляются из
+      входного значения. Может включать значок удаления в поддерживаемых браузерах, который можно
+      использовать для очистки поля. Отображает значок поиска вместо клавиши ввода на некоторых
+      устройствах с динамической клавиатурой.
+    </dd>
+    <app-static-example [InputValue]="staticExample15"></app-static-example>
+    <dt>
+      <code class="attr-value">tel</code>
+    </dt>
+    <dd>
+      Элемент управления для ввода номера телефона. Отображает клавиатуру телефона на некоторых
+      устройствах с динамической клавиатурой.
+    </dd>
+    <app-static-example [InputValue]="staticExample16"></app-static-example>
+    <dt>
+      <code class="attr-value">text</code>
+    </dt>
+    <dd>
+      Значение по умолчанию. Однострочное текстовое поле. Разрывы строк автоматически удаляются из
+      входного значения.
+    </dd>
+    <app-static-example [InputValue]="staticExample17"></app-static-example>
+    <dt>
+      <code class="attr-value">time</code>
+    </dt>
+    <dd>
+      Элемент управления для ввода значения времени без часового пояса.
+    </dd>
+    <app-static-example [InputValue]="staticExample18"></app-static-example>
+    <dt>
+      <code class="attr-value">url</code>
+    </dt>
+    <dd>
+      Поле для ввода URL. Выглядит как ввод текста, но имеет параметры проверки и соответствующую
+      клавиатуру для поддержки браузеров и устройств с динамической клавиатурой.
+    </dd>
+    <app-static-example [InputValue]="staticExample19"></app-static-example>
+    <dt>
+      <code class="attr-value">week</code>
+    </dt>
+    <dd>
+      Поле для ввода URL. Выглядит как ввод текста, но имеет параметры проверки и соответствующую
+      клавиатуру для поддержки браузеров и устройств с динамической клавиатурой.
+    </dd>
+    <app-static-example [InputValue]="staticExample20"></app-static-example>
+  </dl>
+</div>
+
+<div data-custom="head3">
+  <h2 class="head" id="head3">
+    Атрибуты
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <p>
+    Элемент <code class="tag">input</code> такой мощный благодаря своим атрибутам. Атрибут <code class="attr-name">type</code>,
+    описанный с примерами выше, является наиболее важным. Поскольку каждый элемент <code class="tag">input</code>,
+    независимо от типа, основан на интерфейсе <kbd>HTMLInputElement</kbd>, технически они имеют один и
+    тот же набор атрибутов. Однако на самом деле большинство атрибутов влияют только на определенное
+    подмножество типов ввода. Кроме того, то, как некоторые атрибуты влияют на ввод, зависит от типа
+    ввода, по-разному влияя на разные типы ввода.
+  </p>
+  <p>
+    В этом разделе представлена таблица со списком всех атрибутов с кратким описанием. За этой таблицей
+    следует список, описывающий каждый атрибут более подробно, а также типы входных данных, с которыми они связаны.
+    Те из них, которые являются общими для большинства или всех типов ввода, более подробно определены ниже.
+    Атрибуты, уникальные для конкретных типов ввода, или атрибуты, общие для всех типов ввода, но
+    имеющие особое поведение при использовании для данного типа ввода, вместо этого документируются на
+    страницах этих типов.
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Атрибут</th>
+        <th>Допустимые типы элемента <kbd>input</kbd></th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code class="attr-name">accept</code>
+        </td>
+        <td>
+          <code class="attr-value">file</code>
+        </td>
+        <td>
+          Подсказка для ожидаемого типа файла в элементах управления загрузкой файлов.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="attr-name">alt</code>
+        </td>
+        <td>
+          <code class="attr-value">image</code>
+        </td>
+        <td>
+          Атрибут <code class="attr-name">alt</code> для типа изображения. Требуется для доступности.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="attr-name">autocomplete</code>
+        </td>
+        <td>
+          Все кроме: <code class="attr-value">checkbox</code>,
+          <code class="attr-value">radio</code>, <code class="attr-value">button</code>
+        </td>
+        <td>
+          Подсказка для функции автозаполнения формы.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="attr-name">capture</code>
+        </td>
+        <td>
+          <code class="attr-value">file</code>
+        </td>
+        <td>
+          Метод ввода медиазахвата в элементах управления загрузкой файлов.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="attr-name">checked</code>
+        </td>
+        <td>
+          <code class="attr-value">checkbox</code>,
+          <code class="attr-value">radio</code>
+        </td>
+        <td>
+          Устанавливает значение <kbd>true</kbd> для полей форм с типом данных <kbd>boolean</kbd>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="attr-name">dirname</code>
+        </td>
+        <td>
+          <code class="attr-value">search</code>,
+          <code class="attr-value">text</code>
+        </td>
+        <td>
+          Имя поля формы, используемое для отправки направления элемента при отправке формы.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="attr-name">disabled</code>
+        </td>
+        <td>
+          all
+        </td>
+        <td>
+          Отключение управление формой.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="attr-name">form</code>
+        </td>
+        <td>
+          all
+        </td>
+        <td>
+          Связывает элемент управления с элементом формы.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="attr-name">formaction</code>
+        </td>
+        <td>
+          <code class="attr-value">image</code>,
+          <code class="attr-value">submit</code>
+        </td>
+        <td>
+          URL для отправки формы.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="attr-name">formenctype</code>
+        </td>
+        <td>
+          <code class="attr-value">image</code>,
+          <code class="attr-value">submit</code>
+        </td>
+        <td>
+          Тип кодировки набора данных формы для использования при отправке формы
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="attr-name">formmethod</code>
+        </td>
+        <td>
+          <code class="attr-value">image</code>,
+          <code class="attr-value">submit</code>
+        </td>
+        <td>
+          Метод HTTP для отправки формы.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="attr-name">formnovalidate</code>
+        </td>
+        <td>
+          <code class="attr-value">image</code>,
+          <code class="attr-value">submit</code>
+        </td>
+        <td>
+          Обход проверки контроля формы для отправки формы.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="attr-name">formtarget</code>
+        </td>
+        <td>
+          <code class="attr-value">image</code>,
+          <code class="attr-value">submit</code>
+        </td>
+        <td>
+          Контекст просмотра для отправки формы.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="attr-name">height</code>
+        </td>
+        <td>
+          <code class="attr-value">image</code>
+        </td>
+        <td>
+          То же, что атрибут высоты для <code class="tag">&lt;img&gt;</code>, вертикальный
+          размер.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="attr-name">list</code>
+        </td>
+        <td>
+          Можно применять ко всем типам форм, кроме: <code class="attr-value">hidden</code>,
+          <code class="attr-value">password</code>, <code class="attr-value">checkbox</code>,
+          <code class="attr-value">radio</code> и <code class="attr-value">button</code>
+        </td>
+        <td>
+          Значение атрибута <code class="attr-name">id</code> элемента <code class="tag">&lt;datalist&gt;</code>
+          параметров автозаполнения.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="attr-name">max</code>
+        </td>
+        <td>
+          <code class="attr-value">date</code>,
+          <code class="attr-value">mounth</code>, <code class="attr-value">week</code>,
+          <code class="attr-value">time</code>, <code class="attr-value">date-local</code>,
+          <code class="attr-value">number</code>, <code class="attr-value">range</code>
+        </td>
+        <td>
+          Максимальное значение.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="attr-name">maxlength</code>
+        </td>
+        <td>
+          <code class="attr-value">text</code>,
+          <code class="attr-value">search</code>, <code class="attr-value">url</code>,
+          <code class="attr-value">tel</code>, <code class="attr-value">email</code>,
+          <code class="attr-value">password</code>
+        </td>
+        <td>
+          Максимальная длина (количество символов) значения.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="attr-name">min</code>
+        </td>
+        <td>
+          <code class="attr-value">date</code>,
+          <code class="attr-value">mounth</code>, <code class="attr-value">week</code>,
+          <code class="attr-value">time</code>, <code class="attr-value">date-local</code>,
+          <code class="attr-value">number</code>, <code class="attr-value">range</code>
+        </td>
+        <td>
+          Минимальное значение.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="attr-name">minlength</code>
+        </td>
+        <td>
+          <code class="attr-value">text</code>,
+          <code class="attr-value">search</code>, <code class="attr-value">url</code>,
+          <code class="attr-value">tel</code>, <code class="attr-value">email</code>,
+          <code class="attr-value">password</code>
+        </td>
+        <td>
+          Минимальное значение.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="attr-name">multiple</code>
+        </td>
+        <td>
+          <code class="attr-value">email</code>,
+          <code class="attr-value">file</code>
+        </td>
+        <td>
+          Разрешить ли несколько значений.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="attr-name">name</code>
+        </td>
+        <td>
+          all
+        </td>
+        <td>
+          Имя элемента управления формы. Отправляется вместе с формой как часть пары имя/значение.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="attr-name">pattern</code>
+        </td>
+        <td>
+          <code class="attr-value">text</code>,
+          <code class="attr-value">search</code>, <code class="attr-value">url</code>,
+          <code class="attr-value">tel</code>, <code class="attr-value">email</code>,
+          <code class="attr-value">password</code>
+        </td>
+        <td>
+          Шаблон, которому должно соответствовать значение, чтобы быть действительным
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="attr-name">placeholder</code>
+        </td>
+        <td>
+          <code class="attr-value">text</code>,
+          <code class="attr-value">search</code>, <code class="attr-value">url</code>,
+          <code class="attr-value">tel</code>, <code class="attr-value">email</code>,
+          <code class="attr-value">password</code>, <code class="attr-value">number</code>
+        </td>
+        <td>
+          Текст, который появляется в элементе управления формы, когда для него не задано значение
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="attr-name">readonly</code>
+        </td>
+        <td>
+          Все кроме: <code class="attr-value">hidden</code>,
+          <code class="attr-value">range</code>, <code class="attr-value">color</code>,
+          <code class="attr-value">checkbox</code>, <code class="attr-value">radio</code>,
+          <code class="attr-value">buttons</code>
+        </td>
+        <td>
+          Значение недоступно для редактирования.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="attr-name">required</code>
+        </td>
+        <td>
+          Все кроме: <code class="attr-value">hidden</code>,
+          <code class="attr-value">range</code>, <code class="attr-value">color</code>,
+          <code class="attr-value">buttons</code>
+        </td>
+        <td>
+          Значение обязательно или должно быть проверено, чтобы форму можно было отправить.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="attr-name">size</code>
+        </td>
+        <td>
+          <code class="attr-value">text</code>,
+          <code class="attr-value">search</code>, <code class="attr-value">url</code>,
+          <code class="attr-value">tel</code>, <code class="attr-value">email</code>,
+          <code class="attr-value">password</code>
+        </td>
+        <td>
+          Значение обязательно или должно быть проверено, чтобы форму можно было отправить.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="attr-name">step</code>
+        </td>
+        <td>
+          <code class="attr-value">date</code>,
+          <code class="attr-value">mounth</code>, <code class="attr-value">week</code>,
+          <code class="attr-value">time</code>, <code class="attr-value">datetime-local</code>,
+          <code class="attr-value">number</code>, <code class="attr-value">range</code>
+        </td>
+        <td>
+          Допустимые инкрементные значения.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="attr-name">type</code>
+        </td>
+        <td>
+          all
+        </td>
+        <td>
+          Тип элемента управления.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="attr-name">value</code>
+        </td>
+        <td>
+          Все кроме:
+          <code class="attr-value">image</code>
+        </td>
+        <td>
+          Начальное значение элемента управления.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div data-custom="head4">
+  <h2 class="head" id="head4">
+    Примеры
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <h3>
+    Автозаполнение элемента управления.
+  </h3>
+  <p>
+    Указывает, может ли значение элементов <code class="tag">&lt;input&gt;</code> автоматически
+    заполняться браузером.
+  </p>
+  <p>
+    <code class="attr-name">autocomplete</code>=<code class="attr-value">'off'</code> — пользователь
+    должен явно вводить значение в это поле для каждого использования.
+  </p>
+  <p>
+    <code class="attr-name">autocomplete</code>=<code class="attr-value">'on'</code> — браузер может
+    автоматически дополнять значение на основе значений, которые пользователь ввел во время предыдущих
+    использований.
+  </p>
+  <p>
+    Атрибут автозаполнения принимает в качестве своего значения строку, разделенную пробелами, которая
+    описывает, какие функции автозаполнения должны предоставляться входными данными, если таковые
+    имеются. Типичная реализация автозаполнения вызывает предыдущие значения, введенные в то же поле
+    ввода, но могут существовать и более сложные формы автозаполнения. Например, браузер может
+    интегрироваться со списком контактов устройства для автозаполнения адресов электронной почты в
+    поле ввода электронной почты.
+  </p>
+  <app-static-example [InputValue]="staticExample21"></app-static-example>
+  <h3>
+    Использование шаблонов для валидации формы.
+  </h3>
+  <p>
+    Возможно, вы встречали во Всемирной паутине формы, выводящие предупреждения в случае, если
+    не все поля были правильно заполнены. Эта реакция называется валидацией данных формы.
+    Традиционно валидация введенных данных осуществляется с помощью специальных сценариев
+    JavaScript.
+  </p>
+  <p>
+    В языке HTML5 появилась собственная технология валидации введенных данных: теперь эта работа
+    перекладывается на веб-браузер. Валидация позволяет гарантировать, что пользователь введет данные
+    в формате, с которым сможет работать сервер.
+  </p>
+  <app-static-example [InputValue]="staticExample22"></app-static-example>
+  <h3>
+    Допустимые инкрементные значения.
+  </h3>
+  <p>
+    Указывает величину увеличения или уменьшения значений в процессе регулировки диапазона (шаг).
+  </p>
+  <app-static-example [InputValue]="staticExample23"></app-static-example>
+</div>
+

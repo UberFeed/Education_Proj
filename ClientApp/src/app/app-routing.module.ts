@@ -22,6 +22,13 @@ import { TableCreateComponent } from './sub-section/html/table/table-create/tabl
 import { TableSectionComponent } from './sub-section/html/table/table-section/table-section.component';
 import { TableRowComponent } from './sub-section/html/table/table-row/table-row.component';
 import { TableDataSpanComponent } from './sub-section/html/table/table-data-span/table-data-span.component';
+import { InputComponent } from './sub-section/html/form/input/input.component';
+import { TextareaComponent } from './sub-section/html/form/textarea/textarea.component';
+import { ButtonComponent } from './sub-section/html/form/button/button.component';
+import { SelectComponent } from './sub-section/html/form/select/select.component';
+import { DatalistComponent } from './sub-section/html/form/datalist/datalist.component';
+import { MeterComponent } from './sub-section/html/form/meter/meter.component';
+import { FieldsetComponent } from './sub-section/html/form/fieldset/fieldset.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -46,6 +53,13 @@ const routes: Routes = [
       { path: 'html-table-section', component: TableSectionComponent },
       { path: 'html-table-row', component: TableRowComponent },
       { path: 'html-table-data-span', component: TableDataSpanComponent },
+      { path: 'html-form-input', component: InputComponent },
+      { path: 'html-form-textarea', component: TextareaComponent },
+      { path: 'html-form-button', component: ButtonComponent },
+      { path: 'html-form-select', component: SelectComponent },
+      { path: 'html-form-datalist', component: DatalistComponent },
+      { path: 'html-form-meter', component: MeterComponent },
+      { path: 'html-form-fieldset', component: FieldsetComponent },
     ]
   },
 ]

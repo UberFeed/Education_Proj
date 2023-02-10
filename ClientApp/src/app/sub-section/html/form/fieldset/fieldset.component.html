@@ -1,0 +1,88 @@
+
+<div>
+  <p>
+    Элементы формы, связанные по смыслу, можно сгруппировать между тегами <code class="tag">&lt;fieldset&gt;</code>
+    и <code class="tag">&lt;/fieldset&gt;</code>. Это бывает особенно полезно при создании длинных
+    форм. Большинство браузеров отобразят <code class="tag">&lt;fieldset&gt;</code> в виде рамки вокруг
+    группы элементов формы.
+  </p>
+  <p>
+    Элемент <code class="tag">&lt;legend&gt;</code>, содержащий надпись для обозначения группы элементов
+    формы, как правило, помещают сразу после открывающего тега элемента <code class="tag">&lt;fieldset&gt;</code>.
+  </p>
+</div>
+
+<div data-custom="head1" style="padding-top: 0;">
+  <h2 class="head" id="head1">
+    Интерактивный пример
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <app-interactive-example [NameComponent]="NameComponent" [HTMLinputValue]="interactiveExample"></app-interactive-example>
+  <p>
+    Как показано в приведенном выше примере, элемент <code class="tag">&lt;fieldset&gt;</code>
+    обеспечивает группировку части HTML-формы, а вложенный элемент <code class="tag">&lt;legend&gt;</code>
+    обеспечивает заголовок для <code class="tag">&lt;fieldset&gt;</code>. Требуется несколько атрибутов,
+    наиболее заметным из которых является <code class="attr-name">form</code>, которая может содержать идентификатор <code class="tag">&lt;form&gt;</code>
+    на той же странице, что позволяет вам сделать <code class="tag">&lt;fieldset&gt;</code> частью этой
+    <code class="tag">&lt;form&gt;</code>, даже если он не вложен в нее, и <code class="attr-name">disabled</code>,
+    что позволяет отключить <code class="tag">&lt;fieldset&gt;</code> и все его содержимое за один раз.
+  </p>
+</div>
+
+<div data-custom="head2">
+  <h2 class="head" id="head2">
+    Атрибуты
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <dl>
+    <dt>
+      <code class="attr-name">disabled</code>
+    </dt>
+    <dd>
+      Если этот логический атрибут установлен, все элементы управления формы, которые являются
+      потомками <code class="tag">&lt;fieldset&gt;</code>, отключаются, то есть они недоступны для
+      редактирования и не будут отправлены вместе с <code class="tag">&lt;form&gt;</code>. Они не будут
+      получать никаких событий просмотра, таких как щелчки мышью или события, связанные с фокусом. По
+      умолчанию браузеры отображают такие элементы управления серым цветом. Обратите внимание, что
+      элементы формы внутри элемента <code class="tag">&lt;legend&gt;</code> не будут отключены.
+    </dd>
+    <dt>
+      <code class="attr-name">form</code>
+    </dt>
+    <dd>
+      Этот атрибут принимает значение атрибута <code class="attr-name">id</code> элемента <code class="tag">&lt;form&gt;</code>,
+      частью которого должен быть <code class="tag">&lt;fieldset&gt;</code>, даже если он не находится
+      внутри формы. Обратите внимание, что использование этого сбивает с толку — если вы хотите, чтобы
+      элементы <code class="tag">&lt;input&gt;</code> внутри <code class="tag">&lt;fieldset&gt;</code>
+      были связаны с формой, вам нужно использовать атрибут формы непосредственно для этих элементов.
+    </dd>
+    <dt>
+      <code class="attr-name">name</code>
+    </dt>
+    <dd>
+      Имя, связанное с группой.
+    </dd>
+  </dl>
+</div>
+
+<div data-custom="head3">
+  <h2 class="head" id="head3">
+    Примеры
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <h3>
+    Отключение fieldset
+  </h3>
+  <p>
+    В этом примере показан отключенный <code class="tag">&lt;fieldset&gt;</code> с двумя элементами
+    управления внутри. Обратите внимание, что оба элемента управления отключены из-за того, что они
+    находятся внутри отключенного <code class="tag">&lt;fieldset&gt;</code>.
+  </p>
+  <app-static-example [InputValue]="staticExample1"></app-static-example>
+</div>

@@ -1,0 +1,52 @@
+
+<div>
+  <p>
+    Элемент <code class="tag">&lt;textarea&gt;</code> используется для создания многострочных областей 
+    ввода текста. В отличие от других элементов формы, он не является пустым, а следовательно, для него 
+    должны следует указать открывающий и закрывающий теги.
+  </p>
+  <p>
+    Текст, помещенный между ними, будет выведен в поле при загрузке страницы.
+  </p>
+</div>
+
+<div data-custom="head1" style="padding-top: 0;">
+  <h2 class="head" id="head1">
+    Интерактивный пример
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <app-interactive-example [NameComponent]="NameComponent" [HTMLinputValue]="interactiveExample"></app-interactive-example>
+  <p>
+    Атрибут <code class="attr-name">cols</code> устанавливает ширину текстовой области (измеряется в количестве
+    символов в одной строке). Атрибут <code class="attr-name">rows</code> задает высоту поля в строках.
+  </p>
+  <p>
+    Приведенный выше пример демонстрирует ряд возможностей <code class="tag">&lt;textarea&gt;</code>:
+  </p>
+  <ul>
+    <li>
+      Атрибут <code class="attr-name">id</code>, позволяющий связать <code class="tag">&lt;textarea&gt;</code>
+      с элементом <code class="tag">&lt;label&gt;</code> в целях доступности.
+    </li>
+    <li>
+      Атрибут <code class="attr-name">name</code> для установки имени связанной точки данных, отправляемой на сервер при отправке формы.
+    </li>
+    <li>
+      <code class="attr-name">rows</code> и <code class="attr-name">cols</code>, чтобы вы могли
+      указать точный размер <code class="tag">&lt;textarea&gt;</code>. Их установка является хорошей
+      идеей для согласованности, так как браузеры по умолчанию могут различаться.
+    </li>
+    <li>
+      Содержимое по умолчанию, введенное между открывающим и закрывающим тегами. <code class="tag">&lt;textarea&gt;</code>
+      не поддерживает атрибут <code class="attr-name">value</code>.
+    </li>
+  </ul>
+  <p>
+    Элемент <code class="tag">&lt;textarea&gt;</code> также принимает несколько атрибутов, общих для
+    форм <code class="tag">&lt;input&gt;</code>, таких как <code class="attr-name">autocomplete</code>,
+    <code class="attr-name">autofocus</code>, <code class="attr-name">disabled</code>,
+    <code class="attr-name">placeholder</code>, <code class="attr-name">readonly</code> и <code class="attr-name">required</code>.
+  </p>
+</div>

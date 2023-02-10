@@ -21,6 +21,13 @@ import { TableCreateComponent } from './sub-section/html/table/table-create/tabl
 import { TableSectionComponent } from './sub-section/html/table/table-section/table-section.component';
 import { TableRowComponent } from './sub-section/html/table/table-row/table-row.component';
 import { TableDataSpanComponent } from './sub-section/html/table/table-data-span/table-data-span.component';
+import { InputComponent } from './sub-section/html/form/input/input.component';
+import { TextareaComponent } from './sub-section/html/form/textarea/textarea.component';
+import { ButtonComponent } from './sub-section/html/form/button/button.component';
+import { SelectComponent } from './sub-section/html/form/select/select.component';
+import { DatalistComponent } from './sub-section/html/form/datalist/datalist.component';
+import { MeterComponent } from './sub-section/html/form/meter/meter.component';
+import { FieldsetComponent } from './sub-section/html/form/fieldset/fieldset.component';
 import { InteractiveExampleComponent } from './interactive-example/interactive-example.component';
 import { StaticExampleComponent } from './static-example/static-example.component';
 import { CodeExampleComponent } from './code-example/code-example.component';
@@ -47,6 +54,13 @@ import { LessonsData } from './LessonsData.service';
     TableSectionComponent,
     TableRowComponent,
     TableDataSpanComponent,
+    InputComponent,
+    TextareaComponent,
+    ButtonComponent,
+    SelectComponent,
+    MeterComponent,
+    DatalistComponent,
+    FieldsetComponent,
     InteractiveExampleComponent,
     StaticExampleComponent,
     CodeExampleComponent,

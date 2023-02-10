@@ -191,3 +191,27 @@ table{
 .css-prop{
     color: rgb(86, 156, 214);
 }
+
+.css-selector {
+  color: rgb(214, 157, 133);
+}
+
+table{
+    tbody{
+        tr{
+            td{
+                p{
+                    font-size: 14px;
+                }
+                &:first-child{
+                    width: 25%;
+                }
+
+                &:nth-child(2){
+                    width: 25%;
+                }
+            }
+        }
+    }
+}
+

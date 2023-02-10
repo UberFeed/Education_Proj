@@ -84,8 +84,9 @@
         .html_editor {
           .cm-editor {
             height: 100%;
-            &:focus{
-                outline: none;
+
+            &:focus {
+              outline: none;
             }
           }
         }
@@ -98,8 +99,15 @@
       overflow-x: clip;
       word-wrap: break-word;
       padding: 15px;
-      div{
-          word-wrap: anywhere;
+
+      div {
+        word-wrap: anywhere;
+
+        form {
+          label {
+            margin-bottom: 10px;
+          }
+        }
       }
     }
   }

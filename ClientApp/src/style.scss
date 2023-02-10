@@ -66,11 +66,37 @@ body {
     margin-top: 1em;
     margin-bottom: 1em;
   }
-  dl{
-      margin-top: 1em;
-      margin-bottom: 1em;
+
+  dl {
+    margin-top: 1em;
+    margin-bottom: 1em;
   }
-  dd{
-      margin-left: 40px;
+
+  dd {
+    margin-left: 40px;
+  }
+
+  .output_tab {
+    form {
+      label, input {
+        margin-bottom: 5px;
+      }
+    }
+    button{
+        margin: 7px 0;
+    }
+  }
+
+  .code-result {
+    form {
+      label, input {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  fieldset{
+      border: 1.6px solid rgb(214, 214, 219);
+      padding: 5px 10px;
   }
 }
