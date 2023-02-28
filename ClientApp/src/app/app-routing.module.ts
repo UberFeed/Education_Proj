@@ -29,6 +29,9 @@ import { SelectComponent } from './sub-section/html/form/select/select.component
 import { DatalistComponent } from './sub-section/html/form/datalist/datalist.component';
 import { MeterComponent } from './sub-section/html/form/meter/meter.component';
 import { FieldsetComponent } from './sub-section/html/form/fieldset/fieldset.component';
+import { VideoComponent } from './sub-section/html/multimedia/video/video.component';
+import { AudioComponent } from './sub-section/html/multimedia/audio/audio.component';
+import { IframeComponent } from './sub-section/html/multimedia/iframe/iframe.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -60,6 +63,9 @@ const routes: Routes = [
       { path: 'html-form-datalist', component: DatalistComponent },
       { path: 'html-form-meter', component: MeterComponent },
       { path: 'html-form-fieldset', component: FieldsetComponent },
+      { path: 'html-multimedia-video', component: VideoComponent },
+      { path: 'html-multimedia-audio', component: AudioComponent },
+      { path: 'html-multimedia-iframe', component: IframeComponent },
     ]
   },
 ]

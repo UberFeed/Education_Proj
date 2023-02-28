@@ -53,11 +53,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ClientApp\src\app\sub-section\html\multimedia\" />
     <Folder Include="ClientApp\src\app\sub-section\html\html-text\" />
     <Folder Include="ClientApp\src\app\sub-section\html\html-lists\" />
     <Folder Include="ClientApp\src\app\sub-section\html\html-img\" />
     <Folder Include="ClientApp\src\app\sub-section\html\table\" />
-    <Folder Include="ClientApp\src\app\sub-section\html\form\" />
   </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

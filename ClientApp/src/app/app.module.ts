@@ -28,6 +28,9 @@ import { SelectComponent } from './sub-section/html/form/select/select.component
 import { DatalistComponent } from './sub-section/html/form/datalist/datalist.component';
 import { MeterComponent } from './sub-section/html/form/meter/meter.component';
 import { FieldsetComponent } from './sub-section/html/form/fieldset/fieldset.component';
+import { VideoComponent } from './sub-section/html/multimedia/video/video.component';
+import { AudioComponent } from './sub-section/html/multimedia/audio/audio.component';
+import { IframeComponent } from './sub-section/html/multimedia/iframe/iframe.component';
 import { InteractiveExampleComponent } from './interactive-example/interactive-example.component';
 import { StaticExampleComponent } from './static-example/static-example.component';
 import { CodeExampleComponent } from './code-example/code-example.component';
@@ -61,6 +64,9 @@ import { LessonsData } from './LessonsData.service';
     MeterComponent,
     DatalistComponent,
     FieldsetComponent,
+    VideoComponent,
+    AudioComponent,
+    IframeComponent,
     InteractiveExampleComponent,
     StaticExampleComponent,
     CodeExampleComponent,
