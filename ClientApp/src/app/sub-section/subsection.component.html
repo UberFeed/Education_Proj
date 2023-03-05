@@ -2,11 +2,11 @@
   <div class="sidebar">
     <div [ngClass]="setting" class="sidebar_menu">
       <div class="sidebar_inner">
-        <p>Раздел</p>
+        <p class="chapter">Раздел</p>
         <ul class="sidebar_link">
           <li class="section-mark"></li>
         </ul>
-        <p>Навигация по уроку</p>
+        <p class="chapter">Навигация по уроку</p>
         <ul class="sidebar_link" id="hide_menu-inner">
           <li *ngFor="let item of Headers" class="test-1">
             <a href="{{CurrentRouter}}#{{item.id}}">{{item.textContent}}</a>

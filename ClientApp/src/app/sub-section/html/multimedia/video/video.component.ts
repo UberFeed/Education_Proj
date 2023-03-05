@@ -23,7 +23,7 @@ export class VideoComponent implements OnInit {
   NameComponent: string = "Использование элемента <video>";
 
   @Output()
-  interactiveExample: string = "<video width='250' height='150' controls>\n  <source  src='/assets/video/flower.mp4' />\n</video>";
+  interactiveExample: string = "<video width='250' height='150' controls>\n  <source  src='/assets/video/flower.mp4' />\n</video> <p>test</p>";
 
   @Output()
   codeExample1: string = "<video controls>\n  <source src='myVideo.webm' type='video/webm' />\n  <source src='myVideo.mp4' type='video/mp4' />\n  <p>Ваш браузер не поддерживает HTML-видео. Ссылка для скачивания - \n  <a href = 'myVideo.mp4'>Скачать</a></p>\n</video>";
