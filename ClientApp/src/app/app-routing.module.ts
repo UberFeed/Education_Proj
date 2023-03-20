@@ -32,6 +32,7 @@ import { FieldsetComponent } from './sub-section/html/form/fieldset/fieldset.com
 import { VideoComponent } from './sub-section/html/multimedia/video/video.component';
 import { AudioComponent } from './sub-section/html/multimedia/audio/audio.component';
 import { IframeComponent } from './sub-section/html/multimedia/iframe/iframe.component';
+import { CssBasicsComponent } from './sub-section/css/css-basics/css-basics.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -66,6 +67,7 @@ const routes: Routes = [
       { path: 'html-multimedia-video', component: VideoComponent },
       { path: 'html-multimedia-audio', component: AudioComponent },
       { path: 'html-multimedia-iframe', component: IframeComponent },
+      { path: 'css-basics', component: CssBasicsComponent },
     ]
   },
 ]

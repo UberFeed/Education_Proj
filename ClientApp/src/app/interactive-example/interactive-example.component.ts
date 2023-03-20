@@ -1,10 +1,11 @@
 import { Component, ElementRef, Input, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { EditorState } from "@codemirror/state";
-import { autocompletion, closeBrackets, closeBracketsKeymap } from "@codemirror/autocomplete";
+import { autocompletion, closeBrackets } from "@codemirror/autocomplete";
 import { EditorView, keymap, lineNumbers } from "@codemirror/view";
-import { defaultKeymap, history, indentWithTab } from "@codemirror/commands";
+import { defaultKeymap, history } from "@codemirror/commands";
+import { highlightSelectionMatches } from "@codemirror/search";
 import { tags } from "@lezer/highlight";
-import { syntaxHighlighting, HighlightStyle } from "@codemirror/language";
+import { syntaxHighlighting, HighlightStyle, bracketMatching } from "@codemirror/language";
 import { html } from "@codemirror/lang-html";
 import { css } from "@codemirror/lang-css";
 
@@ -33,6 +34,9 @@ export class InteractiveExampleComponent implements OnInit, AfterViewInit {
   CSSactive: boolean = false;
   JSactive: boolean = false;
 
+  HTMLoutput: string = "";
+  CSSoutput: string = "";
+
   @ViewChild("codeMirror", { static: false })
   codeMirror: ElementRef | undefined;
 
@@ -52,6 +56,7 @@ export class InteractiveExampleComponent implements OnInit, AfterViewInit {
   CSSHighlightStyle = HighlightStyle.define([
     { tag: tags.tagName, color: "rgb(215, 186, 125)" },
     { tag: tags.propertyName, color: "rgb(156, 220, 254)" },
+    { tag: tags.keyword, color: "#d78d7d" },
   ])
 
   startStateHTMLTemplate = EditorState.create({
@@ -62,10 +67,12 @@ export class InteractiveExampleComponent implements OnInit, AfterViewInit {
       ".cm-gutterElement": { padding: "0 !important" },
       ".cm-scroller": { height: "250px", overflow: "auto", paddingRight: "5px" },
       ".cm-tooltip": { background: "black" },
+      "&.cm-focused .cm-matchingBracket": { backgroundColor: "rgba(121, 124, 128, 0.5) !important" },
+      ".cm-selectionMatch": { backgroundColor: "rgba(121, 124, 128, 0.6) !important" },
     }),
     lineNumbers(), EditorView.editable.of(true), html(),
       syntaxHighlighting(this.HTMLHighlightStyle), history(), autocompletion(), EditorView.lineWrapping,
-      closeBrackets()
+      closeBrackets(), bracketMatching(), highlightSelectionMatches(),
     ],
   })
 
@@ -79,10 +86,12 @@ export class InteractiveExampleComponent implements OnInit, AfterViewInit {
       ".cm-gutterElement": { padding: "0 !important" },
       ".cm-scroller": { height: "250px", overflow: "auto", paddingRight: "5px" },
       ".cm-tooltip": { background: "black" },
+      "&.cm-focused .cm-matchingBracket": { backgroundColor: "#454952 !important" },
+      ".cm-selectionMatch": { backgroundColor: "rgba(121, 124, 128, 0.6) !important" },
     }),
     lineNumbers(), EditorView.editable.of(true), css(),
       syntaxHighlighting(this.CSSHighlightStyle), history(), autocompletion(), EditorView.lineWrapping,
-      closeBrackets()
+      closeBrackets(), bracketMatching(), highlightSelectionMatches(),
     ],
   })
 
@@ -109,36 +118,41 @@ export class InteractiveExampleComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.codeMirror?.nativeElement.append(this.htmlBlock);
-    let concatStr = String(this.HTMLstartView.state.doc);
+    this.HTMLoutput = String(this.HTMLstartView.state.doc);
 
     if (this.CSSinputValue != '') {
       this.codeMirror?.nativeElement.append(this.cssBlock);
-      concatStr += "<style>" + String(this.CSSstartView.state.doc) + "</style>";
+      this.CSSoutput = String(this.CSSstartView.state.doc);
     }
 
-    this.codeResult?.nativeElement.setAttribute('srcdoc', concatStr);
+    this.ChangeResult();
   }
 
   ResetCode() {
     this.HTMLstartView.dispatch(this.HTMLstartView.state.update({ changes: { from: 0, to: this.HTMLstartView.state.doc.length, insert: this.HTMLinputValue } }));
-    let concatStr = String(this.HTMLstartView.state.doc);
+    this.HTMLoutput = String(this.HTMLstartView.state.doc);
 
     if (this.CSSinputValue != '') {
       this.CSSstartView.dispatch(this.CSSstartView.state.update({ changes: { from: 0, to: this.CSSstartView.state.doc.length, insert: this.CSSinputValue } }));
-      concatStr += "<style>" + String(this.CSSstartView.state.doc) + "</style>";
+      this.CSSoutput = String(this.CSSstartView.state.doc);
     }
 
-    this.codeResult?.nativeElement.setAttribute('srcdoc', concatStr);
+    this.ChangeResult();
   }
 
   ChangeCode() {
-    let concatStr = String(this.HTMLstartView.state.doc);
+    this.HTMLoutput = String(this.HTMLstartView.state.doc);
 
     if (this.CSSinputValue != '') {
-      concatStr += "<style>" + String(this.CSSstartView.state.doc) + "</style>";
+      this.CSSoutput = String(this.CSSstartView.state.doc);
     }
 
-    this.codeResult?.nativeElement.setAttribute('srcdoc', concatStr);
+    this.ChangeResult();
+  }
+
+  ChangeResult() {
+    let Result = `<!DOCTYPE html><html><head><link href='./assets/example/CodeResult.css' rel='stylesheet'><style>${this.CSSoutput}</style></head><body>${this.HTMLoutput}</body></html>`;
+    this.codeResult?.nativeElement.setAttribute('srcdoc', Result);
   }
 
   HTMLswitch() {
