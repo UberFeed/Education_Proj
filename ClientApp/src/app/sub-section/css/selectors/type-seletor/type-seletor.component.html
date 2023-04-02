@@ -1,1 +1,71 @@
-<p>type-seletor works!</p>
+<div>
+  <p>
+    Существует множество различных типов селекторов CSS, позволяющих применять правила к конкретным
+    элементам НТМL-документа.
+  </p>
+  <p>
+    Селекторы CSS чувствительны к регистру, поэтому они должны точно соответствовать именам
+    элементов и значениям атрибутов. Существуют более продвинутые селекторы, позволяющие выбирать
+    элементы на основании атрибутов и их значений.
+  </p>
+</div>
+
+<div data-custom="head1" style="padding-top: 0;">
+  <h2 class="head" id="head1">
+    Интерактивный пример
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <app-interactive-example [NameComponent]="NameComponent" [HTMLinputValue]="HTMLinteractiveExample" [CSSinputValue]="CSSinteractiveExample"></app-interactive-example>
+</div>
+
+<div data-custom="head2">
+  <h2 class="head" id="head2">
+    Перечень селекторов
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <h3>Универсальный селектор</h3>
+  <p>
+    Соответствует любому HTML-элементу. Например, <code>
+      <code class="css-selector">*</code> {{ '{' }}
+      <code class="css-prop">margin</code>:<code class="css-value">0</code>;{{ '}' }}
+    </code> обнулит
+    внешние отступы для всех элементов сайта. Также селектор может использоваться в комбинации с
+    псевдоклассом или псевдоэлементом: <code><code class="css-selector">*</code>:<code class="css-pseudoCl">after</code></code>,
+    <code><code class="css-selector">*</code>:<code class="css-pseudoCl">checked</code></code>.
+  </p>
+  <app-static-example [InputValue]="HTMLstaticExample1" [CSSInputValue]="CSSstaticExample1"></app-static-example>
+  <h3>Селектор типа</h3>
+  <p>
+    Селектор типа в CSS позволяет выбирать все элементы с определенным типом тега, таким как
+    <code class="tag">&lt;p&gt;</code>, <code class="tag">&lt;h1&gt;</code>,
+    <code class="tag">&lt;ul&gt;</code> и т.д.
+  </p>
+  <app-static-example [InputValue]="HTMLstaticExample2" [CSSInputValue]="CSSstaticExample2"></app-static-example>
+  <h3>Селектор класса</h3>
+  <p>
+    Селекторы класса позволяют задавать стили для одного и более элементов с одинаковым именем класса,
+    размещенных в разных местах страницы или на разных страницах сайта.
+  </p>
+  <app-static-example [InputValue]="HTMLstaticExample3" [CSSInputValue]="CSSstaticExample3"></app-static-example>
+  <h3>Селектор идентификатора</h3>
+  <p>
+    Селектор идентификатора - это один из видов селекторов в CSS, который используется для выбора
+    элемента на основе его уникального идентификатора. Идентификатор - это атрибут HTML-элемента,
+    который определяет его уникальность в пределах документа.
+  </p>
+  <p>
+    Селектор идентификатора в CSS обозначается символом <code class="css-selector">#</code>, за которым следует имя
+    идентификатора. Например, для выбора элемента с идентификатором myDiv, мы можем использовать
+    селектор <code class="css-selector">#myDiv</code>. Как только мы выбрали элемент с помощью
+    селектора идентификатора, мы можем применить к нему набор свойств CSS.
+  </p>
+  <p>
+    Селектор идентификатора позволяет создавать уникальные стили для конкретного элемента на странице,
+    что делает его особенным и выделяет на фоне других элементов.
+  </p>
+  <app-static-example [InputValue]="HTMLstaticExample4" [CSSInputValue]="CSSstaticExample4"></app-static-example>
+</div>

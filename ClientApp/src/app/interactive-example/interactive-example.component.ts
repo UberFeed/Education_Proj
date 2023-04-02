@@ -1,22 +1,31 @@
-import { Component, ElementRef, Input, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild, AfterViewInit, AfterContentChecked } from '@angular/core';
 import { EditorState } from "@codemirror/state";
 import { autocompletion, closeBrackets } from "@codemirror/autocomplete";
 import { EditorView, keymap, lineNumbers } from "@codemirror/view";
 import { defaultKeymap, history } from "@codemirror/commands";
 import { highlightSelectionMatches } from "@codemirror/search";
-import { tags } from "@lezer/highlight";
-import { syntaxHighlighting, HighlightStyle, bracketMatching } from "@codemirror/language";
+import { syntaxHighlighting, bracketMatching} from "@codemirror/language";
 import { html } from "@codemirror/lang-html";
 import { css } from "@codemirror/lang-css";
+
+import { EditorStyle } from "src/app/services/HighlightStyle.service";
 
 @Component({
   selector: 'app-interactive-example',
   templateUrl: './interactive-example.component.html',
   styleUrls: ['./interactive-example.component.css']
 })
-export class InteractiveExampleComponent implements OnInit, AfterViewInit {
+export class InteractiveExampleComponent implements OnInit, AfterViewInit, AfterContentChecked {
 
-  constructor() { }
+  constructor(
+    private EditorStyle: EditorStyle
+  ) { }
+
+  @ViewChild("codeMirror", { static: false })
+  codeMirror: ElementRef | undefined;
+
+  @ViewChild("codeResult", { static: false })
+  codeResult: ElementRef | undefined;
 
   @Input()
   NameComponent!: string;
@@ -37,27 +46,11 @@ export class InteractiveExampleComponent implements OnInit, AfterViewInit {
   HTMLoutput: string = "";
   CSSoutput: string = "";
 
-  @ViewChild("codeMirror", { static: false })
-  codeMirror: ElementRef | undefined;
-
-  @ViewChild("codeResult", { static: false })
-  codeResult: ElementRef | undefined;
-
   htmlBlock = document.createElement('div');
   cssBlock = document.createElement('div');
 
-  HTMLHighlightStyle = HighlightStyle.define([
-    { tag: tags.tagName, color: "#905" },
-    { tag: tags.attributeName, color: "#690" },
-    { tag: tags.attributeValue, color: "#0089c4" },
-    { tag: tags.propertyName, color: "rgb(156, 220, 254)" },
-  ])
-
-  CSSHighlightStyle = HighlightStyle.define([
-    { tag: tags.tagName, color: "rgb(215, 186, 125)" },
-    { tag: tags.propertyName, color: "rgb(156, 220, 254)" },
-    { tag: tags.keyword, color: "#d78d7d" },
-  ])
+  public HTMLstartView!: EditorView;
+  public CSSstartView!: EditorView;
 
   startStateHTMLTemplate = EditorState.create({
     extensions: [keymap.of(defaultKeymap), EditorView.theme({
@@ -71,12 +64,10 @@ export class InteractiveExampleComponent implements OnInit, AfterViewInit {
       ".cm-selectionMatch": { backgroundColor: "rgba(121, 124, 128, 0.6) !important" },
     }),
     lineNumbers(), EditorView.editable.of(true), html(),
-      syntaxHighlighting(this.HTMLHighlightStyle), history(), autocompletion(), EditorView.lineWrapping,
+      syntaxHighlighting(this.EditorStyle.HighlightStyle.HTML), history(), autocompletion(), EditorView.lineWrapping,
       closeBrackets(), bracketMatching(), highlightSelectionMatches(),
     ],
   })
-
-  public HTMLstartView!: EditorView;
 
   startStateCSSTemplate = EditorState.create({
     extensions: [keymap.of(defaultKeymap), EditorView.theme({
@@ -90,12 +81,10 @@ export class InteractiveExampleComponent implements OnInit, AfterViewInit {
       ".cm-selectionMatch": { backgroundColor: "rgba(121, 124, 128, 0.6) !important" },
     }),
     lineNumbers(), EditorView.editable.of(true), css(),
-      syntaxHighlighting(this.CSSHighlightStyle), history(), autocompletion(), EditorView.lineWrapping,
+      syntaxHighlighting(this.EditorStyle.HighlightStyle.CSS), history(), autocompletion(), EditorView.lineWrapping,
       closeBrackets(), bracketMatching(), highlightSelectionMatches(),
     ],
   })
-
-  public CSSstartView!: EditorView;
 
   ngOnInit(): void {
     this.HTMLstartView = new EditorView({
@@ -128,6 +117,11 @@ export class InteractiveExampleComponent implements OnInit, AfterViewInit {
     this.ChangeResult();
   }
 
+  ngAfterContentChecked() {
+    let height = this.codeResult?.nativeElement.contentDocument.documentElement.offsetHeight;
+    this.codeResult?.nativeElement.setAttribute('height', height);
+  }
+
   ResetCode() {
     this.HTMLstartView.dispatch(this.HTMLstartView.state.update({ changes: { from: 0, to: this.HTMLstartView.state.doc.length, insert: this.HTMLinputValue } }));
     this.HTMLoutput = String(this.HTMLstartView.state.doc);
@@ -153,6 +147,10 @@ export class InteractiveExampleComponent implements OnInit, AfterViewInit {
   ChangeResult() {
     let Result = `<!DOCTYPE html><html><head><link href='./assets/example/CodeResult.css' rel='stylesheet'><style>${this.CSSoutput}</style></head><body>${this.HTMLoutput}</body></html>`;
     this.codeResult?.nativeElement.setAttribute('srcdoc', Result);
+
+    let height = this.codeResult?.nativeElement.contentDocument.documentElement.offsetHeight;
+    this.codeResult?.nativeElement.setAttribute('height', height);
+
   }
 
   HTMLswitch() {

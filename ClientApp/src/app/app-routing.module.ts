@@ -33,6 +33,7 @@ import { VideoComponent } from './sub-section/html/multimedia/video/video.compon
 import { AudioComponent } from './sub-section/html/multimedia/audio/audio.component';
 import { IframeComponent } from './sub-section/html/multimedia/iframe/iframe.component';
 import { CssBasicsComponent } from './sub-section/css/css-basics/css-basics.component';
+import { TypeSeletorComponent } from './sub-section/css/selectors/type-seletor/type-seletor.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -68,6 +69,7 @@ const routes: Routes = [
       { path: 'html-multimedia-audio', component: AudioComponent },
       { path: 'html-multimedia-iframe', component: IframeComponent },
       { path: 'css-basics', component: CssBasicsComponent },
+      { path: 'type-selectors', component: TypeSeletorComponent },
     ]
   },
 ]

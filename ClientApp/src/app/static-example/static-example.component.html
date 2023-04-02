@@ -1,7 +1,12 @@
-<div #codeMirror class="code-mirror">
+<div #HTMLcodeMirror class="code-mirror">
   <div *ngIf="CodeResultVisible" class="label">Разметка</div>
 </div>
 
-<div *ngIf="CodeResultVisible" #codeResult class="code-result">
+<div #CSScodeMirror *ngIf="CSScodeVisible" class="code-mirror">
+  <div class="label">Стили</div>
+</div>
+
+<div class="code-result">
   <div class="label">Результат</div>
+  <iframe #codeResult scrolling="no"></iframe>
 </div>

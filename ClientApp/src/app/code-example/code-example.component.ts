@@ -7,6 +7,8 @@ import { syntaxHighlighting, HighlightStyle } from "@codemirror/language";
 import { html } from "@codemirror/lang-html";
 import { css } from "@codemirror/lang-css";
 
+import { EditorStyle } from "src/app/services/HighlightStyle.service";
+
 @Component({
   selector: 'app-code-example',
   templateUrl: './code-example.component.html',
@@ -14,7 +16,9 @@ import { css } from "@codemirror/lang-css";
 })
 export class CodeExampleComponent implements OnInit, AfterViewInit {
 
-  constructor() { }
+  constructor(
+    private EditorStyle: EditorStyle
+  ) { }
 
   @ViewChild("codeMirror", { static: false })
   public codeMirror: ElementRef | undefined;
@@ -29,20 +33,6 @@ export class CodeExampleComponent implements OnInit, AfterViewInit {
   @Input()
   CSSInputValue: string = "";
 
-  HTMLHighlightStyle = HighlightStyle.define([
-    { tag: tags.tagName, color: "#905" },
-    { tag: tags.attributeName, color: "#690" },
-    { tag: tags.attributeValue, color: "#0089c4" },
-    { tag: tags.propertyName, color: "rgb(156, 220, 254)" },
-    { tag: tags.keyword, color: "#d78d7d" },
-  ])
-
-  CSSHighlightStyle = HighlightStyle.define([
-    { tag: tags.tagName, color: "rgb(215, 186, 125)" },
-    { tag: tags.propertyName, color: "rgb(156, 220, 254)" },
-    { tag: tags.keyword, color: "#d78d7d" },
-  ])
-
   HTMLstartStateTemplate = EditorState.create({
     extensions: [keymap.of(defaultKeymap), EditorView.theme({
       ".cm-content": { color: "white" },
@@ -50,7 +40,7 @@ export class CodeExampleComponent implements OnInit, AfterViewInit {
       ".cm-gutterElement": { padding: "0 10px 0 5px !important" }
     }),
     EditorView.editable.of(false), html(), css(), EditorView.lineWrapping,
-    syntaxHighlighting(this.HTMLHighlightStyle),
+    syntaxHighlighting(this.EditorStyle.HighlightStyle.HTML),
     ],
   })
 
@@ -61,7 +51,7 @@ export class CodeExampleComponent implements OnInit, AfterViewInit {
       ".cm-gutterElement": { padding: "0 10px 0 5px !important" }
     }),
     EditorView.editable.of(false), css(), EditorView.lineWrapping,
-    syntaxHighlighting(this.CSSHighlightStyle),
+    syntaxHighlighting(this.EditorStyle.HighlightStyle.CSS),
     ],
   })
 

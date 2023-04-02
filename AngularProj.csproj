@@ -22,6 +22,22 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\assets\example\bootstrap-reboot.min.css" />
+    <None Remove="ClientApp\src\assets\example\bootstrap.min.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ClientApp\src\assets\example\bootstrap-reboot.min.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\src\assets\example\bootstrap.min.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\bootstrap-5.2.0-dist\css\bootstrap-grid.css.map" />
     <None Include="wwwroot\bootstrap-5.2.0-dist\css\bootstrap-grid.min.css.map" />
     <None Include="wwwroot\bootstrap-5.2.0-dist\css\bootstrap-grid.rtl.css.map" />
@@ -53,12 +69,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ClientApp\src\app\sub-section\css\selectors\" />
     <Folder Include="ClientApp\src\app\sub-section\html\multimedia\" />
     <Folder Include="ClientApp\src\app\sub-section\html\html-text\" />
     <Folder Include="ClientApp\src\app\sub-section\html\html-lists\" />
     <Folder Include="ClientApp\src\app\sub-section\html\html-img\" />
     <Folder Include="ClientApp\src\app\sub-section\html\table\" />
-    <Folder Include="ClientApp\src\app\sub-section\css\" />
   </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

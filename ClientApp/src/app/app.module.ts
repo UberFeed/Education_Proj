@@ -32,6 +32,7 @@ import { VideoComponent } from './sub-section/html/multimedia/video/video.compon
 import { AudioComponent } from './sub-section/html/multimedia/audio/audio.component';
 import { IframeComponent } from './sub-section/html/multimedia/iframe/iframe.component';
 import { CssBasicsComponent } from './sub-section/css/css-basics/css-basics.component';
+import { TypeSeletorComponent } from './sub-section/css/selectors/type-seletor/type-seletor.component';
 import { InteractiveExampleComponent } from './interactive-example/interactive-example.component';
 import { StaticExampleComponent } from './static-example/static-example.component';
 import { CodeExampleComponent } from './code-example/code-example.component';
@@ -69,6 +70,7 @@ import { LessonsData } from './LessonsData.service';
     AudioComponent,
     IframeComponent,
     CssBasicsComponent,
+    TypeSeletorComponent,
     InteractiveExampleComponent,
     StaticExampleComponent,
     CodeExampleComponent,

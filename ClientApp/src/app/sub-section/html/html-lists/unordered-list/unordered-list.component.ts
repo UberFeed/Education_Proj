@@ -25,7 +25,7 @@ export class UnorderedListComponent implements OnInit {
   interactiveExample: string = "<ul>\n  <li>Microsoft</li>\n  <li>Google</li>\n  <li>Apple</li>\n  <li>IBM</li>\n</ul>";
 
   @Output()
-  staticExample1: string = "<ul>\n  <li>Первый элемент</li>\n  <li>Второй элемет\n\t<ul>\n\t  <li>Первый элемент вложенного списка</li>\n\t  <li>Второй элемент вложенного списка</li>\n\t  <ul>\n\t\t<li>Первый элемент вложенного подсписка</li>\n\t\t<li>Второй элемент вложенного подсписка</li>\n\t  </ul>\n\t</ul>\n  </li>\n  <li>Третий элемент</li>\n</ul>";
+  staticExample1: string = "<ul>\n  <li>Первый элемент</li>\n  <li>Второй элемет\n\t<ul>\n\t  <li>Первый элемент вложенного списка</li>\n\t  <li>Второй элемент вложенного списка</li>\n\t  <ul>\n\t\t<li>Первый элемент вложенного подсписка</li>\n\t\t<li>Второй элемент вложенного подсписка</li>\n\t  </ul>\n\t</ul>\n  </li>\n  <li>Третий элемент</li>\n<li>Третий элемент</li>\n<li>Третий элемент</li>\n<li>Третий элемент</li>\n<li>Третий элемент</li>\n</ul>";
 
   @Output()
   staticExample2: string = "<ul>\n  <li>Первый элемент</li>\n  <li>Второй элемет\n\t<ol>\n\t  <li>Первый элемент вложенного списка</li>\n\t  <li>Второй элемент вложенного списка</li>\n\t</ol>\n  </li>\n  <li>Третий элемент</li>\n</ul>";
