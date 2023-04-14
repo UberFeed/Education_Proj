@@ -58,7 +58,7 @@ export class StaticExampleComponent implements OnInit, AfterViewInit, AfterViewC
 
   CSSstartStateTemplate = EditorState.create({
     extensions: [keymap.of(defaultKeymap), EditorView.theme({
-      ".cm-content": { color: "white" },
+      ".cm-content": { color: "rgb(215, 186, 125)" },
       ".cm-gutters": { background: "#282a36", border: "none" },
       ".cm-gutterElement": { padding: "0 10px 0 5px !important" },
       ".cm-identifier.cm-definition": { color: "black" }

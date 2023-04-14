@@ -34,6 +34,8 @@ import { AudioComponent } from './sub-section/html/multimedia/audio/audio.compon
 import { IframeComponent } from './sub-section/html/multimedia/iframe/iframe.component';
 import { CssBasicsComponent } from './sub-section/css/css-basics/css-basics.component';
 import { TypeSeletorComponent } from './sub-section/css/selectors/type-seletor/type-seletor.component';
+import { SelectorGroupComponent } from './sub-section/css/selectors/selector-group/selector-group.component';
+import { InheritanceComponent } from './sub-section/css/inheritance/inheritance.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -70,6 +72,8 @@ const routes: Routes = [
       { path: 'html-multimedia-iframe', component: IframeComponent },
       { path: 'css-basics', component: CssBasicsComponent },
       { path: 'type-selectors', component: TypeSeletorComponent },
+      { path: 'group-selector', component: SelectorGroupComponent },
+      { path: 'inheritance', component: InheritanceComponent },
     ]
   },
 ]

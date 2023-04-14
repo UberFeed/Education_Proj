@@ -35,9 +35,11 @@ kbd {
 }
 
 code {
+  color: white;
   background-color: $fourth-color;
   border-radius: 5px;
   padding: .2rem .4rem;
+  font-size: 1rem;
 }
 
 .code-mirror {
@@ -204,9 +206,12 @@ table{
   color: rgb(215, 186, 125);
 }
 
-code {
-  color: inherit;
-  font-size: 1rem;
+.css-attr-name {
+  color: rgb(215, 186, 125);
+}
+
+.css-string {
+  color: rgb(215, 141, 125);
 }
 
 table{

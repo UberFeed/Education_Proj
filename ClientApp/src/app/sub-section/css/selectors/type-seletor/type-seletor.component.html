@@ -61,11 +61,402 @@
     Селектор идентификатора в CSS обозначается символом <code class="css-selector">#</code>, за которым следует имя
     идентификатора. Например, для выбора элемента с идентификатором myDiv, мы можем использовать
     селектор <code class="css-selector">#myDiv</code>. Как только мы выбрали элемент с помощью
-    селектора идентификатора, мы можем применить к нему набор свойств CSS.
+    селектора идентификатора, мы можем применить к нему набор свойств CSS. \u002E
   </p>
   <p>
     Селектор идентификатора позволяет создавать уникальные стили для конкретного элемента на странице,
     что делает его особенным и выделяет на фоне других элементов.
   </p>
   <app-static-example [InputValue]="HTMLstaticExample4" [CSSInputValue]="CSSstaticExample4"></app-static-example>
+  <h3>Дочерний селектор</h3>
+  <p>
+    Дочерний элемент является прямым потомком содержащего его элемента и обозначается символом
+    <code class="css-selector">></code>. У одного элемента может быть несколько дочерних элементов, а
+    родительский элемент у каждого элемента может быть только один. Дочерний селектор позволяет
+    применить стили только если дочерний элемент идёт сразу за родительским элементом и между ними нет
+    других элементов, то есть дочерний элемент больше ни во что не вложен.
+  </p>
+  <app-static-example [InputValue]="HTMLstaticExample5" [CSSInputValue]="CSSstaticExample5"></app-static-example>
+  <p>
+    В данном примере мы выбрали нумерованный список <code class="tag">ol</code> родителем которого
+    является элемент маркированного списка <code class="tag">li</code> и применили стили для офомления
+    заднего фона для большей наглядности.
+  </p>
+  <h3>Селектор потомка</h3>
+  <p>
+    Селектор потомка в CSS позволяет выбрать элементы, которые являются потомками другого элемента.
+    Он состоит из двух селекторов, разделенных пробелом. Первый селектор указывает на родительский
+    элемент, а второй на потомка.
+  </p>
+  <app-static-example [InputValue]="HTMLstaticExample6" [CSSInputValue]="CSSstaticExample6"></app-static-example>
+  <h3>Селектор соседнего элемента</h3>
+  <p>
+    Селектор соседнего элемента позволяет выбрать элемент, который следует непосредственно за другим
+    элементом и оба элемента должны быть дочерними элементами одного родительского элемента.
+  </p>
+  <app-static-example [InputValue]="HTMLstaticExample7" [CSSInputValue]="CSSstaticExample7"></app-static-example>
+  <p>
+    В этом примере мы выбираем элемент <code class="tag">p</code>, который следует непосредственно за
+    заголовком <code class="tag">h2</code> и выделяем его. В результате окрашены только первые абзацы
+    после каждого заголовка.
+  </p>
+  <h3>Селектор обобщенных родственных элементов</h3>
+  <p>
+    Соответствует элементу, являющемуся сестринским по отношению к другому элементу, хотя не обязательно
+    расположенному перед ним.
+  </p>
+  <app-static-example [InputValue]="HTMLstaticExample8" [CSSInputValue]="CSSstaticExample8"></app-static-example>
+  <p>
+    В этом примере мы выбираем элемент <code class="tag">p</code>, который следует за
+    заголовком <code class="tag">h2</code> и выделяем его. В результате окрашены все абзацы
+    после каждого определенного заголовка.
+  </p>
+</div>
+
+<div data-custom="head3">
+  <h2 class="head" id="head3">
+    Селектор атрибута
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <p>
+    Селектор атрибута в CSS - это способ выбора элементов на основе наличия или значения атрибута в
+    HTML-разметке.
+  </p>
+  <dl>
+    <dt>
+      <code class="css-attr-name">[атрибут]</code>
+    </dt>
+    <dd>
+      Выбирает элементы, у которых есть указанный атрибут (значение атрибута не имеет значения).
+    </dd>
+    <dt>
+      <code class="css-attr-name">[атрибут =<code class="css-string">'значение'</code>]</code>
+    </dt>
+    <dd>
+      Выбирает элементы, у которых указанный атрибут имеет точное значение.
+    </dd>
+    <dt>
+      <code class="css-attr-name">[атрибут ~=<code class="css-string">'значение'</code>]</code>
+    </dt>
+    <dd>
+      Выбирает элементы, у которых указанный атрибут содержит заданное значение в качестве одного из
+      слов, разделенных пробелами.
+    </dd>
+    <dt>
+      <code class="css-attr-name">[атрибут |=<code class="css-string">'значение'</code>]</code>
+    </dt>
+    <dd>
+      Выбирает элементы, у которых список значений атрибута начинается с указанного слова.
+    </dd>
+    <dt>
+      <code class="css-attr-name">[атрибут ^=<code class="css-string">'значение'</code>]</code>
+    </dt>
+    <dd>
+      Выбирает элементы, у которых атрибут начинается с указанного значения.
+    </dd>
+    <dt>
+      <code class="css-attr-name">[атрибут $=<code class="css-string">'значение'</code>]</code>
+    </dt>
+    <dd>
+      Выбирает элементы, у которых указанный атрибут заканчивается на заданное значение.
+    </dd>
+    <dt>
+      <code class="css-attr-name">[атрибут *=<code class="css-string">'значение'</code>]</code>
+    </dt>
+    <dd>
+      Выбирает элементы, у которых указанный атрибут содержит заданное значение в любом месте.
+    </dd>
+  </dl>
+  <h3>Пример использования селектора атрибута</h3>
+  <app-static-example [InputValue]="HTMLstaticExample9" [CSSInputValue]="CSSstaticExample9"></app-static-example>
+</div>
+
+<div data-custom="head4">
+  <h2 class="head" id="head4">
+    Селектор псевдокласса
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <p>
+    Псевдоклассы — это классы, фактически не прикрепленные к HTML-элементам. Селектор псевдокласса в
+    CSS - это ключевое слово, которое добавляется к селектору и позволяет выбирать элементы не только
+    на основе их имени тега, класса или идентификатора, но и на основе состояния или свойства элемента.
+  </p>
+  <p>
+    Существует множество различных псевдоклассов, которые можно использовать в CSS, например:
+  </p>
+  <dl>
+    <dt>
+      <code>:<code class="css-selector">active</code></code>
+    </dt>
+    <dd>
+      Применяется к элементу во время активации пользователем (когда пользователь нажимает на элемент
+      левой кнопкой мыши).
+    </dd>
+    <dt>
+      <code>:<code class="css-selector">focus</code></code>
+    </dt>
+    <dd>
+      Применяется к элементу, который имеет фокус ввода.
+    </dd>
+    <dt>
+      <code>:<code class="css-selector">hover</code></code>
+    </dt>
+    <dd>
+      Применяется к элементу, на который наведен курсор мыши.
+    </dd>
+    <dt>
+      <code>:<code class="css-selector">visited</code></code>
+    </dt>
+    <dd>
+      Применяется к элементу после того, как он был посещен пользователем.
+    </dd>
+    <dt>
+      <code>:<code class="css-selector">link</code></code>
+    </dt>
+    <dd>
+      Применяется к не посещенным ссылкам.
+    </dd>
+    <dt>
+      <code>:<code class="css-selector">empty</code></code>
+    </dt>
+    <dd>
+      Применяется к элементу, который не имеет потомков.
+    </dd>
+    <dt>
+      <code>:<code class="css-selector">checked</code></code>
+    </dt>
+    <dd>
+      Применяется к отмеченному элементу формы.
+    </dd>
+    <dt>
+      <code>:<code class="css-selector">disabled</code></code>
+    </dt>
+    <dd>
+      Применяется к элементу формы, который отключен.
+    </dd>
+    <dt>
+      <code>:<code class="css-selector">enabled</code></code>
+    </dt>
+    <dd>
+      Применяется к элементу формы, который включен.
+    </dd>
+    <dt>
+      <code>:<code class="css-selector">target</code></code>
+    </dt>
+    <dd>
+      Применяется к элементу, который соответствует текущему URL-адресу.
+    </dd>
+    <dt>
+      <code>:<code class="css-selector">not(selector)</code></code>
+    </dt>
+    <dd>
+      Применяется к элементам, которые не соответствуют заданному селектору.
+    </dd>
+    <dt>
+      <code>:<code class="css-selector">in-range</code></code>
+    </dt>
+    <dd>
+      Поля формы, значения которых находятся в заданном диапазоне.
+    </dd>
+    <dt>
+      <code>:<code class="css-selector">out-of-range</code></code>
+    </dt>
+    <dd>
+      Поля формы, значения которых не входят в установленный диапазон.
+    </dd>
+    <dt>
+      <code>:<code class="css-selector">lang()</code></code>
+    </dt>
+    <dd>
+      Элементы с текстом на указанном языке.
+    </dd>
+  </dl>
+  <h3>Пример использования селектора псевдокласса</h3>
+  <app-static-example [InputValue]="HTMLstaticExample10" [CSSInputValue]="CSSstaticExample10"></app-static-example>
+</div>
+
+<div data-custom="head5">
+  <h2 class="head" id="head5">
+    Селектор структурных псевдоклассов
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <p>
+    Селектор структурных псевдоклассов - это тип псевдокласса в CSS, который позволяет выбирать
+    элементы на основе их позиции в структуре документа относительно других элементов.
+  </p>
+  <dl>
+    <dt>
+      <code>:<code class="css-selector">nth-child(odd)</code></code>
+    </dt>
+    <dd>
+      Нечётные дочерние элементы.
+    </dd>
+    <dt>
+      <code>:<code class="css-selector">nth-child(even)</code></code>
+    </dt>
+    <dd>
+      Чётные дочерние элементы.
+    </dd>
+    <dt>
+      <code>:<code class="css-selector">nth-child(3n)</code></code>
+    </dt>
+    <dd>
+      Каждый третий элемент среди дочерних.
+    </dd>
+    <dt>
+      <code>:<code class="css-selector">nth-child(3n+2)</code></code>
+    </dt>
+    <dd>
+      Выбирает каждый третий элемент, начиная со второго дочернего элемента <code class="css-selector">(+2)</code>.
+    </dd>
+    <dt>
+      <code>:<code class="css-selector">nth-child(n+2)</code></code>
+    </dt>
+    <dd>
+      Выбирает все элементы, начиная со второго.
+    </dd>
+    <dt>
+      <code>:<code class="css-selector">nth-child(3)</code></code>
+    </dt>
+    <dd>
+      Выбирает третий дочерний элемент.
+    </dd>
+    <dt>
+      <code>:<code class="css-selector">nth-last-child()</code></code>
+    </dt>
+    <dd>
+      В списке дочерних элементов выбирает элемент с указанным местоположением, аналогично с
+      <code>:<code class="css-selector">nth-child()</code></code>, но начиная с последнего, в обратную
+      сторону.
+    </dd>
+    <dt>
+      <code>:<code class="css-selector">first-child</code></code>
+    </dt>
+    <dd>
+      Позволяет оформить только самый первый дочерний элемент.
+    </dd>
+    <dt>
+      <code>:<code class="css-selector">last-child</code></code>
+    </dt>
+    <dd>
+      Позволяет форматировать последний дочерний элемент.
+    </dd>
+    <dt>
+      <code>:<code class="css-selector">only-child</code></code>
+    </dt>
+    <dd>
+      Выбирает элемент, являющийся единственным дочерним элементом.
+    </dd>
+    <dt>
+      <code>:<code class="css-selector">empty</code></code>
+    </dt>
+    <dd>
+      Выбирает элементы, у которых нет дочерних элементов.
+    </dd>
+    <dt>
+      <code>:<code class="css-selector">root</code></code>
+    </dt>
+    <dd>
+      Выбирает элемент, являющийся корневым в документе — элемент <code class="tag">&lt;html&gt;</code>.
+    </dd>
+  </dl>
+  <h3>Пример использования селектор структурных псевдоклассов</h3>
+  <app-static-example [InputValue]="HTMLstaticExample11" [CSSInputValue]="CSSstaticExample11"></app-static-example>
+</div>
+
+
+<div data-custom="head6">
+  <h2 class="head" id="head6">
+    Селектор структурных псевдоклассов типа
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <p>
+    Указывают на конкретный тип дочернего элемента.
+  </p>
+  <dl>
+    <dt>
+      <code>:<code class="css-selector">nth-of-type()</code></code>
+    </dt>
+    <dd>
+      Выбирает элементы по аналогии с <code>:<code class="css-selector">nth-child()</code></code>, при
+      этом берёт во внимание только тип элемента.
+    </dd>
+    <dt>
+      <code>:<code class="css-selector">first-of-type</code></code>
+    </dt>
+    <dd>
+      Выбирает первый дочерний элемент данного типа.
+    </dd>
+    <dt>
+      <code>:<code class="css-selector">last-of-type</code></code>
+    </dt>
+    <dd>
+      Выбирает последний элемент данного типа.
+    </dd>
+    <dt>
+      <code>:<code class="css-selector">nth-last-of-type()</code></code>
+    </dt>
+    <dd>
+      Выбирает элемент заданного типа в списке элементов в соответствии с указанным местоположением,
+      начиная с конца.
+    </dd>
+    <dt>
+      <code>:<code class="css-selector">only-of-type</code></code>
+    </dt>
+    <dd>
+      Выбирает единственный элемент указанного типа среди дочерних элементов родительского элемента.
+    </dd>
+  </dl>
+  <h3>Пример использования селектора структурного псевдокласса типа</h3>
+  <app-static-example [InputValue]="HTMLstaticExample12" [CSSInputValue]="CSSstaticExample12"></app-static-example>
+</div>
+
+
+<div data-custom="head7">
+  <h2 class="head" id="head7">
+    Селектор псевдоэлемента
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <p>
+    Псевдоэлементы используются для добавления содержимого, которое генерируется с помощью свойства
+    <code class="css-prop">content</code>
+  </p>
+  <dl>
+    <dt>
+      <code>:<code class="css-selector">first-letter</code></code>
+    </dt>
+    <dd>
+      Применяет стили к первой букве указанного элемента.
+    </dd>
+    <dt>
+      <code>:<code class="css-selector">first-line</code></code>
+    </dt>
+    <dd>
+      Применяет стили к первой строке указанного элемента.
+    </dd>
+    <dt>
+      <code>:<code class="css-selector">before</code></code>
+    </dt>
+    <dd>
+      Вставляет контент до указанного элемента.
+    </dd>
+    <dt>
+      <code>:<code class="css-selector">after</code></code>
+    </dt>
+    <dd>
+      Вставляет контент после указанного элемента.
+    </dd>
+  </dl>
+  <h3>Пример использования селектора псевдоэлемента</h3>
+  <app-static-example [InputValue]="HTMLstaticExample13" [CSSInputValue]="CSSstaticExample13"></app-static-example>
 </div>

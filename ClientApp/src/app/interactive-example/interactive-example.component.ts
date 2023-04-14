@@ -71,7 +71,7 @@ export class InteractiveExampleComponent implements OnInit, AfterViewInit, After
 
   startStateCSSTemplate = EditorState.create({
     extensions: [keymap.of(defaultKeymap), EditorView.theme({
-      ".cm-content": { color: "white", caretColor: "#0e9", width: "450px" },
+      ".cm-content": { color: "rgb(215, 186, 125)", caretColor: "#0e9", width: "450px" },
       ".cm-gutters": { background: "#282a36", borderRight: "1px solid #454952", width: "30px", right: "0" },
       ".cm-gutter": { width: "25px" },
       ".cm-gutterElement": { padding: "0 !important" },
