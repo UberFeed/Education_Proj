@@ -35,7 +35,7 @@ import { IframeComponent } from './sub-section/html/multimedia/iframe/iframe.com
 import { CssBasicsComponent } from './sub-section/css/css-basics/css-basics.component';
 import { TypeSeletorComponent } from './sub-section/css/selectors/type-seletor/type-seletor.component';
 import { SelectorGroupComponent } from './sub-section/css/selectors/selector-group/selector-group.component';
-import { InheritanceComponent } from './sub-section/css/inheritance/inheritance.component';
+import { InheritanceComponent } from './sub-section/css/selectors/inheritance/inheritance.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
