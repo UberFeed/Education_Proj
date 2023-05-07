@@ -119,6 +119,13 @@ div[data-custom] {
     cursor: default;
     text-decoration: underline;
   }
+
+  h4 {
+    color: darken($fifth-color, 5%);
+    text-decoration: underline;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
 }
 
 .label-img{
@@ -215,6 +222,19 @@ table{
 
 .css-string {
   color: rgb(215, 141, 125);
+}
+
+.fontProp {
+  width: 100%;
+
+  tr {
+    th:first-child, td:first-child {
+      width: 30%;
+    }
+    td, th {
+      width: 70%;
+    }
+  }
 }
 
 table{

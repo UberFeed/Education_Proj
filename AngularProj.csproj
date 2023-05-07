@@ -69,6 +69,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ClientApp\src\app\sub-section\css\css-text\" />
     <Folder Include="ClientApp\src\app\sub-section\html\multimedia\" />
     <Folder Include="ClientApp\src\app\sub-section\html\html-text\" />
     <Folder Include="ClientApp\src\app\sub-section\html\html-lists\" />

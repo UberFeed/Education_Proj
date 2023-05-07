@@ -35,6 +35,9 @@ import { CssBasicsComponent } from './sub-section/css/css-basics/css-basics.comp
 import { TypeSeletorComponent } from './sub-section/css/selectors/type-seletor/type-seletor.component';
 import { SelectorGroupComponent } from './sub-section/css/selectors/selector-group/selector-group.component';
 import { InheritanceComponent } from './sub-section/css/selectors/inheritance/inheritance.component';
+import { FontPropComponent } from './sub-section/css/css-text/font-prop/font-prop.component';
+import { TextDecorComponent } from './sub-section/css/css-text/text-decor/text-decor.component';
+import { TextAlignComponent } from './sub-section/css/css-text/text-align/text-align.component';
 import { InteractiveExampleComponent } from './interactive-example/interactive-example.component';
 import { StaticExampleComponent } from './static-example/static-example.component';
 import { CodeExampleComponent } from './code-example/code-example.component';
@@ -75,6 +78,9 @@ import { LessonsData } from './LessonsData.service';
     TypeSeletorComponent,
     SelectorGroupComponent,
     InheritanceComponent,
+    FontPropComponent,
+    TextDecorComponent,
+    TextAlignComponent,
     InteractiveExampleComponent,
     StaticExampleComponent,
     CodeExampleComponent,

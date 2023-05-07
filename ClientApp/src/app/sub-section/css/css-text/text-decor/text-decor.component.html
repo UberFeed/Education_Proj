@@ -1,0 +1,219 @@
+<div>
+  <p>
+    Оформление текста является одной из ключевых задач в веб-дизайне. Он помогает сделать текст более
+    читаемым и привлекательным для пользователей, а также улучшает общее визуальное восприятие сайта.
+  </p>
+</div>
+
+<div data-custom="head1" style="padding-top: 0;">
+  <h2 class="head" id="head1">
+    Интерактивный пример
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <app-interactive-example [NameComponent]="NameComponent" [HTMLinputValue]="HTMLinteractiveExample" [CSSinputValue]="CSSinteractiveExample"></app-interactive-example>
+</div>
+
+<div data-custom="head2">
+  <h2 class="head" id="head2">
+    Создание декораций
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <h3>Линии верхнего и нижнего подчеркивания, перечеркивание</h3>
+  <p>
+    Свойство <code class="css-prop">text-decoration</code> в CSS определяет оформление текста, включая
+    его подчеркивание, линию через текст, цвет и стиль.
+  </p>
+  <table class="fontProp">
+    <thead>
+      <tr>
+        <th>Значение</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code class="css-value">none</code>
+        </td>
+        <td>
+          Текст без оформления.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">underline</code>
+        </td>
+        <td>
+          Добавляет линию под текстом.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">overline</code>
+        </td>
+        <td>
+          Добавляет линию над текстом.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">line-through</code>
+        </td>
+        <td>
+          Добавляет линию через текст.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">blink</code>
+        </td>
+        <td>
+          Делает текст мерцающим (это значение устарело и рекомендуется не использовать его).
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">inherit</code>
+        </td>
+        <td>
+          Наследует значение свойства от родительского элемента.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    Кроме того свойство <code class="css-prop">text-decoration</code> является сокращением для следующих свойств:
+  </p>
+  <ul>
+    <li>
+      <code class="css-prop">text-decoration-color</code> - цвет линии.
+    </li>
+    <li>
+      <code class="css-prop">text-decoration-line</code> - тип линии.
+    </li>
+    <li>
+      <code class="css-prop">text-decoration-style</code> - стиль линии.
+    </li>
+    <li>
+      <code class="css-prop">text-decoration-thickness</code> - задает толщину обводки линии декорации,
+      которая используется для текста.
+    </li>
+  </ul>
+  <p>
+    Свойство CSS <code class="css-prop">text-decoration-skip-ink</code> определяет, как рисуются
+    верхние и нижние линии декорации, когда они пересекают засечки и хвосты символов.
+  </p>
+  <p>
+    Существует также свойсто <code class="css-prop">text-underline-offset</code> не является частью
+    сокращенной записи <code class="css-prop">text-decoration</code>. В то время как у элемента может
+    быть несколько линий <code class="css-prop">text-decoration</code>,
+    <code class="css-prop">text-underline-offset</code> влияет только на подчеркивание и не влияет на
+    другие возможные опции декорации линий, такие как верхнее подчеркивание (overline) или зачеркивание
+    (line-through).
+  </p>
+  <h3>Пример использования линий для оформления текста</h3>
+  <app-static-example [InputValue]="HTMLstaticExample1" [CSSInputValue]="CSSstaticExample1"></app-static-example>
+</div>
+
+<div data-custom="head3">
+  <h2 class="head" id="head3">
+    Преобразование текста
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <p>
+    Свойство <code class="css-prop">text-transform</code> стилизует текст. Оно не влияет на базовое
+    содержимое и не должно влиять на содержимое операции копирования и вставки простого текста.
+  </p>
+  <table class="fontProp">
+    <thead>
+      <tr>
+        <th>Значение</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code class="css-value">none</code>
+        </td>
+        <td>
+          Значение по умолчанию, означает отсутствие эффектов.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">capitalize</code>
+        </td>
+        <td>
+          Изменяет написание первой буквы каждого слова в элементе, делая её прописной.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">overline</code>
+        </td>
+        <td>
+          Добавляет линию над текстом.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">uppercase</code>
+        </td>
+        <td>
+          Выводит все слова в элементе прописными буквами.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">lowercase</code>
+        </td>
+        <td>
+          Выводит все слова в элементе строчными буквами.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">initial</code>
+        </td>
+        <td>
+          Устанавливает значение свойства в значение по умолчанию.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">inherit</code>
+        </td>
+        <td>
+          Наследует значение свойства от родительского элемента.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Пример преобразования текста</h3>
+  <app-static-example [InputValue]="HTMLstaticExample2" [CSSInputValue]="CSSstaticExample2"></app-static-example>
+</div>
+
+<div data-custom="head4">
+  <h2 class="head" id="head4">
+    Создание тени
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <p>
+    Свойство CSS <code class="css-prop">text-shadow</code> добавляет тень к тексту. Оно принимает
+    список теней, разделенных запятыми, которые будут применяться к тексту и любым его декорациям.
+    Каждая тень описывается комбинацией смещений X и Y от элемента, радиусом размытия и цветом.
+  </p>
+  <h3>Пример использования теней</h3>
+  <app-static-example [InputValue]="HTMLstaticExample3" [CSSInputValue]="CSSstaticExample3"></app-static-example>
+</div>
+
+

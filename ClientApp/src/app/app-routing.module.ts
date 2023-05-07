@@ -36,6 +36,9 @@ import { CssBasicsComponent } from './sub-section/css/css-basics/css-basics.comp
 import { TypeSeletorComponent } from './sub-section/css/selectors/type-seletor/type-seletor.component';
 import { SelectorGroupComponent } from './sub-section/css/selectors/selector-group/selector-group.component';
 import { InheritanceComponent } from './sub-section/css/selectors/inheritance/inheritance.component';
+import { FontPropComponent } from './sub-section/css/css-text/font-prop/font-prop.component';
+import { TextDecorComponent } from './sub-section/css/css-text/text-decor/text-decor.component';
+import { TextAlignComponent } from './sub-section/css/css-text/text-align/text-align.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -74,6 +77,9 @@ const routes: Routes = [
       { path: 'type-selectors', component: TypeSeletorComponent },
       { path: 'group-selector', component: SelectorGroupComponent },
       { path: 'inheritance', component: InheritanceComponent },
+      { path: 'font-prop', component: FontPropComponent },
+      { path: 'text-decor', component: TextDecorComponent },
+      { path: 'text-align', component: TextAlignComponent },
     ]
   },
 ]

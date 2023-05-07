@@ -1,0 +1,609 @@
+<div>
+  <p>
+    Шрифт в CSS — это ресурс, содержащий визуальное представление символов. На самом простом уровне он
+    содержит информацию, которая сопоставляет коды символов с фигурами (называемые глифами),
+    представляющие эти символы.
+  </p>
+  <p>
+    Шрифты, использующие общий стиль дизайна, обычно группируются в семейства шрифтов, классифицируемые
+    набором стандартных свойств шрифта. Внутри семейства форма, отображаемая для данного символа, может
+    варьироваться в зависимости от толщины обводки, наклона или относительной ширины.
+  </p>
+</div>
+
+<div data-custom="head1" style="padding-top: 0;">
+  <h2 class="head" id="head1">
+    Интерактивный пример
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <app-interactive-example [NameComponent]="NameComponent" [HTMLinputValue]="HTMLinteractiveExample" [CSSinputValue]="CSSinteractiveExample"></app-interactive-example>
+</div>
+
+<div data-custom="head2">
+  <h2 class="head" id="head2">
+    Семейство шрифтов
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <p>
+    Свойство <code class="css-prop">font-family</code> используется для выбора начертания шрифта.
+    Поскольку невозможно предсказать, установлен тот или иной шрифт на компьютере посетителя вашего
+    сайта, рекомендуется прописывать все возможные варианты однотипных шрифтов. В таком случае браузер
+    будет проверять их наличие, последовательно перебирая предложенные варианты.
+  </p>
+  <p>
+    Если в названии шрифта имеются пробелы или символы (#, $, %), то оно заключается в кавычки. Это
+    делается для того, чтобы браузер мог понять, где начинается и заканчивается название шрифта.
+  </p>
+  <table class="fontProp">
+    <thead>
+      <tr>
+        <th>Значение</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code class="css-value">family-name</code>
+        </td>
+        <td>
+          Название (имя) семейства шрифтов, например, <code class="css-value">Times</code>,
+          <code class="css-value">Courier</code>, <code class="css-value">Arial</code>. Рекомендуется
+          указывать вместе с базовым семейством.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">generic-family</code>
+        </td>
+        <td>
+          Базовое семейство. CSS определяет пять базовых семейств шрифтов:<br />
+          Шрифты с засечками — <code class="css-value">Serif</code> (<code class="css-value">Times New Roman</code>, <code class="css-value">Times</code>, <code class="css-value">Garamond</code>, <code class="css-value">Georgia</code>)<br />
+          Рубленые шрифты — <code class="css-value">Sans-serif</code> (<code class="css-value">Helvetica</code>, <code class="css-value">Geneva</code>, <code class="css-value">Arial</code>, <code class="css-value">Verdana</code>, <code class="css-value">Trebuchet</code>, <code class="css-value">Univers</code>)<br />
+          Моноширинные шрифты — <code class="css-value">Monospace</code> (<code class="css-value">Courier</code>, <code class="css-value">Courier New</code>, <code class="css-value">Andele Mono</code>)<br />
+          Рукописные шрифты — <code class="css-value">Cursive</code> (<code class="css-value">Comic Sans</code>, <code class="css-value">Gabriola</code>, <code class="css-value">Monotype Corsiva</code>, <code class="css-value">Author</code>, <code class="css-value">Zapf Chancery</code>)<br />
+          Аллегорические шрифты - (<code class="css-value">Western</code>, <code class="css-value">Woodblock</code>, <code class="css-value">Klingon</code>)
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">initial</code>
+        </td>
+        <td>
+          Устанавливает значение свойства в значение по умолчанию.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">inherit</code>
+        </td>
+        <td>
+          Наследует значение свойства от родительского элемента.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Пример использования семейств шрифтов</h3>
+  <app-static-example [InputValue]="HTMLstaticExample1" [CSSInputValue]="CSSstaticExample1"></app-static-example>
+</div>
+
+<div data-custom="head3">
+  <h2 class="head" id="head3">
+    Насыщенность шрифта
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <p>
+    В CSS насыщенность шрифта может быть установлена с помощью свойства <code class="css-selector">font-weight</code>.
+    Значение свойства может быть числом от 100 до 900, где 400 - это нормальное насыщение, 700 - жирное
+    насыщение. Большинство шрифтов поддерживают только некоторые значения насыщенности, и не все значения
+    между 100 и 900 будут отображаться.
+  </p>
+  <table class="fontProp">
+    <thead>
+      <tr>
+        <th>Значение</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code class="css-value">normal</code>
+        </td>
+        <td>
+          Значение по умолчанию, устанавливает нормальную насыщенность шрифта. Эквивалентно значению
+          насыщенности, равной 400.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">bold</code>
+        </td>
+        <td>
+          Делает шрифт текста полужирным. Эквивалентно значению насыщенности, равной 700.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">bolder</code>
+        </td>
+        <td>
+          Насыщенность шрифта будет больше, чем у предка.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">lighter</code>
+        </td>
+        <td>
+          Насыщенность шрифта будет меньше, чем у предка.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">100, 200, 300, 400, 500, 600, 700, 800, 900</code>
+        </td>
+        <td>
+          Значение 100 соответствует самому легкому варианту начертания шрифта, а 900 — самому плотному.
+          При этом, эти числа не определяют конкретной плотности, т.е. 100, 200, 300 и 400 могут
+          соответствовать одному и тому же варианту слабой насыщенности начертания шрифта; 500 и 600 —
+          средней насыщенности, а 700, 800 и 900 могут выводить одинаковое очень насыщенное начертание. Распределение плотности так же зависит от количества уровней насыщенности, определенных в конкретном семействе шрифтов.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">initial</code>
+        </td>
+        <td>
+          Устанавливает значение свойства в значение по умолчанию.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">inherit</code>
+        </td>
+        <td>
+          Наследует значение свойства от родительского элемента.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Пример использования насыщенности шрифтов</h3>
+  <app-static-example [InputValue]="HTMLstaticExample2" [CSSInputValue]="CSSstaticExample2"></app-static-example>
+</div>
+
+<div data-custom="head4">
+  <h2 class="head" id="head4">
+    Ширина шрифта
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <p>
+    Свойство <code class="css-prop">font-stretch</code> позволяет выбрать нормальное, сжатое или
+    расширенное начертание символа из семейства шрифтов. Свойство не работает на любом шрифте, а
+    только на шрифтах, для которых разработаны различными начертания, соответствующими определенным
+    размерам.
+  </p>
+  <table class="fontProp">
+    <thead>
+      <tr>
+        <th>Значение</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code class="css-value">ultra-condensed</code>
+        </td>
+        <td>
+          Указывает на наиболее сжатый шрифт.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">extra-condensed</code>
+        </td>
+        <td>
+          Указывает на второй по сжатости шрифт.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">condensed</code>
+        </td>
+        <td>
+          Указывает на сжатый шрифт.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">semi-condensed</code>
+        </td>
+        <td>
+          Указывает на немного сжатый шрифт.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">normal</code>
+        </td>
+        <td>
+          Значение по умолчанию.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">semi-expanded</code>
+        </td>
+        <td>
+          Слегка расширенный шрифт.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">expanded</code>
+        </td>
+        <td>
+          Расширенный шрифт.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">extra-expanded</code>
+        </td>
+        <td>
+          Второй по расширенности шрифт.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">ultra-expanded</code>
+        </td>
+        <td>
+          Максимально расширенный шрифт.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">initial</code>
+        </td>
+        <td>
+          Устанавливает значение свойства в значение по умолчанию.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">inherit</code>
+        </td>
+        <td>
+          Наследует значение свойства от родительского элемента.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Пример использования насыщенности шрифтов</h3>
+  <app-static-example [InputValue]="HTMLstaticExample3" [CSSInputValue]="CSSstaticExample3"></app-static-example>
+</div>
+
+<div data-custom="head5">
+  <h2 class="head" id="head5">
+    Начертание шрифта
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <p>
+    Свойство <code class="css-prop">font-style</code> позволяет выбрать стиль начертания для шрифта.
+    При этом разница между курсивом и наклонным начертанием заключается в том, что курсив вносит
+    небольшие изменения в структуру каждого символа, в то время как наклонное начертание представляет
+    собой наклонную версию прямого шрифта.
+  </p>
+  <table class="fontProp">
+    <thead>
+      <tr>
+        <th>Значение</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code class="css-value">normal</code>
+        </td>
+        <td>
+          Значение по умолчанию, устанавливает для текста обычное начертание шрифта.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">italic</code>
+        </td>
+        <td>
+          Выделяет текст курсивом.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">oblique</code>
+        </td>
+        <td>
+          Устанавливает наклонное начертание шрифта.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">initial</code>
+        </td>
+        <td>
+          Устанавливает значение свойства в значение по умолчанию.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">inherit</code>
+        </td>
+        <td>
+          Наследует значение свойства от родительского элемента.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Пример изменения начертания шрифтов</h3>
+  <app-static-example [InputValue]="HTMLstaticExample4" [CSSInputValue]="CSSstaticExample4"></app-static-example>
+  <p>
+    Значение <code class="css-value">italic</code> устанавливает стандартный наклон, который
+    разработчик шрифта определил для данного шрифта. Этот наклон является частью самого шрифта и может
+    быть использован с любым размером шрифта.
+  </p>
+  <p>
+    Значение <code class="css-value">oblique</code> также создает наклонный текст, но использует
+    наклон, который генерируется браузером, а не частью самого шрифта. Поэтому текст с
+    <code><code class="css-prop">font-style</code>: <code class="css-value">oblique</code></code>
+    может выглядеть менее естественно и более искаженно, особенно при больших размерах шрифта.
+  </p>
+  <p>
+    В целом, использование <code class="css-value">italic</code> предпочтительнее, так как это даёт
+    более естественный и читабельный текст, хотя некоторые разработчики шрифтов могут предпочитать
+    использовать <code class="css-value">oblique</code> для определенных стилей шрифта или эффектов.
+  </p>
+</div>
+
+<div data-custom="head6">
+  <h2 class="head" id="head6">
+    Размер шрифта
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <p>
+    Размер шрифта в CSS задается с помощью свойства <code class="css-prop">font-size</code>. Оно
+    определяет размер шрифта в пикселях (px), процентах (%), пунктах (pt), дюймах (in), сантиметрах
+    (cm), миллиметрах (mm) и т.д.
+  </p>
+  <table class="fontProp">
+    <thead>
+      <tr>
+        <th>Значение</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code class="css-value">absolute-size</code>
+        </td>
+        <td>
+          <code class="css-value">xx-small</code>, <code class="css-value">x-small</code>,
+          <code class="css-value">small</code>, <code class="css-value">medium</code>,
+          <code class="css-value">large</code>, <code class="css-value">x-large</code>,
+          <code class="css-value">xx-large</code>. В качестве стандартного размера принимается
+          <code class="css-value">medium</code>. <br /> В CSS1 предложенный коэффициент масштабирования между соседними индексами
+          составлял 1.5, что для пользователя оказалось слишком большим.<br /> В CSS2 предложенный
+          коэффициент масштабирования для экрана компьютера между смежными индексами составлял 1.2,
+          что все еще создавало проблемы для небольших размеров. Новый коэффициент масштабирования
+          варьируется между каждым индексом, чтобы обеспечить лучшую читаемость.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">relative-size</code>
+        </td>
+        <td>
+          <code class="css-value">smaller</code>, <code class="css-value">larger</code>. Относительные
+          размеры обусловливают изменение размера шрифта элемента относительно родителя. При этом
+          размер шрифта может выйти за рамки размеров, предполагаемых для
+          <code class="css-value">xx-small</code> и <code class="css-value">xx-large</code>.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">lenght</code>
+        </td>
+        <td>
+          Размер шрифта устанавливается с помощью положительных значений единиц длины, например,
+          <code class="css-value">px</code>, <code class="css-value">em</code>, как целых, сантиметрах, миллиметрах, так и дробных.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">%</code>
+        </td>
+        <td>
+          Относительное значение, вычисляется на основании любого размера, унаследованного от
+          родительского элемента. Обеспечивает более точную настройку вычисляемого размера шрифта.
+          Задание размеров шрифта с помощью em эквивалентно процентному значению.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">initial</code>
+        </td>
+        <td>
+          Устанавливает значение свойства в значение по умолчанию.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">inherit</code>
+        </td>
+        <td>
+          Наследует значение свойства от родительского элемента.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Вот конкретные значения для каждого ключевого слова</p>
+  <ul>
+    <li>
+      <code class="css-value">xx-small</code> очень маленький размер шрифта, примерно 9 пикселей.
+    </li>
+    <li>
+      <code class="css-value">x-small</code> маленький размер шрифта, примерно 12 пикселей.
+    </li>
+    <li>
+      <code class="css-value">small</code> небольшой размер шрифта, примерно 14 пикселей.
+    </li>
+    <li>
+      <code class="css-value">medium</code> средний размер шрифта, примерно 16 пикселей.
+    </li>
+    <li>
+      <code class="css-value">large</code> большой размер шрифта, примерно 18 пикселей.
+    </li>
+    <li>
+      <code class="css-value">x-large</code> очень большой размер шрифта, примерно 24 пикселя.
+    </li>
+    <li>
+      <code class="css-value">xx-large</code> огромный размер шрифта, примерно 32 пикселя.
+    </li>
+  </ul>
+  <p>
+    Эти значения не являются абсолютными и могут незначительно отличаться в разных браузерах и на
+    разных устройствах. Их использование может быть полезным для быстрого установления размера шрифта,
+    но рекомендуется использовать более точные значения (например, пиксели или проценты) для более
+    точного контроля над размером шрифта.
+  </p>
+  <h3>Пример изменения размера шрифтов</h3>
+  <app-static-example [InputValue]="HTMLstaticExample5" [CSSInputValue]="CSSstaticExample5"></app-static-example>
+</div>
+
+<div data-custom="head7">
+  <h2 class="head" id="head7">
+    Относительный размер шрифта
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <p>
+    Для любого заданного размера шрифта явный размер и четкость текста варьируется в зависимости от
+    шрифта. Для таких шрифтов, как латиница или кириллица, которые различают прописные и строчные буквы,
+    относительная высота строчных букв по сравнению с их прописными аналогами является определяющим
+    фактором удобочитаемости. 
+  </p>
+  <p>
+    В ситуациях, когда для шрифта указано несколько семейств шрифтов, резервные шрифты могут не
+    использовать то же значение аспекта, что и желаемое семейство шрифтов, и, следовательно, будут
+    казаться менее четкими.
+  </p>
+  <h3>Пример относительных шрифтов</h3>
+  <app-static-example [InputValue]="HTMLstaticExample6" [CSSInputValue]="CSSstaticExample6"></app-static-example>
+</div>
+
+<div data-custom="head8">
+  <h2 class="head" id="head8">
+    Сокращенная запись свойств шрифта
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <p>
+    В CSS существует возможность записи нескольких свойств шрифта в одной строке, используя сокращенную
+    форму записи. Это удобно, когда нужно задать несколько свойств шрифта одновременно.
+  </p>
+  <p>
+    Свойство <code class="css-prop">font</code> за исключением описанного ниже, является сокращенным
+    свойством для установки <code class="css-prop">font-style</code>, <code class="css-prop">font-variant</code>,
+    <code class="css-prop">font-weight</code>, <code class="css-prop">font-stretch</code>,
+    <code class="css-prop">font-size/line-height</code>, <code class="css-prop">font-family</code>.
+    Также могут быть включены значения для свойства <code class="css-prop">font-variant</code>, которые
+    поддерживаются CSS 2.1 — <code class="css-value">normal</code> или <code class="css-value">small-caps</code>.
+  </p>
+  <p>
+    Все подсвойства свойства <code class="css-prop">font</code> сначала сбрасываются на свои начальные
+    значения, включая перечисленные выше, плюс <code class="css-prop">font-size-adjust</code>,
+    <code class="css-prop">font-kerning</code>, все подсвойства <code class="css-prop">font-variant</code>
+    и настройки шрифтов, за исключением <code class="css-prop">font-synthesis</code>. Затем этим
+    свойствам присваиваются те значения, которые указаны в свойстве <code class="css-prop">font</code>.
+    Для свойства <code class="css-prop">font-size-adjust</code> невозможно установить значение,
+    отличное от его начального значения, поэтому следует использовать вместо этого индивидуальное
+    свойство. Если явное значение какого-либо свойства не нужно, то оно опускается.
+  </p>
+  <h3>Пример сокращенной записи свойств шрифтов</h3>
+  <app-static-example [InputValue]="HTMLstaticExample7" [CSSInputValue]="CSSstaticExample7"></app-static-example>
+</div>
+
+<div data-custom="head8">
+  <h2 class="head" id="head8">
+    Сокращенная запись свойств шрифта
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <p>
+    В CSS существует возможность записи нескольких свойств шрифта в одной строке, используя сокращенную
+    форму записи. Это удобно, когда нужно задать несколько свойств шрифта одновременно.
+  </p>
+  <p>
+    Свойство <code class="css-prop">font</code> за исключением описанного ниже, является сокращенным
+    свойством для установки <code class="css-prop">font-style</code>, <code class="css-prop">font-variant</code>,
+    <code class="css-prop">font-weight</code>, <code class="css-prop">font-stretch</code>,
+    <code class="css-prop">font-size/line-height</code>, <code class="css-prop">font-family</code>.
+    Также могут быть включены значения для свойства <code class="css-prop">font-variant</code>, которые
+    поддерживаются CSS 2.1 — <code class="css-value">normal</code> или <code class="css-value">small-caps</code>.
+  </p>
+  <p>
+    Все подсвойства свойства <code class="css-prop">font</code> сначала сбрасываются на свои начальные
+    значения, включая перечисленные выше, плюс <code class="css-prop">font-size-adjust</code>,
+    <code class="css-prop">font-kerning</code>, все подсвойства <code class="css-prop">font-variant</code>
+    и настройки шрифтов, за исключением <code class="css-prop">font-synthesis</code>. Затем этим
+    свойствам присваиваются те значения, которые указаны в свойстве <code class="css-prop">font</code>.
+    Для свойства <code class="css-prop">font-size-adjust</code> невозможно установить значение,
+    отличное от его начального значения, поэтому следует использовать вместо этого индивидуальное
+    свойство. Если явное значение какого-либо свойства не нужно, то оно опускается.
+  </p>
+  <h3>Пример сокращенной записи свойств шрифтов</h3>
+  <app-static-example [InputValue]="HTMLstaticExample7" [CSSInputValue]="CSSstaticExample7"></app-static-example>
+</div>
+
+<div data-custom="head9">
+  <h2 class="head" id="head9">
+    Управление синтезом шрифтов
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <p>
+    Свойство <code class="css-prop">font-synthesis</code> определяет, должен ли браузер автоматически
+    синтезировать стили шрифта, которые отсутствуют в загруженном файле шрифта.
+  </p>
+  <p>
+    Синтезирование шрифтов может происходить в тех случаях, когда загруженный шрифт не содержит
+    некоторые стили, такие как <code class="css-prop">bold</code> или <code class="css-prop">italic</code>.
+    Если <code class="css-prop">font-synthesis</code> установлен в значение <code class="css-value">weight</code> или
+    <code class="css-value">style</code>, то браузер может автоматически добавлять эти стили к
+    загруженному шрифту для лучшего отображения текста.
+  </p>
+  <p>
+    Например, следующее правило CSS указывает, что браузер должен автоматически синтезировать
+    недостающие стили жирного и курсивного шрифта.
+  </p>
+  <h3>Пример синтезирования начертания шрифтов</h3>
+  <app-static-example [InputValue]="HTMLstaticExample8" [CSSInputValue]="CSSstaticExample8"></app-static-example>
+</div>
