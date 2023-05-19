@@ -1,1 +1,340 @@
-<p>decor-lists works!</p>
+<div>
+  <p>
+    Использование HTML-списков очень распространено при создании панелей навигации по сайту. Элементы
+    списка представляют набор блочных элементов.
+  </p>
+  <p>
+    С помощью стандартных CSS-свойств можно изменить внешний вид маркера списка, добавить изображение
+    для маркера, а также изменить местоположение маркера. Высоту блока маркера можно задать свойством
+    <code class="css-prop">line-height</code>.
+  </p>
+  <p>
+    Можно объединить все три свойства форматирования списка (<code class="css-prop">list-style-type</code>,
+    <code class="css-prop">list-style-image</code>,<code class="css-prop">list-style-position</code> в
+    одно с помощью <code class="css-prop">list-style</code>. Значения свойств могут быть расположены в
+    произвольном порядке, а часть значений может быть опущена. Если присутствует одно значение, то
+    другие свойства примут значения браузера по умолчанию.
+  </p>
+</div>
+
+<div data-custom="head1" style="padding-top: 0;">
+  <h2 class="head" id="head1">
+    Интерактивный пример
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <app-interactive-example [NameComponent]="NameComponent" [HTMLinputValue]="HTMLinteractiveExample" [CSSinputValue]="CSSinteractiveExample"></app-interactive-example>
+</div>
+
+<div data-custom="head2">
+  <h2 class="head" id="head2">
+    Тип маркера списка
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <p>
+    Свойство изменяет типа маркера или удаляет маркер для маркированного и нумерованного списков.
+  </p>
+  <table class="fontProp">
+    <thead>
+      <tr>
+        <th>Значение</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code class="css-value">disc</code>
+        </td>
+        <td>
+          В качестве маркера элементов списка выступает закрашенный кружок.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">armenian</code>
+        </td>
+        <td>
+          Традиционная армянская нумерация.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">circle</code>
+        </td>
+        <td>
+          В качестве маркера выступает незакрашенный кружок.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">cjk-ideographic</code>
+        </td>
+        <td>
+          Идеографическая нумерация.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">decimal</code>
+        </td>
+        <td>
+          1, 2, 3, 4, 5, …
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">decimal-leading-zero</code>
+        </td>
+        <td>
+          01, 02, 03, 04, 05, …
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">georgian</code>
+        </td>
+        <td>
+          Традиционная грузинская нумерация.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">hebrew</code>
+        </td>
+        <td>
+          Традиционная еврейская нумерация.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">hiragana</code>
+        </td>
+        <td>
+          Японская нумерация: a, i, u, e, o, …
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">hiragana-iroha</code>
+        </td>
+        <td>
+          Японская нумерация: i, ro, ha, ni, ho, …
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">katakana</code>
+        </td>
+        <td>
+          Японская нумерация: A, I, U, E, O, …
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">katakana-iroha</code>
+        </td>
+        <td>
+          Японская нумерация: I, RO, HA, NI, HO, …
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">lower-alpha</code>,
+          <code class="css-value">upper-alpha</code>
+        </td>
+        <td>
+          a, b, c, d, e, … / A, B, C, D, E, …
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">lower-greek</code>
+        </td>
+        <td>
+          Строчные символы греческого алфавита.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">lower-latin</code>,
+          <code class="css-value">upper-latin</code>
+        </td>
+        <td>
+          a, b, c, d, e, … / A, B, C, D, E, …
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">lower-roman</code>,
+          <code class="css-value">upper-roman</code>
+        </td>
+        <td>
+          i, ii, iii, iv, v, … / I, II, III, IV, V, …
+
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">none</code>
+        </td>
+        <td>
+          Маркер отсутствует.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">square</code>
+        </td>
+        <td>
+          В качестве маркера выступает закрашенный или незакрашенный квадрат.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">initial</code>
+        </td>
+        <td>
+          Устанавливает значение свойства в значение по умолчанию.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">inherit</code>
+        </td>
+        <td>
+          Наследует значение свойства от родительского элемента.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Пример настройки маркеров списка</h3>
+  <app-static-example [InputValue]="HTMLstaticExample1" [CSSInputValue]="CSSstaticExample1"></app-static-example>
+</div>
+
+<div data-custom="head3">
+  <h2 class="head" id="head3">
+    Изображения для элементов списка
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <p>
+    В качестве маркера элементов списка можно использовать изображения и градиентные заливки при помощи свойства
+    <code class="css-prop">list-style-image</code>.
+  </p>
+  <table class="fontProp">
+    <thead>
+      <tr>
+        <th>Значение</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code class="css-value">disc</code>
+        </td>
+        <td>
+          В качестве маркера элементов списка выступает закрашенный кружок.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">url(...)</code>
+        </td>
+        <td>
+          Путь к изображению.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">none</code>
+        </td>
+        <td>
+          значение по умолчанию, означает отсутствие изображения. Также убирает изображение для элемента
+          из группы элементов с установленным изображением-маркером.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">initial</code>
+        </td>
+        <td>
+          Устанавливает значение свойства в значение по умолчанию.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">inherit</code>
+        </td>
+        <td>
+          Наследует значение свойства от родительского элемента.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Пример настройки маркеров списка</h3>
+  <app-static-example [InputValue]="HTMLstaticExample2" [CSSInputValue]="CSSstaticExample2"></app-static-example>
+</div>
+
+<div data-custom="head4">
+  <h2 class="head" id="head4">
+    Местоположение маркера списка
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <p>
+    Свойство <code class="css-prop">list-style-position</code> предоставляет возможность располагать
+    маркер вне или внутри содержимого элемента списка.
+  </p>
+  <table class="fontProp">
+    <thead>
+      <tr>
+        <th>Значение</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code class="css-value">outside</code>
+        </td>
+        <td>
+          Значение по умолчанию. Маркер располагается вне блока с текстом.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">inside</code>
+        </td>
+        <td>
+          Маркер списка изображается в одном блоке с текстом. Последующие строки текста будут
+          располагаться под значком маркера, т.е. маркер будет обтекаться текстом.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">initial</code>
+        </td>
+        <td>
+          Устанавливает значение свойства в значение по умолчанию.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">inherit</code>
+        </td>
+        <td>
+          Наследует значение свойства от родительского элемента.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Пример изменение положения маркеров списка</h3>
+  <app-static-example [InputValue]="HTMLstaticExample3" [CSSInputValue]="CSSstaticExample3"></app-static-example>
+</div>

@@ -39,6 +39,8 @@ import { InheritanceComponent } from './sub-section/css/selectors/inheritance/in
 import { FontPropComponent } from './sub-section/css/css-text/font-prop/font-prop.component';
 import { TextDecorComponent } from './sub-section/css/css-text/text-decor/text-decor.component';
 import { TextAlignComponent } from './sub-section/css/css-text/text-align/text-align.component';
+import { DecorListsComponent } from './sub-section/css/decor/decor-lists/decor-lists.component';
+import { DecorTableComponent } from './sub-section/css/decor/decor-table/decor-table.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -80,6 +82,8 @@ const routes: Routes = [
       { path: 'font-prop', component: FontPropComponent },
       { path: 'text-decor', component: TextDecorComponent },
       { path: 'text-align', component: TextAlignComponent },
+      { path: 'decor-lists', component: DecorListsComponent },
+      { path: 'decor-table', component: DecorTableComponent },
     ]
   },
 ]

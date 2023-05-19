@@ -1,0 +1,322 @@
+<div>
+  <p>
+    Спецификация CSS даёт неограниченные возможности для оформления таблиц. По умолчанию таблица и
+    ячейки таблицы не имеют видимых границ и фона, при этом ячейки внутри таблицы не прилегают вплотную
+    друг к другу.
+  </p>
+  <p>
+    Ширина ячеек таблицы определяется шириной их содержимого, поэтому ширина столбцов таблицы может
+    быть разной. Высота всех ячеек ряда одинаковая и определяется высотой самой высокой ячейки.
+  </p>
+</div>
+
+<div data-custom="head1" style="padding-top: 0;">
+  <h2 class="head" id="head1">
+    Интерактивный пример
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <app-interactive-example [NameComponent]="NameComponent" [HTMLinputValue]="HTMLinteractiveExample" [CSSinputValue]="CSSinteractiveExample"></app-interactive-example>
+</div>
+
+<div data-custom="head2">
+  <h2 class="head" id="head2">
+    Границы таблицы
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <p>
+    Границы таблицы задаются свойством <code class="css-prop">border</code>
+  </p>
+  <p>
+    Свойство border является особенно полезным, когда требуется задать одинаковые параметры для всех
+    четырех границ элемента. Однако, чтобы сделать границы разными, можно использовать длинные свойства
+    <code class="css-prop">border-width</code>, <code class="css-prop">border-style</code> и
+    <code class="css-prop">border-color</code>, которые принимают различные значения для каждой грани.
+  </p>
+  <table class="fontProp">
+    <thead>
+      <tr>
+        <th>Значение</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code class="css-value">line-width</code>
+        </td>
+        <td>
+          Определяет толщину границы. По умолчанию устанавливается значение <code class="css-value">medium</code>,
+          если отсутствует явное указание толщины.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">line-style</code>
+        </td>
+        <td>
+          Устанавливает стиль границы. По умолчанию отсутствует, то есть граница не отображается.
+          <p>Принимает следующи значения:</p>
+          <ul>
+            <li><code class="css-value">none</code> - без границы (значение по умолчанию).</li>
+            <li><code class="css-value">hidden</code> - скрытая граница, которая занимает место.</li>
+            <li><code class="css-value">dotted</code> - пунктирная граница.</li>
+            <li><code class="css-value">dashed</code> - штриховая граница.</li>
+            <li><code class="css-value">solid</code> - сплошная граница.</li>
+            <li><code class="css-value">double</code> - двойная граница.</li>
+            <li><code class="css-value">groove</code> - выдавленная граница. Рисуется двумя цветами
+            — темнее на внешней стороне и светлее на внутренней.</li>
+            <li><code class="css-value">ridge</code> - рельефная граница. Рисуется двумя цветами
+            — светлее на внешней стороне и темнее на внутренней.</li>
+            <li><code class="css-value">inset</code> - внутренняя граница. Рисуется двумя цветами
+            — темнее на внешней стороне и светлее на внутренней.</li>
+            <li><code class="css-value">outset</code> - внешняя граница. Рисуется двумя цветами
+            — светлее на внешней стороне и темнее на внутренней.</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">color</code>
+        </td>
+        <td>
+          Устанавливает цвет границы. По умолчанию используется текущий цвет, если он отсутствует.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h4>Пример оформления границ таблицы</h4>
+  <app-static-example [InputValue]="HTMLstaticExample1" [CSSInputValue]="CSSstaticExample1"></app-static-example>
+</div>
+
+<div data-custom="head3">
+  <h2 class="head" id="head3">
+    Заголовок таблицы
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <p>
+    Добавить заголовок в таблицу можно с помощью элемента <code class="tag">&lt;caption&gt;</code>, а
+    с помощью свойства <code class="css-prop">caption-side</code> его можно поместить перед таблицей
+    или под ней. Для горизонтального выравнивания текста заголовка применяется свойство
+    <code class="css-prop">text-align</code>.
+  </p>
+  <table class="fontProp">
+    <thead>
+      <tr>
+        <th>Значение</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code class="css-value">top</code>
+        </td>
+        <td>
+          Заголовок таблицы располагается над таблицей. Значение по умолчанию.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">bottom</code>
+        </td>
+        <td>
+          Располагает заголовок под таблицей.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">initial</code>
+        </td>
+        <td>
+          Устанавливает значение свойства в значение по умолчанию.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">inherit</code>
+        </td>
+        <td>
+          Наследует значение свойства от родительского элемента.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h4>Пример оформления границ таблицы</h4>
+  <app-static-example [InputValue]="HTMLstaticExample2" [CSSInputValue]="CSSstaticExample2"></app-static-example>
+</div>
+
+<div data-custom="head4">
+  <h2 class="head" id="head4">
+    Промежуток между рамками таблицы
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <p>
+    Рамки ячеек таблицы по умолчанию разделены небольшим промежутком. Если задать для таблицы
+    <code><code class="css-prop">border-collapse</code>: <code class="css-value">collapse</code></code>,
+    то промежуток уберётся.
+  </p>
+  <table class="fontProp">
+    <thead>
+      <tr>
+        <th>Значение</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code class="css-value">separate</code>
+        </td>
+        <td>
+          Рамки ячеек располагаются раздельно.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">collapse</code>
+        </td>
+        <td>
+          Рамки ячеек сливаются в одну, а промежутки между рамками убираются.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">initial</code>
+        </td>
+        <td>
+          Устанавливает значение свойства в значение по умолчанию.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">inherit</code>
+        </td>
+        <td>
+          Наследует значение свойства от родительского элемента.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h4>Пример добавления/удаления промежутка между ячейками</h4>
+  <app-static-example [InputValue]="HTMLstaticExample3" [CSSInputValue]="CSSstaticExample3"></app-static-example>
+</div>
+
+<div data-custom="head5">
+  <h2 class="head" id="head5">
+    Увеличение промежутка между ячейками таблицы
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <p>
+    С помощью свойства <code class="css-prop">border-spacing</code> можно менять расстояние между
+    рамками ячеек. Данное свойство применяется к таблице в целом.
+  </p>
+  <table class="fontProp">
+    <thead>
+      <tr>
+        <th>Значение</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code class="css-value">x-lenght</code>,
+          <code class="css-value">y-lenght</code>
+        </td>
+        <td>
+          Добавляет промежутки между рамками как по вертикали, так и по горизонтали. Если заданы две
+          длины, то первая всегда определяет горизонтальный промежуток, а вторая — вертикальный.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">initial</code>
+        </td>
+        <td>
+          Устанавливает значение свойства в значение по умолчанию.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">inherit</code>
+        </td>
+        <td>
+          Наследует значение свойства от родительского элемента.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h4>Пример добавления/удаления промежутка между ячейками</h4>
+  <app-static-example [InputValue]="HTMLstaticExample4" [CSSInputValue]="CSSstaticExample4"></app-static-example>
+</div>
+
+<div data-custom="head6">
+  <h2 class="head" id="head6">
+    Отображение пустых ячеек таблицы
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path fill="#6c717d" d="M23.906 3.969A4.097 4.097 0 0 0 21 5.188L5.187 21l-.062.313l-1.094 5.5l-.312 1.468l1.469-.312l5.5-1.094l.312-.063L26.813 11a4.075 4.075 0 0 0 0-5.813a4.097 4.097 0 0 0-2.907-1.218zm0 1.906c.504 0 1.012.23 1.5.719c.973.972.973 2.027 0 3l-.718.687l-2.97-2.969l.688-.718c.489-.489.996-.719 1.5-.719zm-3.593 2.844l2.968 2.969L11.188 23.78a6.813 6.813 0 0 0-2.97-2.968zM6.938 22.438a4.734 4.734 0 0 1 2.625 2.625l-3.282.656z" />
+    </svg>
+  </h2>
+  <p>
+    Свойство <code class="css-prop">empty-cells</code> скрывает или показывает пустые ячейки. Действует
+    только на ячейки, которые не содержат какой-либо контент. Если для ячейки задан фон, а для таблицы
+    задано <code><code class="css-selector">table</code> {{ '{' }}<code class="css-prop">border-collapse</code>: <code class="css-value">collapse</code>;{{ '}' }}</code>,
+    то ячейка не будет скрыта.
+  </p>
+  <table class="fontProp">
+    <thead>
+      <tr>
+        <th>Значение</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code class="css-value">show</code>
+        </td>
+        <td>
+          Рамка и фон пустой ячейки будут отрисовываться так же, как для ячейки таблицы, имеющей
+          содержимое.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">hide</code>
+        </td>
+        <td>
+          Если все ячейки строки пусты, то вся строка отображается так, если бы было задано значение
+          <code><code class="css-prop">display</code>: <code class="css-value">none</code></code>.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">initial</code>
+        </td>
+        <td>
+          Устанавливает значение свойства в значение по умолчанию.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="css-value">inherit</code>
+        </td>
+        <td>
+          Наследует значение свойства от родительского элемента.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h4>Пример добавления/удаления промежутка между ячейками</h4>
+  <app-static-example [InputValue]="HTMLstaticExample5" [CSSInputValue]="CSSstaticExample5"></app-static-example>
+</div>

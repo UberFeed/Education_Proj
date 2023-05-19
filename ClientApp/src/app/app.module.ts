@@ -38,6 +38,8 @@ import { InheritanceComponent } from './sub-section/css/selectors/inheritance/in
 import { FontPropComponent } from './sub-section/css/css-text/font-prop/font-prop.component';
 import { TextDecorComponent } from './sub-section/css/css-text/text-decor/text-decor.component';
 import { TextAlignComponent } from './sub-section/css/css-text/text-align/text-align.component';
+import { DecorListsComponent } from './sub-section/css/decor/decor-lists/decor-lists.component';
+import { DecorTableComponent } from './sub-section/css/decor/decor-table/decor-table.component';
 import { InteractiveExampleComponent } from './interactive-example/interactive-example.component';
 import { StaticExampleComponent } from './static-example/static-example.component';
 import { CodeExampleComponent } from './code-example/code-example.component';
@@ -81,6 +83,8 @@ import { LessonsData } from './LessonsData.service';
     FontPropComponent,
     TextDecorComponent,
     TextAlignComponent,
+    DecorListsComponent,
+    DecorTableComponent,
     InteractiveExampleComponent,
     StaticExampleComponent,
     CodeExampleComponent,
