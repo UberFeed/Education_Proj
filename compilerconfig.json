@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "ClientApp/src/app/sub-section/general-style.css",
+    "inputFile": "ClientApp/src/app/sub-section/general-style.scss"
+  },
+  {
+    "outputFile": "ClientApp/src/style.css",
+    "inputFile": "ClientApp/src/style.scss"
+  }
+]

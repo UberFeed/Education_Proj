@@ -41,6 +41,8 @@ import { TextDecorComponent } from './sub-section/css/css-text/text-decor/text-d
 import { TextAlignComponent } from './sub-section/css/css-text/text-align/text-align.component';
 import { DecorListsComponent } from './sub-section/css/decor/decor-lists/decor-lists.component';
 import { DecorTableComponent } from './sub-section/css/decor/decor-table/decor-table.component';
+import { ColorFormatComponent } from './sub-section/css/color/color-format/color-format.component';
+import { BackgroundComponent } from './sub-section/css/color/background/background.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -84,6 +86,8 @@ const routes: Routes = [
       { path: 'text-align', component: TextAlignComponent },
       { path: 'decor-lists', component: DecorListsComponent },
       { path: 'decor-table', component: DecorTableComponent },
+      { path: 'color-format', component: ColorFormatComponent },
+      { path: 'background', component: BackgroundComponent },
     ]
   },
 ]

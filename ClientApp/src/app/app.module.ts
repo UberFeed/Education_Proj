@@ -40,6 +40,8 @@ import { TextDecorComponent } from './sub-section/css/css-text/text-decor/text-d
 import { TextAlignComponent } from './sub-section/css/css-text/text-align/text-align.component';
 import { DecorListsComponent } from './sub-section/css/decor/decor-lists/decor-lists.component';
 import { DecorTableComponent } from './sub-section/css/decor/decor-table/decor-table.component';
+import { ColorFormatComponent } from './sub-section/css/color/color-format/color-format.component';
+import { BackgroundComponent } from './sub-section/css/color/background/background.component';
 import { InteractiveExampleComponent } from './interactive-example/interactive-example.component';
 import { StaticExampleComponent } from './static-example/static-example.component';
 import { CodeExampleComponent } from './code-example/code-example.component';
@@ -85,6 +87,8 @@ import { LessonsData } from './LessonsData.service';
     TextAlignComponent,
     DecorListsComponent,
     DecorTableComponent,
+    ColorFormatComponent,
+    BackgroundComponent,
     InteractiveExampleComponent,
     StaticExampleComponent,
     CodeExampleComponent,

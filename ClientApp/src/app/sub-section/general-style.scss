@@ -7,7 +7,7 @@ p {
     margin-bottom: 0;
   }
 }
-ul{
+ul, ol{
     font-size: 16px;
     color: $light-color;
     li{
@@ -210,6 +210,10 @@ table{
 
 .css-value {
   color: #d78d7d;
+}
+
+.css-number {
+  color: rgb(214, 114, 164);
 }
 
 .css-pseudoCl {
