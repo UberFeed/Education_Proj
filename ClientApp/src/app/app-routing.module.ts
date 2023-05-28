@@ -43,6 +43,8 @@ import { DecorListsComponent } from './sub-section/css/decor/decor-lists/decor-l
 import { DecorTableComponent } from './sub-section/css/decor/decor-table/decor-table.component';
 import { ColorFormatComponent } from './sub-section/css/color/color-format/color-format.component';
 import { BackgroundComponent } from './sub-section/css/color/background/background.component';
+import { BlockSizeComponent } from './sub-section/css/block/block-size/block-size.component';
+import { PaddingMarginsComponent } from './sub-section/css/block/padding-margins/padding-margins.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -88,6 +90,8 @@ const routes: Routes = [
       { path: 'decor-table', component: DecorTableComponent },
       { path: 'color-format', component: ColorFormatComponent },
       { path: 'background', component: BackgroundComponent },
+      { path: 'block-size', component: BlockSizeComponent },
+      { path: 'padding-margins', component: PaddingMarginsComponent },
     ]
   },
 ]

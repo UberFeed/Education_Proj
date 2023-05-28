@@ -108,6 +108,9 @@
       .tabs_content {
         /*height: 500px;
           overflow-y: scroll;*/
+        .tabs-wrapper:last-child {
+            margin-bottom: 200px;
+        }
         .tabs-wrapper {
           counter-reset: a;
 

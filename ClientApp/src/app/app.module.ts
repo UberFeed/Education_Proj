@@ -42,6 +42,8 @@ import { DecorListsComponent } from './sub-section/css/decor/decor-lists/decor-l
 import { DecorTableComponent } from './sub-section/css/decor/decor-table/decor-table.component';
 import { ColorFormatComponent } from './sub-section/css/color/color-format/color-format.component';
 import { BackgroundComponent } from './sub-section/css/color/background/background.component';
+import { BlockSizeComponent } from './sub-section/css/block/block-size/block-size.component';
+import { PaddingMarginsComponent } from './sub-section/css/block/padding-margins/padding-margins.component';
 import { InteractiveExampleComponent } from './interactive-example/interactive-example.component';
 import { StaticExampleComponent } from './static-example/static-example.component';
 import { CodeExampleComponent } from './code-example/code-example.component';
@@ -89,6 +91,8 @@ import { LessonsData } from './LessonsData.service';
     DecorTableComponent,
     ColorFormatComponent,
     BackgroundComponent,
+    BlockSizeComponent,
+    PaddingMarginsComponent,
     InteractiveExampleComponent,
     StaticExampleComponent,
     CodeExampleComponent,
