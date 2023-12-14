@@ -34,8 +34,8 @@
           width: 200px;
         }
 
-        .chapter{
-            font-size: 14px;
+        .chapter {
+          font-size: 14px;
         }
 
         .sidebar_link {
@@ -85,6 +85,22 @@
 
         &:hover {
           background-color: rgba(255, 255, 255, .07);
+        }
+      }
+
+      .icon_color {
+        fill: $light-color;
+      }
+
+      a {
+        text-decoration: none;
+        color: $fifth-color;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+
+        &:hover {
+          color: $orange-color;
         }
       }
     }

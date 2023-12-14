@@ -51,7 +51,7 @@ export class SubsectionComponent implements OnInit, AfterViewInit {
 
 
   ngAfterViewInit() {
-    this.cloneSection = document.querySelector('.breadcrumb li:nth-child(3) a')?.cloneNode(true);
+    this.cloneSection = document.querySelector('.breadcrumb li:nth-child(2) a')?.cloneNode(true);
     document.querySelector('.section-mark')?.insertAdjacentElement('beforeend', this.cloneSection);
 
     let leftMenu = document.querySelectorAll('#hide_menu-inner li a');

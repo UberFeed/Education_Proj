@@ -10,5 +10,9 @@
   {
     "outputFile": "ClientApp/src/app/home/home.component.css",
     "inputFile": "ClientApp/src/app/home/home.component.scss"
+  },
+  {
+    "outputFile": "ClientApp/src/app/sub-section/subsection.component.css",
+    "inputFile": "ClientApp/src/app/sub-section/subsection.component.scss"
   }
 ]
